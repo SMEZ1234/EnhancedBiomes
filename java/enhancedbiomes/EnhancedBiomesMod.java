@@ -57,8 +57,7 @@ import static net.minecraftforge.common.BiomeDictionary.*;
 import net.minecraftforge.common.config.Configuration;
 
 @Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "2.4 for MC 1.7.10", useMetadata = true)
-public class EnhancedBiomesMod
-{		
+public class EnhancedBiomesMod {		
 	@SidedProxy(clientSide = "enhancedbiomes.proxy.ClientProxy", serverSide = "enhancedbiomes.proxy.CommonProxy")
 	public static CommonProxy proxy; 
 	@Instance("enhancedbiomes")
@@ -117,8 +116,7 @@ public class EnhancedBiomesMod
 	public static boolean obsidianVolcano;	
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) 
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		/*try {
 			LanguageRegistry.instance().injectLanguage("ru_RU", StringTranslate.parseLangFile(new FileInputStream(new File("enhancedbiomes:lang/ru_RU.lang"))));
 		} catch (FileNotFoundException e) {
@@ -175,13 +173,11 @@ public class EnhancedBiomesMod
 	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
-	{  		
+	public void load(FMLInitializationEvent event) {  		
 		EnhancedBiomesBiome.load();	    
 		BiomeTypes.registerAllBiomeTypes();
 		RareBiomeHandler.registerRareBiomes();
-		for(int a = 0; a < BiomeGenBase.getBiomeGenArray().length; a++)
-		{
+		for(int a = 0; a < BiomeGenBase.getBiomeGenArray().length; a++) {
 			if(rockList[a] == null) rockList[a] = getRocksForBiome(a)[0].block;			
 			if(rockMetaList[a] == 0) rockMetaList[a] = getRocksForBiome(a)[0].meta;
 
@@ -226,16 +222,12 @@ public class EnhancedBiomesMod
 		MinecraftForge.EVENT_BUS.register(new UseHoeEventHandler());
 		//TODO Remove
 		MinecraftForge.EVENT_BUS.register(new DamageHandler());
-		
-		
+				
 		if(seasons) FMLCommonHandler.instance().bus().register(new SeasonTickHandler());
         
-        if(runBiomeCheck)
-        { 
-            for(int x = 0; x < BiomeGenBase.getBiomeGenArray().length; x++)
-    		{
-            	if(BiomeGenBase.getBiomeGenArray()[x] != null)
-            	{
+        if(runBiomeCheck) { 
+            for(int x = 0; x < BiomeGenBase.getBiomeGenArray().length; x++) {
+            	if(BiomeGenBase.getBiomeGenArray()[x] != null) {
             		BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[x];
             		Block top = null;
             		if(biome.topBlock != null)top = biome.topBlock;
@@ -250,8 +242,7 @@ public class EnhancedBiomesMod
             		if(top != null)System.out.println("Top block: " + top.getLocalizedName());
             		if(filler != null)System.out.println("Filler block: " + filler.getLocalizedName());
             		System.out.print("Biome Types: ");
-            		for(int a = 0; a < BiomeDictionary.getTypesForBiome(biome).length; a++)
-            		{
+            		for(int a = 0; a < BiomeDictionary.getTypesForBiome(biome).length; a++) {
             			System.out.print(BiomeDictionary.getTypesForBiome(biome)[a].toString() + ", ");
             		}
             		System.out.println();
@@ -266,16 +257,14 @@ public class EnhancedBiomesMod
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {}	 
 	
-	private static BlockWithMeta[] getRocksForBiome(int id)
-	{
+	private static BlockWithMeta[] getRocksForBiome(int id) {
 		if(useNewStone != 1) return typeGeoDefault;
-		else
-		{
+		else {
 			BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[id];
 			if(biome == null) 	return typeGeoGrass;
 			else if(biome.biomeName.contains("Shield")) return typeGeoVolcanoSea;
 			else if(biome == biomeBasin) return typeGeoMountains;
-			switch(getCatForBiome(biome)){
+			switch(getCatForBiome(biome)) {
 			case GRASS: 		return typeGeoGrass;
 			case CANYONS: 		return typeGeoSandCanyons;
 			case SAND:			return typeGeoSandCanyons;
@@ -291,14 +280,13 @@ public class EnhancedBiomesMod
 		}
 	}
 
-	private static BlockWithMeta getSoilForBiome(int id)
-	{
+	private static BlockWithMeta getSoilForBiome(int id) {
 		if(!useNewGrass) return BlockWithMeta.dirt;
 		else
 		{
 			BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[id];
 			if(biome == null) 	return BlockWithMeta.dirt;
-			switch(getCatForBiome(biome)){
+			switch(getCatForBiome(biome)) {
 			case GRASS: 		return BlockWithMeta.dirt;
 			case CANYONS: 		return oxisol;
 			case SAND:			return oxisol;
@@ -313,25 +301,21 @@ public class EnhancedBiomesMod
 		}
 	}
 
-	private static Block getGrassForBiome(int id)
-	{
+	private static Block getGrassForBiome(int id) {
 		if(!useNewGrass) return grass;
-		else
-		{
+		else {
 			if(getSoilForBiome(id).block == Blocks.dirt) return grass;
 			return grassEB;
 		}
 	}
 
-	public static boolean isValidIslandBiome(BiomeGenBase biome)
-	{
+	public static boolean isValidIslandBiome(BiomeGenBase biome) {
 		if(biome.rootHeight >= 0.2F) return true;
 		else if(BiomeDictionary.isBiomeOfType(biome, SWAMP)) return true;
 		return false;
 	}
 	
-	public static float getTideHeight(long time)
-	{
+	public static float getTideHeight(long time) {
 		time %= 24000;
 		float r = 63.5F;
 		if(time <= 6000) r = (float) (63.5 + (((int) (time / 500)) * 0.125D));
