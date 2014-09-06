@@ -18,7 +18,7 @@ public class TreeGen
 	public static WorldGenAbstractTree poplar(Random rand){return new WorldGenPoplar(logOak, 2, leavesOak, 2, 2 + rand.nextInt(3));}
 	public static WorldGenAbstractTree mangrove(){return new WorldGenMangrove(logOak, 3, leavesOak, 3, 3);}
 	//TODO
-	public static WorldGenAbstractTree tallow(Random rand){return new WorldGenTallow(logOak, 2, leavesOak, 2, 4 + rand.nextInt(2));}
+	//public static WorldGenAbstractTree tallow(Random rand){return new WorldGenTallow(logOak, 2, leavesOak, 2, 4 + rand.nextInt(2));}
 
 	public static WorldGenAbstractTree fir(Random rand){return new WorldGenFir(3 + rand.nextInt(3), logSpruce, 0, leavesSpruce, 0, false);}
 	public static WorldGenAbstractTree cypress(Random rand){return new WorldGenCypress(logSpruce, 1, leavesSpruce, 1, 4 + rand.nextInt(3));}

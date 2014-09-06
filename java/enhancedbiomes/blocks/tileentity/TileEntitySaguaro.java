@@ -20,10 +20,7 @@ public class TileEntitySaguaro extends TileEntity {
 
         while (iterator.hasNext()) {
             entity = (EntityLivingBase)iterator.next();
-            /*System.out.println("Saguaro attacking " + entity.getUniqueID());
-            entity.attackEntityFrom(DamageSource.cactus, 1.0F);*/
-            /*System.out.println("Saguaro attacking " + entity.getUniqueID());
-            EnhancedBiomesBlocks.saguaro.onEntityCollidedWithBlock(worldObj, xCoord, yCoord, zCoord, entity);*/
+            entity.attackEntityFrom(DamageSource.cactus, 1.0F);
         }
     }
 }

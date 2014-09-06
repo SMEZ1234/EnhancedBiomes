@@ -117,12 +117,6 @@ public class EnhancedBiomesMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		/*try {
-			LanguageRegistry.instance().injectLanguage("ru_RU", StringTranslate.parseLangFile(new FileInputStream(new File("enhancedbiomes:lang/ru_RU.lang"))));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		EnhancedBiomesApi.orh = new OreRegisteringHandler();
 		
 		File configFile = new File("config/Enhanced Biomes/General.cfg");
@@ -220,8 +214,6 @@ public class EnhancedBiomesMod {
 		
 		MinecraftForge.EVENT_BUS.register(new BonemealHandler());
 		MinecraftForge.EVENT_BUS.register(new UseHoeEventHandler());
-		//TODO Remove
-		MinecraftForge.EVENT_BUS.register(new DamageHandler());
 				
 		if(seasons) FMLCommonHandler.instance().bus().register(new SeasonTickHandler());
         

@@ -337,7 +337,7 @@ public class ChunkProviderEnhancedBiomes implements IChunkProvider
                     for (int i2 = -b0; i2 <= b0; ++i2)
                     {
                         BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
-                        float f3 = biomegenbase1.rootHeight; //TODO
+                        float f3 = biomegenbase1.rootHeight;
                         float f4 = biomegenbase1.heightVariation;
 
                         if (this.worldType == WorldType.AMPLIFIED && f3 > 0.0F)

@@ -64,13 +64,13 @@ public class VillagePieceSelection {
 	public static List getStructureVillageWeightedPieceList(Random p_75084_0_, int villageSize, BiomeGenBase biome) {
 		ArrayList arraylist = new ArrayList();
 		//Oriental
-		if(isOriental(biome)) {
+		/*if(isOriental(biome)) {
 			arraylist.add(new StructureVillagePieces.PieceWeight(Torii.class, 		3, 	MathHelper.getRandomIntegerInRange(p_75084_0_, 2 + villageSize, 5 + villageSize * 3)));
 			//TODO Exchange arraylist.add(new StructureVillagePiecesEB.PieceWeight(Torii.class, 		20,	MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 2 + villageSize)));
-		}
+		}*/
 		
 		//Standard
-		else {
+		//else {
 			arraylist.add(new StructureVillagePieces.PieceWeight(House4Garden.class,	4, 	MathHelper.getRandomIntegerInRange(p_75084_0_, 2 + villageSize, 4 + villageSize * 2)));
 			arraylist.add(new StructureVillagePieces.PieceWeight(Church.class, 			20, MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 1 + villageSize)));
 			arraylist.add(new StructureVillagePieces.PieceWeight(House1.class, 			20, MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 2 + villageSize)));
@@ -80,7 +80,7 @@ public class VillagePieceSelection {
 			arraylist.add(new StructureVillagePieces.PieceWeight(Field2.class, 			3, 	MathHelper.getRandomIntegerInRange(p_75084_0_, 2 + villageSize, 4 + villageSize * 2)));
 			arraylist.add(new StructureVillagePieces.PieceWeight(House2.class, 			15, MathHelper.getRandomIntegerInRange(p_75084_0_, 0, 				1 + villageSize)));
 			arraylist.add(new StructureVillagePieces.PieceWeight(House3.class, 			8, 	MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 3 + villageSize * 2)));
-		}
+		//}
 		
 		//Mod
 		VillagerRegistry.addExtraVillageComponents(arraylist, p_75084_0_, villageSize);
