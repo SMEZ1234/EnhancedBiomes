@@ -1,7 +1,7 @@
 package enhancedbiomes.world.gen.layer;
 
-import enhancedbiomes.world.biome.grass.EnhancedBiomesGrass;
-import enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland;
+import enhancedbiomes.world.biome.EnhancedBiomesGrass;
+import enhancedbiomes.world.biome.EnhancedBiomesWetland;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;

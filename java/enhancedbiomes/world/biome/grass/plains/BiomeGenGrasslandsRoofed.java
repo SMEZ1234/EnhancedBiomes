@@ -2,7 +2,7 @@ package enhancedbiomes.world.biome.grass.plains;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.BiomeGenPlainsBase;
+import enhancedbiomes.world.biome.base.BiomeGenPlainsBase;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.*;

@@ -2,7 +2,7 @@ package enhancedbiomes.world.biome.wasteland.sandstone;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.BiomeGenSandstoneBase;
+import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

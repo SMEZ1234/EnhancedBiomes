@@ -1,18 +1,18 @@
 package enhancedbiomes.world.gen.layer;
 
 import net.minecraft.world.biome.BiomeGenBase;
+import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesBiome.*;
-import static enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago.*;
-import static enhancedbiomes.world.biome.grass.EnhancedBiomesGrass.*;
-import static enhancedbiomes.world.biome.grass.plains.EnhancedBiomesPlains.*;
-import static enhancedbiomes.world.biome.sand.EnhancedBiomesSand.*;
-import static enhancedbiomes.world.biome.snow.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.snow.snowforest.EnhancedBiomesSnowForest.*;
-import static enhancedbiomes.world.biome.woodland.EnhancedBiomesWoodland.*;
-import static enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland.*;
-import static enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock.*;
-import static enhancedbiomes.world.biome.wasteland.sandstone.EnhancedBiomesSandstone.*;
-import static enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesGrass.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesPlains.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 

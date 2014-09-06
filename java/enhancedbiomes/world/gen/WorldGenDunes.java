@@ -2,7 +2,7 @@ package enhancedbiomes.world.gen;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.sand.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesSand;
 import static enhancedbiomes.helpers.EnhancedBiomesWorldHelper.setBlockIfEmpty;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

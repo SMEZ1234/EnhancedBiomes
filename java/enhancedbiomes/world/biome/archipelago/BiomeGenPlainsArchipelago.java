@@ -1,6 +1,6 @@
 package enhancedbiomes.world.biome.archipelago;
 
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenPlains;

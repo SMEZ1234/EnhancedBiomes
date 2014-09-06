@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

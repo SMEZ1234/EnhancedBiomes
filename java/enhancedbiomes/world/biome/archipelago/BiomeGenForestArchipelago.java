@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.archipelago;
 import java.util.Random;
 
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenTrees;

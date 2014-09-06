@@ -6,7 +6,7 @@ import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.blocks.BlockSaplingEnhancedBiomes;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.helpers.EnhancedBiomesWorldHelper;
-import enhancedbiomes.world.biome.BiomeGenGrassBase;
+import enhancedbiomes.world.biome.base.BiomeGenGrassBase;
 import enhancedbiomes.world.gen.WorldGenBadlands;
 import enhancedbiomes.world.gen.WorldGenInselberg;
 import net.minecraft.block.Block;

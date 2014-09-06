@@ -5,7 +5,7 @@ import java.util.Random;
 import enhancedbiomes.blocks.BlockSaplingEnhancedBiomes;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenPlainsBase;
+import enhancedbiomes.world.biome.base.BiomeGenPlainsBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.init.Blocks;

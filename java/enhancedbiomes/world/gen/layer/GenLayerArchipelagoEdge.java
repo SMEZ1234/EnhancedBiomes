@@ -1,7 +1,7 @@
 package enhancedbiomes.world.gen.layer;
 
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
-import enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago;
+import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;

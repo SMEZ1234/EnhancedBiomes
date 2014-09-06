@@ -6,7 +6,7 @@ import com.google.common.eventbus.Subscribe;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.village.VillagePieceSelection;
-import enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock;
+import enhancedbiomes.world.biome.EnhancedBiomesRock;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;

@@ -1,6 +1,6 @@
 package enhancedbiomes.world.biome.wetland;
 
-import enhancedbiomes.world.biome.BiomeGenWetlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWetlandBase;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenLake extends BiomeGenWetlandBase {

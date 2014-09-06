@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.sand;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,8 +7,13 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenSandBase;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.base.BiomeGenSandBase;
+import enhancedbiomes.world.biome.sand.BiomeGenRedDesert;
+import enhancedbiomes.world.biome.sand.BiomeGenRockyDesert;
+import enhancedbiomes.world.biome.sand.BiomeGenSahara;
+import enhancedbiomes.world.biome.sand.BiomeGenScrub;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.config.Configuration;
@@ -42,19 +47,19 @@ public class EnhancedBiomesSand
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		rockyDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rocky Desert", 47).getInt();
+		rockyDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rocky Desert", BiomeIDs.rockyDesert).getInt();
 		rockyDesertGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Rocky Desert biome", 10).getInt();
 		villageRockyDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Rocky Desert biome", true).getBoolean(true);
 
-		scrubId = config.get(config.CATEGORY_GENERAL, "Biome ID of Scrub", 48).getInt();
+		scrubId = config.get(config.CATEGORY_GENERAL, "Biome ID of Scrub", BiomeIDs.scrub).getInt();
 		scrubGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Scrub biome", 10).getInt();
 		villageScrub = config.get(config.CATEGORY_GENERAL, "Generate villages in Scrub biome", true).getBoolean(true);
 		
-		saharaId = config.get(config.CATEGORY_GENERAL, "Biome ID of Sahara", 51).getInt();
+		saharaId = config.get(config.CATEGORY_GENERAL, "Biome ID of Sahara", BiomeIDs.sahara).getInt();
 		saharaGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Sahara biome", 10).getInt();
 		villageSahara = config.get(config.CATEGORY_GENERAL, "Generate villages in Sahara biome", true).getBoolean(true);
 		
-		redDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Red Desert", 105).getInt();
+		redDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Red Desert", BiomeIDs.redDesert).getInt();
 		redDesertGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Red Desert biome", 10).getInt();
 		villageRedDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Red Desert biome", true).getBoolean(true);
 

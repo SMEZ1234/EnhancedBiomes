@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.grass.plains;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,8 +7,17 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenPlainsBase;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.base.BiomeGenPlainsBase;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenGrasslands;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenGrasslandsRoofed;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenLowHills;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenMeadow;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenMeadowM;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenPrairie;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenSavannah;
+import enhancedbiomes.world.biome.grass.plains.BiomeGenSteppe;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -62,35 +71,35 @@ public class EnhancedBiomesPlains
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		grasslandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Shrublands", 70).getInt();
+		grasslandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Shrublands", BiomeIDs.shrublands).getInt();
 		grasslandsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Shrublands biome", 10).getInt();
 		villageGrasslands = config.get(config.CATEGORY_GENERAL, "Generate villages in Shrublands biome", true).getBoolean(true);
 		
-		savannahId = config.get(config.CATEGORY_GENERAL, "Biome ID of Xeric Savanna", 71).getInt();
+		savannahId = config.get(config.CATEGORY_GENERAL, "Biome ID of Xeric Savanna", BiomeIDs.xericSavannah).getInt();
 		savannahGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Xeric Savanna biome", 10).getInt();
 		villageSavannah = config.get(config.CATEGORY_GENERAL, "Generate villages in Xeric Savanna biome", true).getBoolean(true);
 		
-		steppeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Steppe", 72).getInt();
+		steppeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Steppe", BiomeIDs.steppe).getInt();
 		steppeGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Steppe biome", 10).getInt();
 		villageSteppe = config.get(config.CATEGORY_GENERAL, "Generate villages in Steppe biome", true).getBoolean(true);
 		
-		prairieId = config.get(config.CATEGORY_GENERAL, "Biome ID of Prairie", 73).getInt();
+		prairieId = config.get(config.CATEGORY_GENERAL, "Biome ID of Prairie", BiomeIDs.prairie).getInt();
 		prairieGrass = config.get(config.CATEGORY_GENERAL, "Grass colour of Prairie biome", 0xFBC520).getInt();
 		prairieGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Prairie biome", 10).getInt();
 		villagePrairie = config.get(config.CATEGORY_GENERAL, "Generate villages in Prairie biome", true).getBoolean(true);
 		
-		lowHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Low Hills", 74).getInt();
+		lowHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Low Hills", BiomeIDs.lowHills).getInt();
 		lowHillsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Low Hills biome", 10).getInt();
 		villageLowHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Low Hills biome", true).getBoolean(true);
 		
-		meadowId = config.get(config.CATEGORY_GENERAL, "Biome ID of Meadow", 75).getInt();
+		meadowId = config.get(config.CATEGORY_GENERAL, "Biome ID of Meadow", BiomeIDs.meadow).getInt();
 		meadowGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Meadow biome", 10).getInt();
 		villageMeadow = config.get(config.CATEGORY_GENERAL, "Generate villages in Meadow biome", true).getBoolean(true);
 		
-		grasslandsRoofedId = config.get(config.CATEGORY_GENERAL, "Biome ID of Roofed Shrublands", 198).getInt();
+		grasslandsRoofedId = config.get(config.CATEGORY_GENERAL, "Biome ID of Roofed Shrublands", BiomeIDs.roofedShrublands).getInt();
 		villageGrasslandsRoofed = config.get(config.CATEGORY_GENERAL, "Generate villages in Roofed Shrublands biome", true).getBoolean(true);
 		
-		meadowMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Meadow M", 203).getInt();
+		meadowMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Meadow M", BiomeIDs.meadowM).getInt();
 		villageMeadowM = config.get(config.CATEGORY_GENERAL, "Generate villages in Meadow M biome", true).getBoolean(true);
 		
 		config.save();

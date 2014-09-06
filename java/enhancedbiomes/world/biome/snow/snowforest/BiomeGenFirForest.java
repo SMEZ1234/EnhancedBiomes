@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.snow.snowforest;
 import java.util.Random;
 
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenSnowForestBase;
+import enhancedbiomes.world.biome.base.BiomeGenSnowForestBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;

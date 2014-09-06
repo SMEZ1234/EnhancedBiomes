@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.woodland.tropical;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,8 +7,11 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenTropicalBase;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.base.BiomeGenTropicalBase;
+import enhancedbiomes.world.biome.woodland.tropical.BiomeGenOasis;
+import enhancedbiomes.world.biome.woodland.tropical.BiomeGenRainforest;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -36,14 +39,14 @@ public class EnhancedBiomesTropical
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		oasisId = config.get(config.CATEGORY_GENERAL, "Biome ID of Oasis", 53).getInt();
+		oasisId = config.get(config.CATEGORY_GENERAL, "Biome ID of Oasis", BiomeIDs.oasis).getInt();
 		villageOasis = config.get(config.CATEGORY_GENERAL, "Generate villages in Oasis biome", true).getBoolean(true);
 		
-		rainforestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rainforest", 54).getInt();
+		rainforestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rainforest", BiomeIDs.rainforest).getInt();
 		rainforestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Rainforest biome", 10).getInt();
 		villageRainforest = config.get(config.CATEGORY_GENERAL, "Generate villages in Rainforest biome", true).getBoolean(true);
 		
-		rainforestValleyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rainforest Valley", 55).getInt();
+		rainforestValleyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rainforest Valley", BiomeIDs.rainforestValley).getInt();
 		villageRainforestValley = config.get(config.CATEGORY_GENERAL, "Generate villages in Rainforest Valley biome", true).getBoolean(true);
 		
 		config.save();

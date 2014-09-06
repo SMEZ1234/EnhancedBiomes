@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.snow.snowforest;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,12 +7,14 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenSnowForestBase;
-import enhancedbiomes.world.biome.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenSnowForestBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.snow.snowforest.BiomeGenFirForest;
 import enhancedbiomes.world.biome.woodland.BiomeGenBorealForest;
 import enhancedbiomes.world.biome.woodland.BiomeGenCypressForest;
 import enhancedbiomes.world.biome.woodland.BiomeGenPineForest;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -43,16 +45,16 @@ public class EnhancedBiomesSnowForest
 		Configuration config = new Configuration(configFile);
 		config.load();
 		
-		coldPineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Pine Forest", 226).getInt();
+		coldPineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Pine Forest", BiomeIDs.coldPineForest).getInt();
 		villageColdPineForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Cold Pine Forest biome", true).getBoolean(true);
 		
-		coldFirForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Fir Forest", 208).getInt();
+		coldFirForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Fir Forest", BiomeIDs.coldFirForest).getInt();
 		villageColdFirForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Cold Fir Forest biome", true).getBoolean(true);
 		
-		coldCypressForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Cypress Forest", 188).getInt();
+		coldCypressForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Cypress Forest", BiomeIDs.coldCypressForest).getInt();
 		villageColdCypressForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Cold Cypress Forest biome", true).getBoolean(true);
 		
-		coldBorealForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Boreal Forest", 190).getInt();
+		coldBorealForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cold Boreal Forest", BiomeIDs.coldBorealForest).getInt();
 		villageColdBorealForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Cold Boreal Forest biome", true).getBoolean(true);
 		
 		config.save();

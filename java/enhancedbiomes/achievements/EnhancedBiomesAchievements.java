@@ -5,7 +5,7 @@ import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.snow.EnhancedBiomesSnow;
+import enhancedbiomes.world.biome.EnhancedBiomesSnow;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;

@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.woodland;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -13,12 +13,22 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenSnowForestBase;
-import enhancedbiomes.world.biome.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenSnowForestBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import enhancedbiomes.world.biome.snow.snowforest.BiomeGenAlpineEdge;
 import enhancedbiomes.world.biome.snow.snowforest.BiomeGenFirForest;
-import enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.woodland.BiomeGenAspenForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenBorealForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenCherryBlossom;
+import enhancedbiomes.world.biome.woodland.BiomeGenCypressForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenKakadu;
+import enhancedbiomes.world.biome.woodland.BiomeGenOakForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenPineForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenShield;
+import enhancedbiomes.world.biome.woodland.BiomeGenSilverPineForest;
+import enhancedbiomes.world.biome.woodland.BiomeGenWoodlands;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 
 public class EnhancedBiomesWoodland
 {	  
@@ -125,80 +135,80 @@ public class EnhancedBiomesWoodland
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		blossomWoodsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Blossom Woods", 56).getInt();
+		blossomWoodsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Blossom Woods", BiomeIDs.blossomWoods).getInt();
 		blossomWoodsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Blossom Woods biome", 10).getInt();
 		villageBlossomWoods = config.get(config.CATEGORY_GENERAL, "Generate villages in Blossom Woods biome", true).getBoolean(true);
 		
-		blossomHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Blossom Hills", 57).getInt();
+		blossomHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Blossom Hills", BiomeIDs.blossomHills).getInt();
 		villageBlossomHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Blossom Hills biome", true).getBoolean(true);
 		
-		woodLandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodlands", 58).getInt();
+		woodLandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodlands", BiomeIDs.woodlands).getInt();
 		woodLandsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Woodlands biome", 10).getInt();
 		villageWoodLands = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodlands biome", true).getBoolean(true);
 		
-		woodLandHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Hills", 59).getInt();
+		woodLandHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Hills", BiomeIDs.woodlandHills).getInt();
 		villageWoodLandHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Hills biome", true).getBoolean(true);
 		
-		pineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Pine Forest", 98).getInt();
+		pineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Pine Forest", BiomeIDs.pineForest).getInt();
 		pineForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Pine Forest biome", 10).getInt();
 		villagePineForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Pine Forest biome", true).getBoolean(true);
 		
-		oakForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Oak Forest", 61).getInt();
+		oakForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Oak Forest", BiomeIDs.oakForest).getInt();
 		oakForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Oak Forest biome", 10).getInt();
 		villageOakForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Oak Forest biome", true).getBoolean(true);
 		
-		borealForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Forest", 62).getInt();
+		borealForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Forest", BiomeIDs.borealForest).getInt();
 		borealForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Boreal Forest biome", 10).getInt();
 		villageBorealForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Forest biome", true).getBoolean(true);
 		
-		kakaduId = config.get(config.CATEGORY_GENERAL, "Biome ID of Kakadu", 63).getInt();
+		kakaduId = config.get(config.CATEGORY_GENERAL, "Biome ID of Kakadu", BiomeIDs.kakadu).getInt();
 		kakaduGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Kakadu biome", 10).getInt();
 		villageKakadu = config.get(config.CATEGORY_GENERAL, "Generate villages in Kakadu biome", true).getBoolean(true);
 		
-		silverPineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Silver Pine Forest", 93).getInt();
+		silverPineForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Silver Pine Forest", BiomeIDs.silverPineForest).getInt();
 		silverPineForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Silver Pine Forest biome", 10).getInt();
 		villageSilverPineForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Silver Pine Forest biome", true).getBoolean(true);
 		
-		silverPineHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Silver Pine Hills", 94).getInt();
+		silverPineHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Silver Pine Hills", BiomeIDs.silverPineHills).getInt();
 		villageSilverPineHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Silver Pine Hills biome", true).getBoolean(true);
 		
-		aspenForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Aspen Forest", 96).getInt();
+		aspenForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Aspen Forest", BiomeIDs.aspenForest).getInt();
 		aspenForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Aspen Forest biome", 10).getInt();
 		villageAspenForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Aspen Forest biome", true).getBoolean(true);
 		
-		aspenHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Aspen Hills", 97).getInt();
+		aspenHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Aspen Hills", BiomeIDs.aspenHills).getInt();
 		villageAspenHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Aspen Hills biome", true).getBoolean(true);
 		
-		cypressForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cypress Forest", 60).getInt();
+		cypressForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cypress Forest", BiomeIDs.cypressForest).getInt();
 		cypressForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Cypress Forest biome", 10).getInt();
 		villageCypressForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Cypress Forest biome", true).getBoolean(true);
 		
-		shieldId = config.get(config.CATEGORY_GENERAL, "Biome ID of Shield", 85).getInt();
+		shieldId = config.get(config.CATEGORY_GENERAL, "Biome ID of Shield", BiomeIDs.shield).getInt();
 		shieldGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Shield biome", 10).getInt();
 		villageShield = config.get(config.CATEGORY_GENERAL, "Generate villages in Shield biome", true).getBoolean(true);
 
-		forestMountainsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Mountains", 186).getInt();
+		forestMountainsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Mountains", BiomeIDs.forestedMountains).getInt();
 		villageForestMountains = config.get(config.CATEGORY_GENERAL, "Generate villages in Forested Mountains biome", true).getBoolean(true);
 		
-		woodlandFieldId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Field", 95).getInt();
+		woodlandFieldId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Field", BiomeIDs.woodlandField).getInt();
 		woodlandFieldGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Woodland Field biome", 10).getInt();
 		villageWoodlandField = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Field biome", true).getBoolean(true);
 		
-		borealPlateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau", 92).getInt();
+		borealPlateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau", BiomeIDs.borealPlateau).getInt();
 		borealPlateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Boreal Plateau biome", 10).getInt();
 		villageBorealPlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Plateau biome", true).getBoolean(true);
 		
-		alpineEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains Edge", 77).getInt();
+		alpineEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains Edge", BiomeIDs.alpineMountainsEdge).getInt();
 		villageAlpineEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Mountains Edge biome", true).getBoolean(true);
 		
-		firForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fir Forest", 80).getInt();
+		firForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fir Forest", BiomeIDs.firForest).getInt();
 		firForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Fir Forest biome", 10).getInt();
 		villageFirForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Fir Forest biome", true).getBoolean(true);
 		
-		borealPlateauMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau M", 220).getInt();
+		borealPlateauMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau M", BiomeIDs.borealPlateauM).getInt();
 		villageBorealPlateauM = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Plateau M biome", true).getBoolean(true);
 
-		forestValleyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Valley", 187).getInt();
+		forestValleyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Valley", BiomeIDs.forestedValley).getInt();
 		villageForestValley = config.get(config.CATEGORY_GENERAL, "Generate villages in Forested Valley biome", true).getBoolean(true);
 		
 		config.save();

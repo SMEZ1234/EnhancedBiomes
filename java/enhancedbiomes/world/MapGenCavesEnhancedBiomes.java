@@ -6,8 +6,8 @@ import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.sand.EnhancedBiomesSand;
-import enhancedbiomes.world.biome.snow.EnhancedBiomesSnow;
+import enhancedbiomes.world.biome.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesSnow;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;

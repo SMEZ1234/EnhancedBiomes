@@ -13,7 +13,7 @@ import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.world.ChunkProviderEnhancedBiomes;
 import enhancedbiomes.world.MapGenCavesEnhancedBiomes;
 import enhancedbiomes.world.MapGenRavineEnhancedBiomes;
-import enhancedbiomes.world.biome.sand.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesSand;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;

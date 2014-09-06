@@ -2,8 +2,8 @@ package enhancedbiomes.world;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland;
-import enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical;
+import enhancedbiomes.world.biome.EnhancedBiomesTropical;
+import enhancedbiomes.world.biome.EnhancedBiomesWetland;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.ComponentScatteredFeaturePieces;

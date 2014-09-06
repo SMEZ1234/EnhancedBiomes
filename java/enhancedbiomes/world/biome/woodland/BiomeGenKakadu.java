@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.woodland;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biome.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomesKakadu;
 import enhancedbiomes.world.gen.WorldGenSpikedBush;
 import net.minecraft.block.Block;

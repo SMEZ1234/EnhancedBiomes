@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Map.Entry;
 
-import enhancedbiomes.world.biome.sand.EnhancedBiomesSand;
-import enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland;
-import enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical;
+import enhancedbiomes.world.biome.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesTropical;
+import enhancedbiomes.world.biome.EnhancedBiomesWetland;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.BiomeGenBase;

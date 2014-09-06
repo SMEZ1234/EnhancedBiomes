@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biometype;
+package enhancedbiomes.world.biomestats;
 
 import static net.minecraftforge.common.BiomeDictionary.*;
 import static net.minecraftforge.common.BiomeDictionary.Type.*;

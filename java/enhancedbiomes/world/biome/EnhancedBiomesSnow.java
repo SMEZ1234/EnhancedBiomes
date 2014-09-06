@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.snow;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -15,13 +15,22 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
 import enhancedbiomes.helpers.EBHeights;
-import enhancedbiomes.world.biome.BiomeGenRockBase;
-import enhancedbiomes.world.biome.BiomeGenSandstoneBase;
-import enhancedbiomes.world.biome.BiomeGenSnowBase;
-import enhancedbiomes.world.biome.snow.snowforest.EnhancedBiomesSnowForest;
+import enhancedbiomes.world.biome.base.BiomeGenRockBase;
+import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
+import enhancedbiomes.world.biome.base.BiomeGenSnowBase;
+import enhancedbiomes.world.biome.snow.BiomeGenAlpine;
+import enhancedbiomes.world.biome.snow.BiomeGenAlpineM;
+import enhancedbiomes.world.biome.snow.BiomeGenGlacier;
+import enhancedbiomes.world.biome.snow.BiomeGenIceSheet;
+import enhancedbiomes.world.biome.snow.BiomeGenPolarDesert;
+import enhancedbiomes.world.biome.snow.BiomeGenSnowyDesert;
+import enhancedbiomes.world.biome.snow.BiomeGenSnowyPlateau;
+import enhancedbiomes.world.biome.snow.BiomeGenSnowyRanges;
+import enhancedbiomes.world.biome.snow.BiomeGenTundra;
 import enhancedbiomes.world.biome.wasteland.rock.BiomeGenWasteLands;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenSandStoneRanges;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 
 public class EnhancedBiomesSnow
 {
@@ -81,42 +90,42 @@ public class EnhancedBiomesSnow
 		Configuration config = new Configuration(configFile);
 		config.load();
 		
-		alpineId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains", 76).getInt();
+		alpineId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains", BiomeIDs.alpineMountains).getInt();
 		alpineGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Alpine Mountains biome", 10).getInt();
 		villageAlpine = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Mountains biome", true).getBoolean(true);
 		
-		glacierId = config.get(config.CATEGORY_GENERAL, "Biome ID of Glacier", 78).getInt();
+		glacierId = config.get(config.CATEGORY_GENERAL, "Biome ID of Glacier", BiomeIDs.glacier).getInt();
 		villageGlacier = config.get(config.CATEGORY_GENERAL, "Generate villages in Glacier biome", true).getBoolean(true);
 		
-		iceSheetId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ice Sheet", 178).getInt();
+		iceSheetId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ice Sheet", BiomeIDs.iceSheet).getInt();
 		villageIceSheet = config.get(config.CATEGORY_GENERAL, "Generate villages in Ice Sheet biome", true).getBoolean(true);
 		
-		tundraId = config.get(config.CATEGORY_GENERAL, "Biome ID of Tundra", 79).getInt();
+		tundraId = config.get(config.CATEGORY_GENERAL, "Biome ID of Tundra", BiomeIDs.tundra).getInt();
 		tundraGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Tundra biome", 10).getInt();
 		villageTundra = config.get(config.CATEGORY_GENERAL, "Generate villages in Tundra biome", true).getBoolean(true);
 		
-		plateauSnowId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Plateau", 193).getInt();
+		plateauSnowId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Plateau", BiomeIDs.snowyPlateau).getInt();
 		plateauSnowGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Snowy Plateau biome", 10).getInt();
 		villagePlateauSnow = config.get(config.CATEGORY_GENERAL, "Generate villages in Snowy Plateau biome", true).getBoolean(true);
 		
-		snowDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Desert", 207).getInt();
+		snowDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Desert", BiomeIDs.snowyDesert).getInt();
 		villageSnowDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Snowy Desert biome", true).getBoolean(true);
 
-		polarDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Polar Desert", 50).getInt();
+		polarDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Polar Desert", BiomeIDs.polarDesert).getInt();
 		polarDesertGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Polar Desert biome", 10).getInt();
 		villagePolarDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Polar Desert biome", true).getBoolean(true);
 		
-		wasteLandsSnowyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Wastelands", 209).getInt();
+		wasteLandsSnowyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Wastelands", BiomeIDs.snowyWastelands).getInt();
 		villageWasteLandsSnowy = config.get(config.CATEGORY_GENERAL, "Generate villages in Snowy Wastelands biome", true).getBoolean(true);
 		
-		alpineMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains M", 204).getInt();
+		alpineMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains M", BiomeIDs.alpineMountainsM).getInt();
 		villageAlpineM = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Mountains M biome", true).getBoolean(true);
 		
-		/*driftsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Drifts", 105).getInt();
+		/*driftsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Drifts", BiomeIDs.drifts).getInt();
 		driftsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Drifts biome", 10).getInt();
 		villageDrifts = config.get(config.CATEGORY_GENERAL, "Generate villages in Drifts biome", true).getBoolean(true);*/
 
-		snowyRangesId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Ranges", 104).getInt();
+		snowyRangesId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Ranges", BiomeIDs.snowyRanges).getInt();
 		snowyRangesGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Snowy Ranges biome", 10).getInt();
 		villageSnowyRanges = config.get(config.CATEGORY_GENERAL, "Generate villages in Snowy Ranges biome", true).getBoolean(true);
 		

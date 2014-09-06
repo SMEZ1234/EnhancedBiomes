@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.wetland;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,10 +7,17 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenWetlandBase;
-import enhancedbiomes.world.biome.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWetlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.wetland.BiomeGenCarr;
+import enhancedbiomes.world.biome.wetland.BiomeGenEphemeralLake;
+import enhancedbiomes.world.biome.wetland.BiomeGenFen;
+import enhancedbiomes.world.biome.wetland.BiomeGenLake;
+import enhancedbiomes.world.biome.wetland.BiomeGenMangrove;
+import enhancedbiomes.world.biome.wetland.BiomeGenMarsh;
 import enhancedbiomes.world.biome.woodland.BiomeGenWoodlands;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -66,35 +73,35 @@ public class EnhancedBiomesWetland
 		Configuration config = new Configuration(configFile);
 		config.load();
 		
-		mangroveId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mangrove", 87).getInt();
+		mangroveId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mangrove", BiomeIDs.mangroves).getInt();
 		mangroveGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Mangrove biome", 10).getInt();
 		villageMangrove = config.get(config.CATEGORY_GENERAL, "Generate villages in Mangrove biome", true).getBoolean(true);
 		
-		ephemeralLakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake", 88).getInt();
+		ephemeralLakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake", BiomeIDs.ephemeralLake).getInt();
 		ephemeralLakeGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Ephemeral Lake biome", 10).getInt();
 		villageEphemeralLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Ephemeral Lake biome", true).getBoolean(true);
 		
-		ephemeralLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake Edge", 89).getInt();
+		ephemeralLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake Edge", BiomeIDs.ephemeralLakeEdge).getInt();
 		villageEphemeralLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Ephemeral Lake Edge biome", true).getBoolean(true);
 		
-		fenId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fens", 90).getInt();
+		fenId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fens", BiomeIDs.fens).getInt();
 		fenGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Fens biome", 10).getInt();
 		villageFen = config.get(config.CATEGORY_GENERAL, "Generate villages in Fens biome", true).getBoolean(true);
 		
-		carrId = config.get(config.CATEGORY_GENERAL, "Biome ID of Carr", 91).getInt();
+		carrId = config.get(config.CATEGORY_GENERAL, "Biome ID of Carr", BiomeIDs.carr).getInt();
 		carrGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Carr biome", 10).getInt();
 		villageCarr = config.get(config.CATEGORY_GENERAL, "Generate villages in Carr biome", true).getBoolean(true);
 		
-		lakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Lake", 100).getInt();
+		lakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Lake", BiomeIDs.lake).getInt();
 		villageLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Lake biome", false).getBoolean(true);
 		
-		woodlandLakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake", 216).getInt();
+		woodlandLakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake", BiomeIDs.woodlandLake).getInt();
 		villageWoodlandLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake biome", true).getBoolean(true);
 		
-		woodlandLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake Edge", 217).getInt();
+		woodlandLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake Edge", BiomeIDs.woodlandLakeEdge).getInt();
 		villageWoodlandLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake Edge biome", true).getBoolean(true);
 		
-		marshId = config.get(config.CATEGORY_GENERAL, "Biome ID of Marsh", 102).getInt();
+		marshId = config.get(config.CATEGORY_GENERAL, "Biome ID of Marsh", BiomeIDs.marsh).getInt();
 		marshGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Marsh biome", 10).getInt();
 		villageMarsh = config.get(config.CATEGORY_GENERAL, "Generate villages in Marsh biome", true).getBoolean(true);
 		

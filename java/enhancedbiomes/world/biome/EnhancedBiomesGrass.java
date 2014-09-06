@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.grass;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -12,9 +12,13 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.config.Configuration;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenGrassBase;
-import enhancedbiomes.world.biome.grass.plains.EnhancedBiomesPlains;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.base.BiomeGenGrassBase;
+import enhancedbiomes.world.biome.grass.BiomeGenAlpineTundra;
+import enhancedbiomes.world.biome.grass.BiomeGenBadlands;
+import enhancedbiomes.world.biome.grass.BiomeGenMountains;
+import enhancedbiomes.world.biome.grass.BiomeGenPlateau;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 
 public class EnhancedBiomesGrass 
 {
@@ -52,25 +56,25 @@ public class EnhancedBiomesGrass
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		badlandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Badlands", 52).getInt();
+		badlandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Badlands", BiomeIDs.badlands).getInt();
 		badlandsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Badlands biome", 10).getInt();
 		villageBadlands = config.get(config.CATEGORY_GENERAL, "Generate villages in Badlands biome", true).getBoolean(true);
 		
-		plateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Plateau", 65).getInt();
+		plateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Plateau", BiomeIDs.plateau).getInt();
 		plateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Plateau biome", 10).getInt();
 		villagePlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Plateau biome", true).getBoolean(true);
 
-		mountainsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains", 66).getInt();
+		mountainsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains", BiomeIDs.mountains).getInt();
 		mountainsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Mountains biome", 10).getInt();
 		villageMountains = config.get(config.CATEGORY_GENERAL, "Generate villages in Mountains biome", true).getBoolean(true);
 
-		mountainsEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains Edge", 67).getInt();
+		mountainsEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains Edge", BiomeIDs.mountainsEdge).getInt();
 		villageMountainsEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Mountains Edge biome", true).getBoolean(true);
 
-		clearingId = config.get(config.CATEGORY_GENERAL, "Biome ID of Clearing", 101).getInt();
+		clearingId = config.get(config.CATEGORY_GENERAL, "Biome ID of Clearing", BiomeIDs.clearing).getInt();
 		villageClearing = config.get(config.CATEGORY_GENERAL, "Generate villages in Clearing biome", true).getBoolean(true);
 
-		mountainTundraId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Tundra", 103).getInt();
+		mountainTundraId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Tundra", BiomeIDs.alpineTundra).getInt();
 		mountainTundraGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Alpine Tundra biome", 10).getInt();
 		villageMountainTundra = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Tundra biome", true).getBoolean(true);
 		

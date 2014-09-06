@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.archipelago;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,8 +7,18 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.archipelago.BiomeGenBorealArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenDesertArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenFlowerArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenForestArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenJungleArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenMountainsArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenPineForestArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenPlainsArchipelago;
+import enhancedbiomes.world.biome.archipelago.BiomeGenSnowArchipelago;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -66,38 +76,38 @@ public class EnhancedBiomesArchipelago
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		mountainArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountainous Archipelago", 40).getInt();
+		mountainArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountainous Archipelago", BiomeIDs.mountainousArchipelago).getInt();
 		mountainArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Mountainous Archipelago biome", 10).getInt();
 		villageMountainArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Mountainous Archipelago biome", true).getBoolean(true);	
 		
-		desertArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Desert Archipelago", 41).getInt();
+		desertArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Desert Archipelago", BiomeIDs.desertArchipelago).getInt();
 		desertArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Desert Archipelago biome", 10).getInt();
 		villageDesertArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Desert Archipelago biome", true).getBoolean(true);
 		
-		forestArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Archipelago", 42).getInt();
+		forestArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Archipelago", BiomeIDs.forestedArchipelago).getInt();
 		forestArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Forested Archipelago biome", 10).getInt();
 		villageForestArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Forested Archipelago biome", true).getBoolean(true);
 		
-		jungleArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Tropical Archipelago", 43).getInt();
+		jungleArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Tropical Archipelago", BiomeIDs.tropicalArchipelago).getInt();
 		jungleArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Tropical Archipelago biome", 10).getInt();
 		villageJungleArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Tropical Archipelago biome", true).getBoolean(true);
 		
-		pineArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Pine Forest Archipelago", 44).getInt();
+		pineArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Pine Forest Archipelago", BiomeIDs.pineForestArchipelago).getInt();
 		pineArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Pine Forest Archipelago biome", 10).getInt();
 		villagePineArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Pine Forest Archipelago biome", true).getBoolean(true);	
 		
-		snowArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Frozen Archipelago", 45).getInt();
+		snowArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Frozen Archipelago", BiomeIDs.frozenArchipelago).getInt();
 		snowArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Frozen Archipelago biome", 10).getInt();
 		villageSnowArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Frozen Archipelago biome", true).getBoolean(true);	
 		
-		plainsArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Grassy Archipelago", 46).getInt();
+		plainsArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Grassy Archipelago", BiomeIDs.grassyArchipelago).getInt();
 		plainsArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Grassy Archipelago biome", 10).getInt();
 		villagePlainsArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Grassy Archipelago biome", true).getBoolean(true);	
 		
-		flowerArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Flowery Archipelago", 170).getInt();
+		flowerArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Flowery Archipelago", BiomeIDs.floweryArchipelago).getInt();
 		villageFlowerArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Flowery Archipelago biome", true).getBoolean(true);
 		
-		borealArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Archipelago", 172).getInt();
+		borealArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Archipelago", BiomeIDs.borealArchipelago).getInt();
 		villageBorealArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Archipelago biome", true).getBoolean(true);	
 		
 		config.save();

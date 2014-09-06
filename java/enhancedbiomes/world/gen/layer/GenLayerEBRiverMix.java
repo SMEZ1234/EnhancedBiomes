@@ -1,11 +1,11 @@
 package enhancedbiomes.world.gen.layer;
 
+import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
-import enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago;
-import enhancedbiomes.world.biome.snow.EnhancedBiomesSnow;
-import enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock;
-import enhancedbiomes.world.biome.wasteland.sandstone.EnhancedBiomesSandstone;
-import enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland;
+import enhancedbiomes.world.biome.EnhancedBiomesRock;
+import enhancedbiomes.world.biome.EnhancedBiomesSandstone;
+import enhancedbiomes.world.biome.EnhancedBiomesSnow;
+import enhancedbiomes.world.biome.EnhancedBiomesWetland;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;

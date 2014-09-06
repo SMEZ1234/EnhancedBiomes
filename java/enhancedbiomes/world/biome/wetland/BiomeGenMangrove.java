@@ -5,7 +5,7 @@ import java.util.Random;
 
 import enhancedbiomes.helpers.EnhancedBiomesWorldHelper;
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenWetlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWetlandBase;
 import enhancedbiomes.world.gen.WorldGenLakesEnhancedBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityBlaze;

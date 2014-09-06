@@ -1,6 +1,4 @@
-package enhancedbiomes.world.biome;
-
-import net.minecraft.world.biome.BiomeGenBase;
+package enhancedbiomes.world.biome.base;
 
 public class BiomeGenSandstoneBase extends BiomeGenWastelandBase
 {

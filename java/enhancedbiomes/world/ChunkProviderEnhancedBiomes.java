@@ -5,8 +5,8 @@ import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago;
-import enhancedbiomes.world.biome.grass.EnhancedBiomesGrass;
+import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
+import enhancedbiomes.world.biome.EnhancedBiomesGrass;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;

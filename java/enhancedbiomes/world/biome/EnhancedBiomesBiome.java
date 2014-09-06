@@ -1,17 +1,17 @@
 package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
-import static enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago.*;
-import static enhancedbiomes.world.biome.grass.EnhancedBiomesGrass.*;
-import static enhancedbiomes.world.biome.grass.plains.EnhancedBiomesPlains.*;
-import static enhancedbiomes.world.biome.sand.EnhancedBiomesSand.*;
-import static enhancedbiomes.world.biome.snow.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.snow.snowforest.EnhancedBiomesSnowForest.*;
-import static enhancedbiomes.world.biome.woodland.EnhancedBiomesWoodland.*;
-import static enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland.*;
-import static enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock.*;
-import static enhancedbiomes.world.biome.wasteland.sandstone.EnhancedBiomesSandstone.*;
-import static enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesGrass.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesPlains.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
 import static enhancedbiomes.helpers.EBHeights.*;
 
 import java.io.File;
@@ -21,14 +21,9 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago;
-import enhancedbiomes.world.biome.grass.EnhancedBiomesGrass;
-import enhancedbiomes.world.biome.sand.EnhancedBiomesSand;
-import enhancedbiomes.world.biome.snow.EnhancedBiomesSnow;
-import enhancedbiomes.world.biome.wasteland.EnhancedBiomesWasteland;
-import enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland;
-import enhancedbiomes.world.biome.woodland.EnhancedBiomesWoodland;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biome.base.BiomeGenRiparianZone;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 
 public class EnhancedBiomesBiome 
 {	
@@ -45,7 +40,7 @@ public class EnhancedBiomesBiome
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		riparianId = config.get(config.CATEGORY_GENERAL, "Biome ID of Riparian Zone", 135).getInt();
+		riparianId = config.get(config.CATEGORY_GENERAL, "Biome ID of Riparian Zone", BiomeIDs.riparianZone).getInt();
 		riparianGen = config.get(config.CATEGORY_GENERAL, "Generate the Riparian Zone instead of Rivers", true).getBoolean(true);
 		villageRiparian = config.get(config.CATEGORY_GENERAL, "Generate villages in Riparian Zone biome", false).getBoolean(false);
 		

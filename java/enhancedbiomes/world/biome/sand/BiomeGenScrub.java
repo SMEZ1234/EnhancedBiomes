@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.sand;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biome.BiomeGenSandBase;
+import enhancedbiomes.world.biome.base.BiomeGenSandBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
 import enhancedbiomes.world.gen.WorldGenSpikedBush;
 import net.minecraft.block.Block;

@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biometype;
+package enhancedbiomes.world.biomestats;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import net.minecraft.block.Block;

@@ -1,8 +1,6 @@
-package enhancedbiomes.world.biome;
+package enhancedbiomes.world.biome.base;
 
-import net.minecraft.world.biome.BiomeGenBase;
-
-public class BiomeGenSnowBase extends BiomeGenBase
+public class BiomeGenSnowBase extends BiomeGenEBBase
 {
 	public BiomeGenSnowBase(int par1) 
 	{

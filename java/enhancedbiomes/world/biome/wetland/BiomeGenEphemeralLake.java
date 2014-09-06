@@ -4,7 +4,7 @@ import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenWetlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWetlandBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
 import enhancedbiomes.world.gen.WorldGenTallGrassEB;
 import net.minecraft.block.Block;

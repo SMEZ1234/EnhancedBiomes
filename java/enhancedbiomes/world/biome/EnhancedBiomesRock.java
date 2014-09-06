@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.wasteland.rock;
+package enhancedbiomes.world.biome;
 
 import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
@@ -7,10 +7,16 @@ import java.io.File;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.BiomeGenRockBase;
-import enhancedbiomes.world.biome.BiomeGenSandstoneBase;
+import enhancedbiomes.world.biome.base.BiomeGenRockBase;
+import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
+import enhancedbiomes.world.biome.wasteland.rock.BiomeGenBasin;
+import enhancedbiomes.world.biome.wasteland.rock.BiomeGenRockHills;
+import enhancedbiomes.world.biome.wasteland.rock.BiomeGenStoneCanyon;
+import enhancedbiomes.world.biome.wasteland.rock.BiomeGenVolcano;
+import enhancedbiomes.world.biome.wasteland.rock.BiomeGenWasteLands;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenSandStoneCanyon;
-import enhancedbiomes.world.biometype.BiomeWoods;
+import enhancedbiomes.world.biomestats.BiomeIDs;
+import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
@@ -55,27 +61,27 @@ public class EnhancedBiomesRock
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		volcanoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano", 64).getInt();
+		volcanoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano", BiomeIDs.volcano).getInt();
 		villageVolcano = config.get(config.CATEGORY_GENERAL, "Generate villages in Volcano biome", false).getBoolean(false);
 		
-		wasteLandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Wastelands", 81).getInt();
+		wasteLandsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Wastelands", BiomeIDs.wastelands).getInt();
 		wasteLandsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Wastelands biome", 10).getInt();
 		villageWasteLands = config.get(config.CATEGORY_GENERAL, "Generate villages in Wastelands biome", true).getBoolean(true);
 		
-		rockHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rocky Hills", 82).getInt();
+		rockHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Rocky Hills", BiomeIDs.rockyHills).getInt();
 		rockHillsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Rocky Hills biome", 10).getInt();
 		villageRockHills = config.get(config.CATEGORY_GENERAL, "Generate villages in Rocky Hills biome", true).getBoolean(true);
 		
-		basinId = config.get(config.CATEGORY_GENERAL, "Biome ID of Basin", 99).getInt();		
+		basinId = config.get(config.CATEGORY_GENERAL, "Biome ID of Basin", BiomeIDs.basin).getInt();		
 		villageBasin = config.get(config.CATEGORY_GENERAL, "Generate villages in Basin biome", true).getBoolean(true);
 		
-		stoneCanyonId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon", 211).getInt();
+		stoneCanyonId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon", BiomeIDs.stoneCanyons).getInt();
 		villageStoneCanyon = config.get(config.CATEGORY_GENERAL, "Generate villages in Stone Canyon biome", true).getBoolean(true);
 		
-		stoneGorgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon 2", 212).getInt();
+		stoneGorgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon 2", BiomeIDs.stoneCanyon).getInt();
 		villageStoneGorge = config.get(config.CATEGORY_GENERAL, "Generate villages in Stone Canyon 2 biome", true).getBoolean(true);
 		
-		volcanoMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano M", 192).getInt();
+		volcanoMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano M", BiomeIDs.volcanoM).getInt();
 		villageVolcanoM = config.get(config.CATEGORY_GENERAL, "Generate villages in Volcano M biome", false).getBoolean(false);
 		
 		config.save();

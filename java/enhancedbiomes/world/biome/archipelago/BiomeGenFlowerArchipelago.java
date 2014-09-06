@@ -1,7 +1,7 @@
 package enhancedbiomes.world.biome.archipelago;
 
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome;
+package enhancedbiomes.world.biome.base;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeGenRiparianZone extends BiomeGenBase
+public class BiomeGenRiparianZone extends BiomeGenEBBase
 {
     public BiomeGenRiparianZone(int par1)
     {

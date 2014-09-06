@@ -1,9 +1,6 @@
-package enhancedbiomes.world.biome.wasteland;
+package enhancedbiomes.world.biome;
 
 import java.io.File;
-
-import enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock;
-import enhancedbiomes.world.biome.wasteland.sandstone.EnhancedBiomesSandstone;
 
 public class EnhancedBiomesWasteland
 {

@@ -2,7 +2,7 @@ package enhancedbiomes.world.biome.archipelago;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.BiomeGenArchipelagoBase;
+import enhancedbiomes.world.biome.base.BiomeGenArchipelagoBase;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;

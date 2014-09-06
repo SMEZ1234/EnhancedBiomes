@@ -2,7 +2,7 @@ package enhancedbiomes.world.biome.snow;
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.BiomeGenSnowBase;
+import enhancedbiomes.world.biome.base.BiomeGenSnowBase;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;

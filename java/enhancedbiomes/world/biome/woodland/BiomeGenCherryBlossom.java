@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.woodland;
 import java.util.Random;
 
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.BiomeGenWoodlandBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.world.World;

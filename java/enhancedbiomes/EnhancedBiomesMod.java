@@ -1,7 +1,12 @@
 package enhancedbiomes;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
+
+import javax.imageio.ImageIO;
 
 import enhancedbiomes.api.EnhancedBiomesApi;
 import enhancedbiomes.api.internal.OreGenEntry;
@@ -19,25 +24,26 @@ import enhancedbiomes.world.MapGenScatteredFeatureEnhancedBiomes;
 import enhancedbiomes.world.StructureScatteredFeatureEnhancedBiomesStart;
 import enhancedbiomes.world.WorldTypeEnhancedBiomes;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
-import enhancedbiomes.world.biometype.BiomeTypes;
+import enhancedbiomes.world.biome.base.BiomeGenEBBase;
+import enhancedbiomes.world.biomestats.BiomeTypes;
+import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesBiome.*;
-import static enhancedbiomes.world.biome.archipelago.EnhancedBiomesArchipelago.*;
-import static enhancedbiomes.world.biome.grass.EnhancedBiomesGrass.*;
-import static enhancedbiomes.world.biome.grass.plains.EnhancedBiomesPlains.*;
-import static enhancedbiomes.world.biome.sand.EnhancedBiomesSand.*;
-import static enhancedbiomes.world.biome.snow.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.snow.snowforest.EnhancedBiomesSnowForest.*;
-import static enhancedbiomes.world.biome.woodland.EnhancedBiomesWoodland.*;
-import static enhancedbiomes.world.biome.wetland.EnhancedBiomesWetland.*;
-import static enhancedbiomes.world.biome.wasteland.rock.EnhancedBiomesRock.*;
-import static enhancedbiomes.world.biome.wasteland.sandstone.EnhancedBiomesSandstone.*;
-import static enhancedbiomes.world.biome.woodland.tropical.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesGrass.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesPlains.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
+import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
 import static net.minecraft.world.biome.BiomeGenBase.*;
-import static enhancedbiomes.world.biometype.BiomeTypes.*;
+import static enhancedbiomes.world.biomestats.BiomeCategorisation.*;
+import static enhancedbiomes.world.biomestats.BiomeTypes.*;
 import static enhancedbiomes.blocks.EnhancedBiomesBlocks.*;
 import static enhancedbiomes.blocks.BlockWithMeta.*;
 import static enhancedbiomes.blocks.LandTypes.*;
-import static enhancedbiomes.world.biometype.BiomeCategorisation.*;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.event.*;
@@ -218,9 +224,15 @@ public class EnhancedBiomesMod {
 		if(seasons) FMLCommonHandler.instance().bus().register(new SeasonTickHandler());
         
         if(runBiomeCheck) { 
-            for(int x = 0; x < BiomeGenBase.getBiomeGenArray().length; x++) {
+            try {
+				createBiomeImage();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        	for(int x = 0; x < BiomeGenBase.getBiomeGenArray().length; x++) {
             	if(BiomeGenBase.getBiomeGenArray()[x] != null) {
             		BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[x];
+            		//System.out.println("public static final int " + biome.biomeName.substring(0, 1).toLowerCase() + biome.biomeName.substring(1).replaceAll(" ", "") + " = " + biome.biomeID + ";");
             		Block top = null;
             		if(biome.topBlock != null)top = biome.topBlock;
             		
@@ -381,5 +393,40 @@ public class EnhancedBiomesMod {
 	
 	public static Block getCobbleFromStone(Block stone) {
 		return stone == EnhancedBiomesBlocks.stoneEB ? EnhancedBiomesBlocks.stoneCobbleEB : Blocks.cobblestone;
+	}
+	
+	public static void createBiomeImage() throws Exception {
+		try {
+			BufferedImage bi = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+
+			Graphics2D ig2 = bi.createGraphics();
+
+			for(int a = 0; a < 256; a++) { 
+				if(BiomeGenBase.getBiomeGenArray()[a] != null) {
+					BiomeGenBase b = BiomeGenBase.getBiomeGenArray()[a];
+					if(a < 128) {
+						if(b instanceof BiomeGenEBBase) {
+							if(a < 128 && BiomeGenBase.getBiomeGenArray()[a + 128] != null) ig2.setPaint(Color.red.darker());
+							else ig2.setPaint(Color.red);
+						}
+						else {
+							if(a < 128 && BiomeGenBase.getBiomeGenArray()[a + 128] != null) ig2.setPaint(Color.blue.darker());
+							else ig2.setPaint(Color.blue);
+						}
+					}
+					else {
+						if(b instanceof BiomeGenEBBase) ig2.setPaint(Color.red.darker().darker());
+						else ig2.setPaint(Color.blue.darker().darker());
+					}
+					ig2.fillRect(a % 16, a / 16, 1, 1);
+				}
+			}
+
+			ImageIO.write(bi, "PNG", new File("config/Enhanced Biomes/biomeidimage.png"));
+
+		} catch (IOException ie) {
+			ie.printStackTrace();
+		}
+
 	}
 }

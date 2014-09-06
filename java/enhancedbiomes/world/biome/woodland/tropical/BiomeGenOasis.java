@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.BiomeGenTropicalBase;
+import enhancedbiomes.world.biome.base.BiomeGenTropicalBase;
 import enhancedbiomes.world.gen.WorldGenLakesEnhancedBiomes;
 import enhancedbiomes.world.gen.WorldGenTreesEnhancedBiomes;
 import net.minecraft.block.Block;

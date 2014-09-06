@@ -3,7 +3,7 @@ package enhancedbiomes.world.biome.wasteland.rock;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biome.BiomeGenRockBase;
+import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

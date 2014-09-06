@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biome.BiomeGenRockBase;
+import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.init.Blocks;
