@@ -427,6 +427,5 @@ public class EnhancedBiomesMod {
 		} catch (IOException ie) {
 			ie.printStackTrace();
 		}
-
 	}
 }
