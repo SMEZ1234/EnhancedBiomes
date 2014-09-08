@@ -132,32 +132,32 @@ public class BlockStoneEB extends BlockStone
     {
         int meta = world.getBlockMetadata(x, y, z);
         switch (meta) {
-		case 0:
-			return this.blockHardness - 0.4F;
-		case 1:
-			return this.blockHardness - 0.1F;
-		case 2:
-			return this.blockHardness - 0.3F;
-		case 3:
-			return this.blockHardness - 0.5F;
-		case 4:
+        case 0://b
 			return this.blockHardness + 0.5F;
-		case 5:
+        case 1://sh
+			return this.blockHardness - 0.3F;
+		case 2://sa
+			return this.blockHardness - 0.4F;
+		case 3://l
+			return this.blockHardness - 0.5F;
+		case 4://sl
+			return this.blockHardness - 0.1F;
+		case 5://r
 			return this.blockHardness + 0.3F;
-		case 6:
-			return this.blockHardness + 0.4F;
-		case 7:
-			return this.blockHardness + 0.1F;
-		case 8:
-			return this.blockHardness - 0.2F;
-		case 9:
-			return this.blockHardness - 0.6F;
-		case 10:
+		case 6://cha
 			return this.blockHardness - 0.7F;
-		case 11:
-			return this.blockHardness;
-		case 12:
+		case 7://m
 			return this.blockHardness + 0.2F;
+		case 8://d
+			return this.blockHardness;
+		case 9://sc
+			return this.blockHardness - 0.2F;
+		case 10://che
+			return this.blockHardness - 0.6F;
+		case 11://g
+			return this.blockHardness + 0.4F;
+		case 12://d
+			return this.blockHardness + 0.1F;
 		default:
 			break;
 		}
