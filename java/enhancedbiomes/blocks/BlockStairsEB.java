@@ -17,7 +17,6 @@ public class BlockStairsEB extends BlockStairs
 	{
 		super(par2Block, par3);
 		this.useNeighborBrightness = true;
-		//if(isWooden) Blocks.fire.setFireInfo(this, 5, 20);
 	}
 
     @SideOnly(Side.CLIENT)
@@ -26,11 +25,7 @@ public class BlockStairsEB extends BlockStairs
      /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        if(par1 != Item.getItemFromBlock(EnhancedBiomesBlocks.stairsSEB[2]))
-        {
-        	par3List.add(new ItemStack(par1, 1, 0));
-        }
+    public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
+        par3List.add(new ItemStack(par1, 1, 0));
     }
 }

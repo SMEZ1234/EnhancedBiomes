@@ -306,6 +306,7 @@ tile.slabSEBB2_6.name=Dacite Bricks Slab
 
 tile.slabSCEB_0.name=Cobbled Basalt Slab
 tile.slabSCEB_1.name=Cobbled Shale Slab
+tile.slabSCEB_2.name=Cobbled Sandstone Slab
 tile.slabSCEB_3.name=Cobbled Limestone Slab
 tile.slabSCEB_4.name=Cobbled Slate Slab
 tile.slabSCEB_5.name=Cobbled Rhyolite Slab
@@ -335,6 +336,7 @@ tile.stairsSEBB12.name=Cobbled Dacite Stairs
 
 tile.stairsSCEB0.name=Cobbled Basalt Stairs
 tile.stairsSCEB1.name=Cobbled Shale Stairs
+tile.stairsSCEB2.name=Cobbled Sandstone Stairs
 tile.stairsSCEB3.name=Cobbled Limestone Stairs
 tile.stairsSCEB4.name=Cobbled Slate Stairs
 tile.stairsSCEB5.name=Cobbled Rhyolite Stairs

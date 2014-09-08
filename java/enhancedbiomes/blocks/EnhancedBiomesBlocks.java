@@ -437,7 +437,7 @@ public class EnhancedBiomesBlocks
 
 	public static void setStoneBlock(int x, int y, int z, Block blockDef, Block blockEB, int meta, int flag, World world) 
 	{
-		if(stone == EnhancedBiomesBlocks.stoneEB) world.setBlock(x, y, z, blockEB, world.getBlockMetadata(x, y, z), 2);
+		if(world.getBlock(x, y, z) == EnhancedBiomesBlocks.stoneEB) world.setBlock(x, y, z, blockEB, world.getBlockMetadata(x, y, z), 2);
         else world.setBlock(x, y, z, blockDef, 0, 2);
 	}
 }

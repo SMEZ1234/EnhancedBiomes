@@ -123,5 +123,44 @@ public class BlockStoneEB extends BlockStone
     public boolean isReplaceableOreGen(World world, int x, int y, int z, Block target)
     {
         return target == Blocks.stone || this == target || target.isReplaceableOreGen(world, x, y, z, Blocks.stone);
+    }  
+
+    /**
+     * Returns the block hardness at a location. Args: world, x, y, z
+     */
+    public float getBlockHardness(World world, int x, int y, int z)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        switch (meta) {
+		case 0:
+			return this.blockHardness - 0.4F;
+		case 1:
+			return this.blockHardness - 0.1F;
+		case 2:
+			return this.blockHardness - 0.3F;
+		case 3:
+			return this.blockHardness - 0.5F;
+		case 4:
+			return this.blockHardness + 0.5F;
+		case 5:
+			return this.blockHardness + 0.3F;
+		case 6:
+			return this.blockHardness + 0.4F;
+		case 7:
+			return this.blockHardness + 0.1F;
+		case 8:
+			return this.blockHardness - 0.2F;
+		case 9:
+			return this.blockHardness - 0.6F;
+		case 10:
+			return this.blockHardness - 0.7F;
+		case 11:
+			return this.blockHardness;
+		case 12:
+			return this.blockHardness + 0.2F;
+		default:
+			break;
+		}
+    	return this.blockHardness;
     }
 }
