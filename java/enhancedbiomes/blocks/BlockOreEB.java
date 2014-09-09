@@ -185,5 +185,44 @@ public class BlockOreEB extends Block
 	@Override
 	public int getRenderType() {
 		return BlockOreRenderer.renderID;
-	}
+	} 
+
+    /**
+     * Returns the block hardness at a location. Args: world, x, y, z
+     */
+    public float getBlockHardness(World world, int x, int y, int z)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        switch (meta) {
+        case 0://b
+			return this.blockHardness + 0.5F;
+        case 1://sh
+			return this.blockHardness - 0.3F;
+		case 2://sa
+			return this.blockHardness - 0.4F;
+		case 3://l
+			return this.blockHardness - 0.5F;
+		case 4://sl
+			return this.blockHardness - 0.1F;
+		case 5://r
+			return this.blockHardness + 0.3F;
+		case 6://cha
+			return this.blockHardness - 0.7F;
+		case 7://m
+			return this.blockHardness + 0.2F;
+		case 8://d
+			return this.blockHardness;
+		case 9://sc
+			return this.blockHardness - 0.2F;
+		case 10://che
+			return this.blockHardness - 0.6F;
+		case 11://g
+			return this.blockHardness + 0.4F;
+		case 12://d
+			return this.blockHardness + 0.1F;
+		default:
+			break;
+		}
+    	return this.blockHardness;
+    }
 }
