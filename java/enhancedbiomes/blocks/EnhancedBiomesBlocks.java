@@ -56,8 +56,7 @@ import static net.minecraft.block.Block.*;
 import static net.minecraft.init.Items.*;
 import static net.minecraft.init.Blocks.*;
 
-public class EnhancedBiomesBlocks
-{	
+public class EnhancedBiomesBlocks {	
 	public static Block logOak;
 	public static Block logSpruce;
 	public static Block logBirch;
@@ -138,8 +137,7 @@ public class EnhancedBiomesBlocks
 													"Alder", "Eucalyptus", "Aspen", "", 
 													"Baobab", "Dead", "Cherry", ""};
 	
-	public static void load()
-	{
+	public static void load() {
 		RenderingRegistry.registerBlockHandler(new BlockOreRenderer());
 		RenderingRegistry.registerBlockHandler(new BlockRedstoneOreRenderer());
 		
@@ -250,10 +248,8 @@ public class EnhancedBiomesBlocks
 		OreDictionary.registerOre("slabWood", new ItemStack(slab2, 1, OreDictionary.WILDCARD_VALUE));
 		
 		inputBlockList(stairsEB);
-		for(int a = 0; a < stairsEB.length; a++)
-		{
-			if(stairsEB[a] != null)
-			{
+		for(int a = 0; a < stairsEB.length; a++) {
+			if(stairsEB[a] != null) {
 				Blocks.fire.setFireInfo(stairsEB[a], 5, 20);
 				OreDictionary.registerOre("stairWood", new ItemStack(stairsEB[a], 1, OreDictionary.WILDCARD_VALUE));
 			}
@@ -333,52 +329,44 @@ public class EnhancedBiomesBlocks
 
 		RenderingRegistry.registerBlockHandler(new BlockGrassRenderer());
 		
-		for(int x = 0; x < 4; x++)
-		{
+		for(int x = 0; x < 4; x++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(planksEB, 4, x), new Object[] {new ItemStack(logOak, 1, x)});
 			GameRegistry.addShapelessRecipe(new ItemStack(planksEB, 4, 4 + x), new Object[] {new ItemStack(logSpruce, 1, x)});
 			GameRegistry.addShapelessRecipe(new ItemStack(planksEB, 4, 8 + x), new Object[] {new ItemStack(logBirch, 1, x)});
 			GameRegistry.addShapelessRecipe(new ItemStack(planksEB, 4, 12 + x), new Object[] {new ItemStack(logJungle, 1, x)});
 		}		  
 		 
-		for(int x = 0; x < 8; x++)
-		{
+		for(int x = 0; x < 8; x++) {
 			GameRegistry.addRecipe(new ItemStack(slab1, 6, x), new Object[] {"###", '#', new ItemStack(planksEB, 1, x)});
 			GameRegistry.addRecipe(new ItemStack(slab2, 6, x), new Object[] {"###", '#', new ItemStack(planksEB, 1, 8 + x)});
 		}
 		
-		for(int x = 0; x < 16; x++)
-		{
+		for(int x = 0; x < 16; x++) {
 			if(stairsEB[x] != null)
 				GameRegistry.addRecipe(new ItemStack(stairsEB[x], 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(planksEB, 1, x)});
 		}
 		
-		for(int x = 0; x < BlockStoneBrickEB.stones.length; x++)
-        {
+		for(int x = 0; x < BlockStoneBrickEB.stones.length; x++) {
         	GameRegistry.addSmelting(new ItemStack(stoneCobbleEB, 1, x), new ItemStack(stoneEB, 1, x), 0.1F);
         }
 		
-		for(int x = 0; x < BlockStoneBrickEB.stones.length; x++)
-        {
+		for(int x = 0; x < BlockStoneBrickEB.stones.length; x++) {
 			GameRegistry.addRecipe(new ItemStack(stoneBrickEB, 4, x), new Object[] {"##", "##", '#', new ItemStack(stoneEB, 1, x)});
         }
 		
-		for(int x = 0; x < BlockStoneEB.stones.length; x++)
-		{
+		for(int x = 0; x < BlockStoneEB.stones.length; x++) {
 			GameRegistry.addRecipe(new ItemStack(slabS, 6, x), new Object[] {"###", '#', new ItemStack(stoneEB, 1, x)});
 			GameRegistry.addRecipe(new ItemStack(slabSB, 6, x), new Object[] {"###", '#', new ItemStack(stoneBrickEB, 1, x)});
 			GameRegistry.addRecipe(new ItemStack(slabSC, 6, x), new Object[] {"###", '#', new ItemStack(stoneCobbleEB, 1, x)});
 		}
 		
-		for(int x = 0; x < BlockStoneEB.stones2.length; x++)
-		{
+		for(int x = 0; x < BlockStoneEB.stones2.length; x++) {
 			GameRegistry.addRecipe(new ItemStack(slabS2, 6, x), new Object[] {"###", '#', new ItemStack(stoneEB, 1, x + BlockStoneEB.stones.length)});
 			GameRegistry.addRecipe(new ItemStack(slabSB2, 6, x), new Object[] {"###", '#', new ItemStack(stoneBrickEB, 1, x + BlockStoneEB.stones.length)});
 			GameRegistry.addRecipe(new ItemStack(slabSC2, 6, x), new Object[] {"###", '#', new ItemStack(stoneCobbleEB, 1, x + BlockStoneEB.stones.length)});
 		}
 		
-		for(int x = 0; x < stairsSEB.length / 2; x++)
-		{
+		for(int x = 0; x < stairsSEB.length / 2; x++) {
 			if(stairsSEB[x] != null)
 				GameRegistry.addRecipe(new ItemStack(stairsSEB[x], 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(stoneCobbleEB, 1, x)});
 
@@ -412,31 +400,26 @@ public class EnhancedBiomesBlocks
 		}		
 	}
 	
-	public static void inputMetaBlock(Block block)
-	{
+	public static void inputMetaBlock(Block block) {
 		GameRegistry.registerBlock(block, ItemBlockEnhancedBiomes.class, "enhancedbiomes." + block.getUnlocalizedName());
 	}
 	
-	public static void inputMetaBlockWithItemBlock(Block block, Class<? extends ItemBlock> blockClass)
-	{
+	public static void inputMetaBlockWithItemBlock(Block block, Class<? extends ItemBlock> blockClass) {
 		GameRegistry.registerBlock(block, blockClass, "enhancedbiomes." + block.getUnlocalizedName());
 	}
 	
-	public static void inputSlabBlocks(BlockSlab blockHalfSlab, BlockSlab blockDoubleSlab, Class<? extends ItemSlab> blockClass)
-	{
+	public static void inputSlabBlocks(BlockSlab blockHalfSlab, BlockSlab blockDoubleSlab, Class<? extends ItemSlab> blockClass) {
 		GameRegistry.registerBlock(blockHalfSlab, blockClass, "enhancedbiomes." + blockHalfSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(blockDoubleSlab, blockClass, "enhancedbiomes." + blockDoubleSlab.getUnlocalizedName());
 	}
 	
-	public static void inputWoodBlock(Block block, Class<? extends ItemBlockWithMetadata> logClass)
-	{
+	public static void inputWoodBlock(Block block, Class<? extends ItemBlockWithMetadata> logClass) {
 		GameRegistry.registerBlock(block, logClass, "enhancedbiomes." + block.getUnlocalizedName());
 		OreDictionary.registerOre("logWood", new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
 	    GameRegistry.addSmelting(block, new ItemStack(coal, 1, 1), 0.15F);
 	}
 
-	public static void setStoneBlock(int x, int y, int z, Block blockDef, Block blockEB, int meta, int flag, World world) 
-	{
+	public static void setStoneBlock(int x, int y, int z, Block blockDef, Block blockEB, int meta, int flag, World world) {
 		if(world.getBlock(x, y, z) == EnhancedBiomesBlocks.stoneEB) world.setBlock(x, y, z, blockEB, world.getBlockMetadata(x, y, z), 2);
         else world.setBlock(x, y, z, blockDef, 0, 2);
 	}
