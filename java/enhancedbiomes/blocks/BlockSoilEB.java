@@ -86,7 +86,7 @@ public class BlockSoilEB extends Block
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {
-        return icons[meta];
+        return meta < icons.length ? icons[meta] : icons[0];
     }
 
     /**

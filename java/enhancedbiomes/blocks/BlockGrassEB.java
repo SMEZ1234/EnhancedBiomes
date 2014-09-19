@@ -114,16 +114,16 @@ public class BlockGrassEB extends BlockGrass implements IGrowable
         
         if (p_149673_5_ == 1)
         {
-            return this.topIcon[meta];
+            return meta < this.topIcon.length ? this.topIcon[meta] : this.topIcon[0];
         }
         else if (p_149673_5_ == 0)
         {
-            return EnhancedBiomesBlocks.dirtEB.icons[meta];
+            return EnhancedBiomesBlocks.dirtEB.getIcon(p_149673_1_, p_149673_2_, p_149673_3_, p_149673_4_, p_149673_5_);
         }
         else
         {
             Material material = p_149673_1_.getBlock(p_149673_2_, p_149673_3_ + 1, p_149673_4_).getMaterial();
-            return material != Material.snow && material != Material.craftedSnow ? this.sideIcon[meta] : this.sideSnowIcon[meta];
+            return material != Material.snow && material != Material.craftedSnow ? (meta < this.sideIcon.length ? this.sideIcon[meta] : this.sideIcon[0]) : meta < this.sideSnowIcon.length ? this.sideSnowIcon[meta] : this.sideSnowIcon[0];
         }
     }
 
@@ -188,13 +188,13 @@ public class BlockGrassEB extends BlockGrass implements IGrowable
     @SideOnly(Side.CLIENT)
     public static IIcon getIconSideOverlay(int meta)
     {
-        return sideOverlayIcon[meta];
+    	return meta < sideOverlayIcon.length ? sideOverlayIcon[meta] : sideOverlayIcon[0];
     }
 
     @SideOnly(Side.CLIENT)
     public static IIcon getGrassUnderlayIcon(int meta)
     {
-        return grassUnderlayIcon[meta];
+        return meta < grassUnderlayIcon.length ? grassUnderlayIcon[meta] : grassUnderlayIcon[0];
     }
 
     public void func_149853_b(World p_149853_1_, Random p_149853_2_, int p_149853_3_, int p_149853_4_, int p_149853_5_)
