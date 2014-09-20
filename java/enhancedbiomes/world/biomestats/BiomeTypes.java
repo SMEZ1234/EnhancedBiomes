@@ -19,8 +19,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-public class BiomeTypes 
-{
+public class BiomeTypes {
 	public static void registerAllBiomeTypes() {
     	registerBiomeType(biomeMountainArchipelago, 	OCEAN, MOUNTAIN, HILLS);
 		registerBiomeType(biomeDesertArchipelago, 		OCEAN, DRY, SANDY);

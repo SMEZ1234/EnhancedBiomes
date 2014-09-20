@@ -7,6 +7,7 @@ import com.google.common.eventbus.Subscribe;
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.village.VillagePieceSelection;
 import enhancedbiomes.world.biome.EnhancedBiomesRock;
+import enhancedbiomes.world.biomestats.BiomeCategorisation;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -160,7 +161,7 @@ public class VillageBlocksHandler
 		}
 		
 		if(a == gravel) {
-			if(VillagePieceSelection.isOriental(b)) {
+			if(BiomeCategorisation.isOriental(b)) {
 				int pathType = rand.nextInt(5);
 				if(pathType <= 1) {
 					event.replacement = cobblestone;

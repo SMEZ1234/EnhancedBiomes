@@ -115,6 +115,7 @@ public class EnhancedBiomesMod {
 	public static int seasonLength;
 
 	public static int useNewStone;
+	public static boolean useNewOres;
 	public static boolean useNewGrass;
 	public static boolean useVillageMods;	
 	public static boolean useListedRareBiomes;
@@ -140,6 +141,7 @@ public class EnhancedBiomesMod {
 		villageSize = config.get(config.CATEGORY_GENERAL, "Size of villages", 0, "Normal is 0").getInt();
 		
 		useNewStone = config.get(config.CATEGORY_GENERAL, "Use new stone", 1, "If 0, the new stones will not generate, if 2 they will generate as pockets").getInt();
+		useNewOres = config.get(config.CATEGORY_GENERAL, "Use new ores", true, "Only relevant if the new stones are generating, if false will generate standard ores always").getBoolean(true);
 		useNewGrass = config.get(config.CATEGORY_GENERAL, "Use new grass", true, "If false, the new grass will not generate").getBoolean(true);
 		useVillageMods = config.get(config.CATEGORY_GENERAL, "Enable the modifications to villages", true, "Disabling this will solve issues with other mods which edit the way villages generate").getBoolean(true);
 		useListedRareBiomes = config.get(config.CATEGORY_GENERAL, "Use EB's rare biome code (Rare biomes have to be registered with EB to work)", true, "If true, rare biomes can have any ID, if false, their ID must be 128 more than their standard biome's ID").getBoolean(true);
@@ -194,7 +196,8 @@ public class EnhancedBiomesMod {
 			if(BiomeGenBase.getBiomeGenArray()[a] != null) biomeTempsList[a] = BiomeGenBase.getBiomeGenArray()[a].temperature;
 			else biomeTempsList[a] = 0.5F;
 		}
-        //TODO if(achievement) EnhancedBiomesAchievements.load();
+        //TODO Achievements
+		//if(achievement) EnhancedBiomesAchievements.load();
 		
 		//Events
 		if(useVillageMods) {
@@ -202,7 +205,8 @@ public class EnhancedBiomesMod {
 			MapGenStructureIO.registerStructure(MapGenVillageEB.Start.class, "VillageEB");
 			VillagePieceSelection.registerVillagePieces();
 			MinecraftForge.TERRAIN_GEN_BUS.register(new VillageBlocksHandler());
-			//TODO MapGenStructureIO.registerStructure(StructureScatteredFeatureEnhancedBiomesStart.class, "ScatteredFeatureEB");
+			//TODO New scattered features
+			//MapGenStructureIO.registerStructure(StructureScatteredFeatureEnhancedBiomesStart.class, "ScatteredFeatureEB");
 		}
 		
 		if(useNewStone == 2) {

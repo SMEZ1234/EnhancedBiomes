@@ -125,7 +125,8 @@ public class Torii extends StructureVillagePiecesEB.Village
 			}
 		}*/
 		
-		//TODO this.spawnVillagers(world, p_74875_3_, 1, 1, 2, 1);
+		//TODO Villager spawning
+		//this.spawnVillagers(world, p_74875_3_, 1, 1, 2, 1);
 		return true;
 	}
 }

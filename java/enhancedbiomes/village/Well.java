@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
+import enhancedbiomes.world.biomestats.BiomeCategorisation;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -78,7 +79,7 @@ public class Well extends StructureVillagePieces.Start
 			}
 		}
 
-		if(VillagePieceSelection.isOriental(biome)) {
+		if(BiomeCategorisation.isOriental(biome)) {
 			this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 0, 1, 4, 11, 4, Blocks.cobblestone, Blocks.flowing_water, false);
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.flowing_water, 0, 2, 11, 2, p_74875_3_);
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.flowing_water, 0, 3, 11, 2, p_74875_3_);

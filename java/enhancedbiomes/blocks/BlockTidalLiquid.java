@@ -30,7 +30,7 @@ public class BlockTidalLiquid extends BlockLiquid implements ITileEntityProvider
     /**
      * Ticks the block if it's been scheduled
      */
-    //TODO
+    //TODO Tides
 	/*public void updateTick(World world, int x, int y, int z, Random rand)
     {
     	long tod = MinecraftServer.getServer().worldServers[0].getWorldTime();

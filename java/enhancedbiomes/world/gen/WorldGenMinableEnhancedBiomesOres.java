@@ -70,7 +70,7 @@ public class WorldGenMinableEnhancedBiomesOres extends WorldGenerator
                                 Block stone = par1World.getBlock(var38, var41, var44);
                                 if (var39 * var39 + var42 * var42 + var45 * var45 < 1.0D && stone.isReplaceableOreGen(par1World, var38, var41, var44, Blocks.stone))
                                 {
-                                    if(stone == EnhancedBiomesBlocks.stoneEB) par1World.setBlock(var38, var41, var44, this.minableBlockIdEB, par1World.getBlockMetadata(var38, var41, var44), 2);
+                                    if(stone == EnhancedBiomesBlocks.stoneEB && EnhancedBiomesMod.useNewOres) par1World.setBlock(var38, var41, var44, this.minableBlockIdEB, par1World.getBlockMetadata(var38, var41, var44), 2);
                                     else par1World.setBlock(var38, var41, var44, this.minableBlockIdDef, 0, 2);
                                 }
                             }

@@ -15,6 +15,7 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 import enhancedbiomes.village.StructureVillagePiecesEB.Start;
 import enhancedbiomes.village.oriental.*;
 import enhancedbiomes.village.standard.*;
+import enhancedbiomes.world.biomestats.BiomeCategorisation;
 import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesBiome.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesGrass.*;
@@ -66,7 +67,8 @@ public class VillagePieceSelection {
 		//Oriental
 		/*if(isOriental(biome)) {
 			arraylist.add(new StructureVillagePieces.PieceWeight(Torii.class, 		3, 	MathHelper.getRandomIntegerInRange(p_75084_0_, 2 + villageSize, 5 + villageSize * 3)));
-			//TODO Exchange arraylist.add(new StructureVillagePiecesEB.PieceWeight(Torii.class, 		20,	MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 2 + villageSize)));
+			//TODO Exchange torii generation values
+			arraylist.add(new StructureVillagePiecesEB.PieceWeight(Torii.class, 		20,	MathHelper.getRandomIntegerInRange(p_75084_0_, 0 + villageSize, 2 + villageSize)));
 		}*/
 		
 		//Standard
@@ -120,12 +122,8 @@ public class VillagePieceSelection {
 		return (StructureVillagePieces.Village)object;
 	}
 	
-	public static boolean isOriental(BiomeGenBase biome) {
-		return biome == biomeBlossomWoods || biome == biomeBlossomHills;
-	}
-	
 	public static StructureVillagePiecesEB.Village getTorch(BiomeGenBase biome, Start p_75081_0_, int p_75081_7_, Random p_75081_2_, StructureBoundingBox structureboundingbox, int p_75081_6_) {
-		if(isOriental(biome)) return new Lantern(p_75081_0_, p_75081_7_, p_75081_2_, structureboundingbox, p_75081_6_);
+		if(BiomeCategorisation.isOriental(biome)) return new Lantern(p_75081_0_, p_75081_7_, p_75081_2_, structureboundingbox, p_75081_6_);
 		return new Torch(p_75081_0_, p_75081_7_, p_75081_2_, structureboundingbox, p_75081_6_);
 	}
 	
@@ -134,7 +132,7 @@ public class VillagePieceSelection {
 	}
 
 	public static StructureBoundingBox getTorchBoundingBox(BiomeGenBase biome, StructureVillagePiecesEB.Start p_74904_0_, List p_74904_1_, Random p_74904_2_, int p_74904_3_, int p_74904_4_, int p_74904_5_, int p_74904_6_) {
-		if(isOriental(biome)) return Lantern.func_74904_a(p_74904_0_, p_74904_1_, p_74904_2_, p_74904_3_, p_74904_4_, p_74904_5_, p_74904_6_);
+		if(BiomeCategorisation.isOriental(biome)) return Lantern.func_74904_a(p_74904_0_, p_74904_1_, p_74904_2_, p_74904_3_, p_74904_4_, p_74904_5_, p_74904_6_);
 		return Torch.func_74904_a(p_74904_0_, p_74904_1_, p_74904_2_, p_74904_3_, p_74904_4_, p_74904_5_, p_74904_6_);		
 	}
 

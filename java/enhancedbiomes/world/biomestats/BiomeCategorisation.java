@@ -1,5 +1,7 @@
 package enhancedbiomes.world.biomestats;
 
+import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.biomeBlossomHills;
+import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.biomeBlossomWoods;
 import static net.minecraftforge.common.BiomeDictionary.*;
 import static net.minecraftforge.common.BiomeDictionary.Type.*;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -53,5 +55,9 @@ public enum BiomeCategorisation {
 			if(!isBiomeOfType(biome, type)) return false;
 		}
 		return true;
+	}
+	
+	public static boolean isOriental(BiomeGenBase biome) {
+		return biome == biomeBlossomWoods || biome == biomeBlossomHills;
 	}
 }
