@@ -21,6 +21,7 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
+import enhancedbiomes.world.biome.base.BiomeGenEBBase;
 import enhancedbiomes.world.biome.base.BiomeGenRiparianZone;
 import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
@@ -30,7 +31,7 @@ public class EnhancedBiomesBiome
 	public static int riparianId;
 	public static boolean riparianGen;
 	public static boolean villageRiparian;
-	public static BiomeGenBase biomeRiparian;
+	public static BiomeGenEBBase biomeRiparian;
 	
 	public static boolean volcanoGen;
 	
@@ -59,7 +60,7 @@ public class EnhancedBiomesBiome
 	
 	public static void load()
 	{
-		biomeRiparian = (new BiomeGenRiparianZone(riparianId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Riparian Zone");
+		biomeRiparian = (BiomeGenEBBase) (new BiomeGenRiparianZone(riparianId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Riparian Zone");
 		if (villageRiparian == true) 			{  BiomeManager.addVillageBiome(biomeRiparian, true);  }
 		BiomeManager.addStrongholdBiome(biomeRiparian);
 		BiomeWoods.register(biomeRiparian, EnhancedBiomesBlocks.planksEB, 8);
