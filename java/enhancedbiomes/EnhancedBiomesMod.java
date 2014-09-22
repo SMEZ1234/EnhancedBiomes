@@ -137,7 +137,8 @@ public class EnhancedBiomesMod {
 		//tides = config.get(config.CATEGORY_GENERAL, "Allow tides module", true).getBoolean(true);
 		
 		biomeSize = config.get(config.CATEGORY_GENERAL, "Size of biomes", 4, "Normal is 4, large biomes is 6, but other sizes can be chosen").getInt();
-		villageDistance = config.get(config.CATEGORY_GENERAL, "Distance between villages", 32, "Normal is 32").getInt();
+		//TODO Revert for release
+		villageDistance = 8;//config.get(config.CATEGORY_GENERAL, "Distance between villages", 32, "Normal is 32").getInt();
 		villageSize = config.get(config.CATEGORY_GENERAL, "Size of villages", 0, "Normal is 0").getInt();
 		
 		useNewStone = config.get(config.CATEGORY_GENERAL, "Use new stone", 1, "If 0, the new stones will not generate, if 2 they will generate as pockets").getInt();

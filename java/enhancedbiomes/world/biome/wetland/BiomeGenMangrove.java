@@ -43,11 +43,11 @@ public class BiomeGenMangrove extends BiomeGenWetlandBase
     {
         super.decorate(par1World, par2Random, par3, par4);
         
-        for(int c = 250; c > 0; c--)
+        for(int c = 10; c > 0; c--)
     	{
     		int posX = par3 + par2Random.nextInt(16);
-    		int posY = par2Random.nextInt(120);
         	int posZ = par4 + par2Random.nextInt(16);
+    		int posY = par1World.getTopSolidOrLiquidBlock(posX, posZ);
         	new WorldGenLakesEnhancedBiomes(Blocks.flowing_water, Blocks.obsidian).generate(par1World, par1World.rand, posX, posY, posZ);
     	}
         
