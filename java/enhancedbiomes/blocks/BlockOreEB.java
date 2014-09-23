@@ -5,6 +5,7 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.blocks.renderer.BlockOreRenderer;
 import enhancedbiomes.helpers.EnhancedBiomesJava;
 import net.minecraft.block.Block;
@@ -36,7 +37,7 @@ public class BlockOreEB extends Block
 
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return this == EnhancedBiomesBlocks.oreCoalEB ? Items.coal : (this == EnhancedBiomesBlocks.oreDiamondEB ? Items.diamond : (this == EnhancedBiomesBlocks.oreLapisEB ? Items.dye : (this == EnhancedBiomesBlocks.oreEmeraldEB ? Items.emerald : Item.getItemFromBlock(this))));
+        return this == EnhancedBiomesBlocks.oreCoalEB ? Items.coal : (this == EnhancedBiomesBlocks.oreDiamondEB ? Items.diamond : (this == EnhancedBiomesBlocks.oreLapisEB ? Items.dye : (this == EnhancedBiomesBlocks.oreEmeraldEB ? Items.emerald : EnhancedBiomesMod.getOreDrop(this))));
     }
 
     /**
