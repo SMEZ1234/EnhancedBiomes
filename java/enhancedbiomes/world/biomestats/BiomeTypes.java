@@ -46,7 +46,8 @@ public class BiomeTypes {
 		registerBiomeType(biomeMeadowM, 				PLAINS);
 		registerBiomeType(biomeRockyDesert, 			HOT, DRY, SANDY, WASTELAND);  	  
 		registerBiomeType(biomeScrub, 					HOT, DRY, SANDY, SPARSE);
-		registerBiomeType(biomeSahara, 					HOT, DRY, SANDY);
+		registerBiomeType(biomeSahara, 					HOT, DRY, SANDY); 	  
+		registerBiomeType(biomeXericShrubland,			HOT, DRY, SANDY, SPARSE);
 		registerBiomeType(biomeAlpine, 					COLD, MOUNTAIN, SNOWY);		  
 		registerBiomeType(biomeGlacier, 				COLD, MOUNTAIN);	
 		registerBiomeType(biomeIceSheet, 				COLD, WASTELAND);

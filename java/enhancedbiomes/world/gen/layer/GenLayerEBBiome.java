@@ -35,7 +35,7 @@ public class GenLayerEBBiome extends GenLayer
     	bl_cool = BiomeGenManager.getCoolBiomes(bl_cool);    	
     	bl_frozen = BiomeGenManager.getFrozenBiomes(bl_frozen);    	
         //TODO Remove for release
-        /*bl_frozen = new BiomeGenBase[]{biomeRedDesert, biomeTundra};
+    	bl_frozen = new BiomeGenBase[]{biomeXericShrubland, biomeGrasslands};
         bl_hot = bl_warm = bl_cool = bl_frozen;/**/
     	/*bl_warm = bl_cool = bl_frozen = bl_hot;/**/
     	/*bl_hot = bl_frozen = bl_cool = bl_warm;/**/

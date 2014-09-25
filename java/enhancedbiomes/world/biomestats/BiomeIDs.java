@@ -77,4 +77,5 @@ public class BiomeIDs {
 	public static final int alpineTundra = getNextID();
 	public static final int snowyRanges = getNextID();
 	public static final int redDesert = getNextID();
+	public static final int xericShrubland = getNextID();
 }

@@ -12,9 +12,11 @@ import enhancedbiomes.world.biome.sand.BiomeGenRedDesert;
 import enhancedbiomes.world.biome.sand.BiomeGenRockyDesert;
 import enhancedbiomes.world.biome.sand.BiomeGenSahara;
 import enhancedbiomes.world.biome.sand.BiomeGenScrub;
+import enhancedbiomes.world.biome.sand.BiomeGenXericShrubland;
 import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
@@ -39,7 +41,12 @@ public class EnhancedBiomesSand
 	public static int redDesertId;	 
 	public static int redDesertGen;
 	public static boolean villageRedDesert;
-	public static BiomeGenSandBase biomeRedDesert;	
+	public static BiomeGenSandBase biomeRedDesert;
+
+	public static int xericShrublandId;
+	public static int xericShrublandGen;
+	public static boolean villageXericShrubland;
+	public static BiomeGenSandBase biomeXericShrubland;	
 
 	public static void config()
 	{
@@ -62,6 +69,10 @@ public class EnhancedBiomesSand
 		redDesertId = config.get(config.CATEGORY_GENERAL, "Biome ID of Red Desert", BiomeIDs.redDesert).getInt();
 		redDesertGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Red Desert biome", 10).getInt();
 		villageRedDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Red Desert biome", true).getBoolean(true);
+
+		xericShrublandId = config.get(config.CATEGORY_GENERAL, "Biome ID of Xeric Shrubland", BiomeIDs.xericShrubland).getInt();
+		xericShrublandGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Xeric Shrubland biome", 10).getInt();
+		villageXericShrubland = config.get(config.CATEGORY_GENERAL, "Generate villages in Xeric Shrubland biome", true).getBoolean(true);
 
 		config.save();
 	}
@@ -91,8 +102,13 @@ public class EnhancedBiomesSand
 		biomeRedDesert = (BiomeGenSandBase) (new BiomeGenRedDesert(redDesertId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.8F, 0.0F)).setHeight(heightDefault).setBiomeName("Red Desert");
 		BiomeGenManager.addHotBiome(biomeRedDesert, redDesertGen);	
 		if (villageRedDesert)			{  BiomeManager.addVillageBiome(biomeRedDesert, true);  }
-		BiomeManager.addStrongholdBiome(biomeRedDesert);		
-		//BiomeGenManager.addCaveExceptionBiome(biomeRedDesert);
+		BiomeManager.addStrongholdBiome(biomeRedDesert);
 		BiomeWoods.register(biomeRedDesert, EnhancedBiomesBlocks.planksEB, 13, false);
+		
+		biomeXericShrubland = (BiomeGenSandBase) (new BiomeGenXericShrubland(xericShrublandId)).setDisableRain().setColor(9286496).setTemperatureRainfall(1.0F, 0.25F).setHeight(heightDefault).setBiomeName("Xeric Shrubland");
+		BiomeGenManager.addHotBiome(biomeXericShrubland, xericShrublandGen);
+		if (villageXericShrubland)				{  BiomeManager.addVillageBiome(biomeXericShrubland, true);  }
+		BiomeManager.addStrongholdBiome(biomeXericShrubland);
+		BiomeWoods.register(biomeXericShrubland, Blocks.planks, 0, false);
 	}
 }
