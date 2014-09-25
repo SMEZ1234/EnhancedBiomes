@@ -62,7 +62,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.*;
 import static net.minecraftforge.common.BiomeDictionary.*;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "2.4 for MC 1.7.10", useMetadata = true)
+@Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "2.4.1 for MC 1.7.10", useMetadata = true)
 public class EnhancedBiomesMod {		
 	@SidedProxy(clientSide = "enhancedbiomes.proxy.ClientProxy", serverSide = "enhancedbiomes.proxy.CommonProxy")
 	public static CommonProxy proxy; 
@@ -138,7 +138,7 @@ public class EnhancedBiomesMod {
 		
 		biomeSize = config.get(config.CATEGORY_GENERAL, "Size of biomes", 4, "Normal is 4, large biomes is 6, but other sizes can be chosen").getInt();
 		//TODO Revert for release
-		villageDistance = 8;//config.get(config.CATEGORY_GENERAL, "Distance between villages", 32, "Normal is 32").getInt();
+		villageDistance = config.get(config.CATEGORY_GENERAL, "Distance between villages", 32, "Normal is 32").getInt();
 		villageSize = config.get(config.CATEGORY_GENERAL, "Size of villages", 0, "Normal is 0").getInt();
 		
 		useNewStone = config.get(config.CATEGORY_GENERAL, "Use new stone", 1, "If 0, the new stones will not generate, if 2 they will generate as pockets").getInt();
