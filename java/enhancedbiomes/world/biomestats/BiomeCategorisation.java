@@ -12,7 +12,8 @@ public enum BiomeCategorisation {
 	GRASS,
 	SAND,
 	CANYONS,
-	WOODLAND,
+	BOREAL,
+	BROADLEAF,
 	WETLAND,
 	MOUNTAINS,
 	VOLCANO,
@@ -27,6 +28,7 @@ public enum BiomeCategorisation {
 		if(isBiomeOfAnyType(biome, MESA)) return CANYONS;
 		else if(isBiomeOfAnyType(biome, END)) return SKY;
 		else if(isBiomeOfAnyType(biome, MUSHROOM)) return SHROOM;
+		else if(isBiomeOfAllType(biome, CONIFEROUS, FOREST)) return BOREAL;
 		else if(isBiomeOfAllType(biome, HOT, DRY)) return SAND;
 		else if(isBiomeOfAnyType(biome, OCEAN)) return SEA;
 		else if(isBiomeOfAnyType(biome, MOUNTAIN)) return MOUNTAINS;
@@ -37,7 +39,7 @@ public enum BiomeCategorisation {
 		//Round 2
 		else if(isBiomeOfAnyType(biome, SANDY, SAVANNA, BEACH)) return SAND;
 		else if(isBiomeOfAllType(biome, CONIFEROUS, COLD) || isBiomeOfAllType(biome, WASTELAND, COLD)) return ICE;
-		else if(isBiomeOfAnyType(biome, FOREST, JUNGLE)) return WOODLAND;
+		else if(isBiomeOfAnyType(biome, FOREST, JUNGLE)) return BROADLEAF;
 		else if(isBiomeOfAnyType(biome, PLAINS)) return GRASS;
 		else if(isBiomeOfAnyType(biome, WASTELAND)) return ROCK;
 		return GRASS;		

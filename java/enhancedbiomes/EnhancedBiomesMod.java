@@ -277,7 +277,8 @@ public class EnhancedBiomesMod {
 			case GRASS: 		return typeGeoGrass;
 			case CANYONS: 		return typeGeoSandCanyons;
 			case SAND:			return typeGeoSandCanyons;
-			case WOODLAND: 		return typeGeoWoodland;
+			case BROADLEAF: 	return typeGeoWoodland;
+			case BOREAL: 		return typeGeoWoodland;
 			case WETLAND: 		return typeGeoWetland;
 			case MOUNTAINS: 	return typeGeoMountains;
 			case VOLCANO: 		return typeGeoVolcanoSea;
@@ -296,10 +297,11 @@ public class EnhancedBiomesMod {
 			BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[id];
 			if(biome == null) 	return BlockWithMeta.dirt;
 			switch(getCatForBiome(biome)) {
-			case GRASS: 		return BlockWithMeta.dirt;
+			case GRASS: 		return mollisol;
 			case CANYONS: 		return oxisol;
 			case SAND:			return oxisol;
-			case WOODLAND: 		return alfisol;
+			case BROADLEAF: 	return alfisol;
+			case BOREAL: 		return BlockWithMeta.dirt;
 			case WETLAND: 		return histosol;
 			case MOUNTAINS: 	return inceptisol;
 			case VOLCANO: 		return andisol;
