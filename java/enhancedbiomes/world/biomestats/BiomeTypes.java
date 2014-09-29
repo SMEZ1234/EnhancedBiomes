@@ -47,7 +47,6 @@ public class BiomeTypes {
 		registerBiomeType(biomeRockyDesert, 			HOT, DRY, SANDY, WASTELAND);  	  
 		registerBiomeType(biomeScrub, 					HOT, DRY, SANDY, SPARSE);
 		registerBiomeType(biomeSahara, 					HOT, DRY, SANDY); 	  
-		registerBiomeType(biomeXericShrubland,			HOT, DRY, SANDY, SPARSE);
 		registerBiomeType(biomeAlpine, 					COLD, MOUNTAIN, SNOWY);		  
 		registerBiomeType(biomeGlacier, 				COLD, MOUNTAIN);	
 		registerBiomeType(biomeIceSheet, 				COLD, WASTELAND);
@@ -109,6 +108,7 @@ public class BiomeTypes {
 		registerBiomeType(biomeOasis, 					WET, SWAMP, JUNGLE);
 		registerBiomeType(biomeRainforest,				WET, HOT, JUNGLE, DENSE);		  	  
 		registerBiomeType(biomeRainforestValley, 		WET, HOT, JUNGLE, DENSE, SWAMP);
-		registerBiomeType(biomeRiparian, 				RIVER, FOREST);  
+		registerBiomeType(biomeRiparian, 				RIVER, FOREST);
+		registerBiomeType(biomeXericShrubland,			HOT, DRY, SANDY, SPARSE);
 	}
 }

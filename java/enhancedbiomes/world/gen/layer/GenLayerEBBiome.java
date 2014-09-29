@@ -2,6 +2,7 @@ package enhancedbiomes.world.gen.layer;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.handlers.BiomeGenManager;
+import enhancedbiomes.world.biomestats.BiomeCategorisation;
 import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesBiome.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesGrass.*;
@@ -15,6 +16,7 @@ import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
 import static net.minecraft.world.biome.BiomeGenBase.*;
+import static enhancedbiomes.world.biomestats.BiomeCategorisation.*;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
@@ -35,7 +37,7 @@ public class GenLayerEBBiome extends GenLayer
     	bl_cool = BiomeGenManager.getCoolBiomes(bl_cool);    	
     	bl_frozen = BiomeGenManager.getFrozenBiomes(bl_frozen);    	
         //TODO Remove for release
-    	bl_frozen = new BiomeGenBase[]{biomeXericShrubland, biomeGrasslands};
+    	bl_frozen = getAllBiomesOfCat(BOREAL);//new BiomeGenBase[]{biomeXericShrubland, biomeGrasslands};
         bl_hot = bl_warm = bl_cool = bl_frozen;/**/
     	/*bl_warm = bl_cool = bl_frozen = bl_hot;/**/
     	/*bl_hot = bl_frozen = bl_cool = bl_warm;/**/
