@@ -75,11 +75,11 @@ public enum BiomeCategorisation {
 				newList[list.length] = BiomeGenBase.getBiome(id);
 				list = newList;
 			}
-		}
+		}/*
 		
 		for(int a = 0; a < list.length; a++) {
 			System.err.println(list[a].biomeName);
-		}
+		}*/
 		
 		return list;	
 	}
