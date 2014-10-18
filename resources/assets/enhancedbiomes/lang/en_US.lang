@@ -381,3 +381,4 @@ tile.util.name=DO NOT USE THIS BLOCK. TELL SMEZ1234 THAT HE STUFFED UP.
 itemGroup.enhancedBiomesOrganic=Enhanced Biomes - Organic
 itemGroup.enhancedBiomesMineral=Enhanced Biomes - Mineral
 generator.typeEB=Enhanced Biomes
+generator.typeOneBiome=Single Biome

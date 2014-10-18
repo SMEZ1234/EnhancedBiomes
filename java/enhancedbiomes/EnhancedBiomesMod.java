@@ -20,9 +20,8 @@ import enhancedbiomes.proxy.CommonProxy;
 import enhancedbiomes.village.MapGenVillageEB;
 import enhancedbiomes.village.StructureVillagePiecesEB;
 import enhancedbiomes.village.VillagePieceSelection;
-import enhancedbiomes.world.MapGenScatteredFeatureEnhancedBiomes;
-import enhancedbiomes.world.StructureScatteredFeatureEnhancedBiomesStart;
 import enhancedbiomes.world.WorldTypeEnhancedBiomes;
+import enhancedbiomes.world.WorldTypeSingleBiome;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
 import enhancedbiomes.world.biome.base.BiomeGenEBBase;
 import enhancedbiomes.world.biomestats.BiomeTypes;
@@ -70,6 +69,7 @@ public class EnhancedBiomesMod {
 	public static EnhancedBiomesMod instance;
 
 	public static WorldType enhancedBiomesWorldType;	
+	public static WorldType singleBiomeWorldType;	
 
 	private static Block[] rockList = new Block[BiomeGenBase.getBiomeGenArray().length];
 	private static byte[] rockMetaList = new byte[BiomeGenBase.getBiomeGenArray().length];
@@ -98,12 +98,15 @@ public class EnhancedBiomesMod {
 	private static ArrayList<ArrayList<Double>> stoneNoiseNN = new ArrayList<ArrayList<Double>>();
 
 	public static boolean runBiomeCheck = false;
-	
+
 	public static boolean worldType;
 	public static boolean vanilla;
 	//public static boolean achievement;
 	public static boolean seasons;
 	//public static boolean tides;
+
+	public static boolean worldTypeSB;
+	public static int biomeIDSB;
 	
 	public static int biomeSize;
 	public static int villageDistance;
@@ -136,6 +139,9 @@ public class EnhancedBiomesMod {
 		seasons = config.get(config.CATEGORY_GENERAL, "Allow seasons module", true).getBoolean(true);
 		//tides = config.get(config.CATEGORY_GENERAL, "Allow tides module", true).getBoolean(true);
 		
+		worldTypeSB = config.get(config.CATEGORY_GENERAL, "Allow single biome world type", false, "Only a single biome (plus sub-biomes) will generate in this world type").getBoolean(false);
+		biomeIDSB = config.get(config.CATEGORY_GENERAL, "Biome ID to generate in single biome world type", 1, "Check the Biomes config for biome IDs").getInt();
+		
 		biomeSize = config.get(config.CATEGORY_GENERAL, "Size of biomes", 4, "Normal is 4, large biomes is 6, but other sizes can be chosen").getInt();
 		//TODO Revert for release
 		villageDistance = config.get(config.CATEGORY_GENERAL, "Distance between villages", 32, "Normal is 32").getInt();
@@ -167,6 +173,7 @@ public class EnhancedBiomesMod {
 		
 		//Content
 		if(worldType) enhancedBiomesWorldType = new WorldTypeEnhancedBiomes("typeEB");	
+		if(worldTypeSB) singleBiomeWorldType = new WorldTypeSingleBiome("typeOneBiome");	
 		if(vanilla) VanillaHandler.load();
 		EnhancedBiomesBlocks.load();
 		EnhancedBiomesItems.load();
