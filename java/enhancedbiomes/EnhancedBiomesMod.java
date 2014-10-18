@@ -152,14 +152,14 @@ public class EnhancedBiomesMod {
 		obsidianVolcano = config.get(config.CATEGORY_GENERAL, "Create volcanoes out of obsidian", true, "If false, volcanoes will instead be made from basalt").getBoolean(true);
 		config.save();
 
-		configFile = new File("config/Enhanced Biomes/Oceans.cfg");
+		/*configFile = new File("config/Enhanced Biomes/Oceans.cfg");
 		config = new Configuration(configFile);
 		config.load();
 
-		/*ratioIsland = config.get(config.CATEGORY_GENERAL, "Ratio of Islands", 3, "Default is 3. This determines the ratio of islands to ocean in the 1/3 of the ocean that they generate in").getInt();
-		ratioOcean = config.get(config.CATEGORY_GENERAL, "Ratio of Ocean", 5, "Default is 5").getInt();*/
+		ratioIsland = config.get(config.CATEGORY_GENERAL, "Ratio of Islands", 3, "Default is 3. This determines the ratio of islands to ocean in the 1/3 of the ocean that they generate in").getInt();
+		ratioOcean = config.get(config.CATEGORY_GENERAL, "Ratio of Ocean", 5, "Default is 5").getInt();
 
-		config.save();
+		config.save();*/
 		
 		//Configs
 		if(vanilla) VanillaHandler.config();
