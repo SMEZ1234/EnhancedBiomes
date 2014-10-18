@@ -6,6 +6,8 @@ import enhancedbiomes.EnhancedBiomesMod;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.common.MinecraftForge;
 
 public class BiomeGenManager 
 {
@@ -20,28 +22,28 @@ public class BiomeGenManager
 	{
 		if(weight < 1) return;
 		for(int a = 0; a < weight; a++) frozenBiomes.add(biome);
-		BiomeManager.icyBiomes.add(new BiomeEntry(biome, weight));
+		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(biome, weight));
 	}
 	
 	public static void addCoolBiome(BiomeGenBase biome, int weight)
 	{
 		if(weight < 1) return;
 		for(int a = 0; a < weight; a++) coolBiomes.add(biome);
-		BiomeManager.coolBiomes.add(new BiomeEntry(biome, weight));
+		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(biome, weight));
 	}
 	
 	public static void addWarmBiome(BiomeGenBase biome, int weight)
 	{
 		if(weight < 1) return;
 		for(int a = 0; a < weight; a++) warmBiomes.add(biome);
-		BiomeManager.warmBiomes.add(new BiomeEntry(biome, weight));
+		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(biome, weight));
 	}
 	
 	public static void addHotBiome(BiomeGenBase biome, int weight)
 	{
 		if(weight < 1) return;
 		for(int a = 0; a < weight; a++) hotBiomes.add(biome);
-		BiomeManager.desertBiomes.add(new BiomeEntry(biome, weight));
+		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(biome, weight));
 	}
 	
 	public static void addEBFrozenBiome(BiomeGenBase biome, int weight)

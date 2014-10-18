@@ -109,8 +109,8 @@ public class EnhancedBiomesMod {
 	public static int villageDistance;
 	public static int villageSize;
 
-	public static int ratioIsland;
-	public static int ratioOcean;
+	/*public static int ratioIsland;
+	public static int ratioOcean;*/
 	
 	public static int seasonLength;
 
@@ -156,8 +156,8 @@ public class EnhancedBiomesMod {
 		config = new Configuration(configFile);
 		config.load();
 
-		ratioIsland = config.get(config.CATEGORY_GENERAL, "Ratio of Islands", 3, "Default is 3. This determines the ratio of islands to ocean in the 1/3 of the ocean that they generate in").getInt();
-		ratioOcean = config.get(config.CATEGORY_GENERAL, "Ratio of Ocean", 5, "Default is 5").getInt();
+		/*ratioIsland = config.get(config.CATEGORY_GENERAL, "Ratio of Islands", 3, "Default is 3. This determines the ratio of islands to ocean in the 1/3 of the ocean that they generate in").getInt();
+		ratioOcean = config.get(config.CATEGORY_GENERAL, "Ratio of Ocean", 5, "Default is 5").getInt();*/
 
 		config.save();
 		

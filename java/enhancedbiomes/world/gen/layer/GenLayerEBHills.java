@@ -8,6 +8,7 @@ import net.minecraft.world.gen.layer.GenLayerBiome;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,18 +88,18 @@ public class GenLayerEBHills extends GenLayer
                     int i2 = k1;
                     int j2;
 
-                    if (k1 == BiomeGenBase.ocean.biomeID)
+                    /*if (k1 == BiomeGenBase.ocean.biomeID)
                     {
                     	if(EnhancedBiomesMod.ratioIsland > this.nextInt(EnhancedBiomesMod.ratioOcean + EnhancedBiomesMod.ratioIsland))
                     	{
                     		int v = this.nextInt(4);
-                    		List<BiomeEntry> glbList = v == 0 ? BiomeManager.icyBiomes : v == 1 ? BiomeManager.coolBiomes : v == 2 ? BiomeManager.warmBiomes : BiomeManager.desertBiomes;
+                    		List<BiomeEntry> glbList = v == 0 ? BiomeManager.getBiomes(BiomeType.ICY) : v == 1 ? BiomeManager.getBiomes(BiomeType.COOL) : v == 2 ? BiomeManager.getBiomes(BiomeType.WARM) : BiomeManager.getBiomes(BiomeType.DESERT);
                     		BiomeGenBase biome = glbList.get(this.nextInt(glbList.size())).biome;
                     		if(biome != null && EnhancedBiomesMod.isValidIslandBiome(biome)) i2 = biome.biomeID;
                     	}
                     }
 
-                    else if (EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight)
+                    else */if (EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight)
                 	{
                     	i2 = biomeVolcano.biomeID;
                     }
