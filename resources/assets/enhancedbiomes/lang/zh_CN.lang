@@ -61,25 +61,25 @@ tile.planksEB_14.name=樱花树木板
 tile.planksEB_15.name=木棉树木板
 
 
-tile.stairs原木EB0.name=巨型橡树木楼梯
-tile.stairs原木EB1.name=山楂树木楼梯
-tile.stairs原木EB2.name=杨树木楼梯
-tile.stairs原木EB3.name=红树木楼梯
+tile.stairsWoodEB0.name=巨型橡树木楼梯
+tile.stairsWoodEB1.name=山楂树木楼梯
+tile.stairsWoodEB2.name=杨树木楼梯
+tile.stairsWoodEB3.name=红树木楼梯
 
-tile.stairs原木EB4.name=冷杉木楼梯
-tile.stairs原木EB5.name=柏树木楼梯
-tile.stairs原木EB6.name=松树木楼梯
-tile.stairs原木EB7.name=白松树木楼梯
+tile.stairsWoodEB4.name=冷杉木楼梯
+tile.stairsWoodEB5.name=柏树木楼梯
+tile.stairsWoodEB6.name=松树木楼梯
+tile.stairsWoodEB7.name=白松树木楼梯
 
-tile.stairs原木EB8.name=桤树木楼梯
-tile.stairs原木EB9.name=桉树木楼梯
-tile.stairs原木EB10.name=山杨木楼梯
-tile.stairs原木EB11.name=白桦树木楼梯
+tile.stairsWoodEB8.name=桤树木楼梯
+tile.stairsWoodEB9.name=桉树木楼梯
+tile.stairsWoodEB10.name=山杨木楼梯
+tile.stairsWoodEB11.name=白桦树木楼梯
 
-tile.stairs原木EB12.name=猴面包树木楼梯
-tile.stairs原木EB13.name=枯树木楼梯
-tile.stairs原木EB14.name=樱花树木楼梯
-tile.stairs原木EB15.name=木棉树木楼梯
+tile.stairsWoodEB12.name=猴面包树木楼梯
+tile.stairsWoodEB13.name=枯树木楼梯
+tile.stairsWoodEB14.name=樱花树木楼梯
+tile.stairsWoodEB15.name=木棉树木楼梯
 
 
 tile.slab1EB_0.name=巨型橡树木台阶
