@@ -121,7 +121,7 @@ public class BlockOreEB extends Block
      */
     public int damageDropped(int p_149692_1_)
     {
-        return this == EnhancedBiomesBlocks.oreLapisEB ? 4 : this == EnhancedBiomesBlocks.oreIronEB || this == EnhancedBiomesBlocks.oreGoldEB ? p_149692_1_ : 0;
+        return this == EnhancedBiomesBlocks.oreLapisEB ? 4 : (this == EnhancedBiomesBlocks.oreIronEB || this == EnhancedBiomesBlocks.oreGoldEB) && EnhancedBiomesMod.useNewOres != 2 ? p_149692_1_ : 0;
     }
 
     @SideOnly(Side.CLIENT)
