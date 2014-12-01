@@ -325,13 +325,13 @@ tile.stairsSEBB2.name=Hardened Sandstone Brick Stairs
 tile.stairsSEBB3.name=Limestone Brick Stairs
 tile.stairsSEBB4.name=Slate Brick Stairs
 tile.stairsSEBB5.name=Rhyolite Brick Stairs
-tile.stairsSEBB6.name=Cobbled Chalk Stairs
-tile.stairsSEBB7.name=Cobbled Marble Stairs
-tile.stairsSEBB8.name=Cobbled Dolomite Stairs
-tile.stairsSEBB9.name=Cobbled Schist Stairs
-tile.stairsSEBB10.name=Cobbled Chert Stairs
-tile.stairsSEBB11.name=Cobbled Gabbro Stairs
-tile.stairsSEBB12.name=Cobbled Dacite Stairs
+tile.stairsSEBB6.name=Chalk Brick Stairs
+tile.stairsSEBB7.name=Marble Brick Stairs
+tile.stairsSEBB8.name=Dolomite Brick Stairs
+tile.stairsSEBB9.name=Schist Brick Stairs
+tile.stairsSEBB10.name=Chert Brick Stairs
+tile.stairsSEBB11.name=Gabbro Brick Stairs
+tile.stairsSEBB12.name=Dacite Brick Stairs
 
 
 tile.stairsSCEB0.name=Cobbled Basalt Stairs
