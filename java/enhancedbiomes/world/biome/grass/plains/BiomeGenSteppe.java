@@ -14,15 +14,14 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenSteppe extends BiomeGenPlainsBase
 {
-    public BiomeGenSteppe(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 5, 2, 6));
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.theBiomeDecorator.flowersPerChunk = -999;
-        this.theBiomeDecorator.grassPerChunk = -999;
-        this.theBiomeDecorator.bigMushroomsPerChunk = -999;
-        this.theBiomeDecorator.generateLakes = false;
-        this.theBiomeDecorator.reedsPerChunk = -999;
-    }
+	public BiomeGenSteppe(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 5, 2, 6));
+		this.theBiomeDecorator.treesPerChunk = -999;
+		this.theBiomeDecorator.flowersPerChunk = -999;
+		this.theBiomeDecorator.grassPerChunk = -999;
+		this.theBiomeDecorator.bigMushroomsPerChunk = -999;
+		this.theBiomeDecorator.generateLakes = false;
+		this.theBiomeDecorator.reedsPerChunk = -999;
+	}
 }

@@ -20,43 +20,38 @@ import net.minecraft.world.gen.feature.*;
 
 public class BiomeGenMangrove extends BiomeGenWetlandBase
 {
-	public BiomeGenMangrove(int par1)
-    {
-        super(par1);
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.theBiomeDecorator.reedsPerChunk = 10;
-        this.theBiomeDecorator.clayPerChunk = 1;
-        this.theBiomeDecorator.waterlilyPerChunk = 4;
-        this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 1, 1, 1));
-    }
+	public BiomeGenMangrove(int par1) {
+		super(par1);
+		this.theBiomeDecorator.treesPerChunk = -999;
+		this.theBiomeDecorator.reedsPerChunk = 10;
+		this.theBiomeDecorator.clayPerChunk = 1;
+		this.theBiomeDecorator.waterlilyPerChunk = 4;
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 1, 1, 1));
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
 	@Override
-    public WorldGenAbstractTree func_150567_a(Random par1Random)
-    {
-        return TreeGen.mangrove();
-    }
-    
-    public void decorate(World par1World, Random par2Random, int par3, int par4)
-    {
-        super.decorate(par1World, par2Random, par3, par4);
-        
-        for(int c = 10; c > 0; c--)
-    	{
-    		int posX = par3 + par2Random.nextInt(16);
-        	int posZ = par4 + par2Random.nextInt(16);
-    		int posY = par1World.getTopSolidOrLiquidBlock(posX, posZ);
-        	new WorldGenLakesEnhancedBiomes(Blocks.flowing_water, Blocks.obsidian).generate(par1World, par1World.rand, posX, posY, posZ);
-    	}
-        
-        for(int c = 5; c > 0; c--)
-    	{
-    		int posX = par3 + par2Random.nextInt(16);
-        	int posZ = par4 + par2Random.nextInt(16);
-    		int posY = EnhancedBiomesWorldHelper.getTopSolidBlock(posX, posZ, par1World);
-    		TreeGen.mangrove().generate(par1World, par1World.rand, posX, posY, posZ);
-    	}
-    }
+	public WorldGenAbstractTree func_150567_a(Random par1Random) {
+		return TreeGen.mangrove();
+	}
+
+	public void decorate(World par1World, Random par2Random, int par3, int par4) {
+		super.decorate(par1World, par2Random, par3, par4);
+
+		for(int c = 10; c > 0; c--) {
+			int posX = par3 + par2Random.nextInt(16);
+			int posZ = par4 + par2Random.nextInt(16);
+			int posY = par1World.getTopSolidOrLiquidBlock(posX, posZ);
+			new WorldGenLakesEnhancedBiomes(Blocks.flowing_water, Blocks.obsidian).generate(par1World, par1World.rand, posX, posY, posZ);
+		}
+
+		for(int c = 5; c > 0; c--) {
+			int posX = par3 + par2Random.nextInt(16);
+			int posZ = par4 + par2Random.nextInt(16);
+			int posY = EnhancedBiomesWorldHelper.getTopSolidBlock(posX, posZ, par1World);
+			TreeGen.mangrove().generate(par1World, par1World.rand, posX, posY, posZ);
+		}
+	}
 }

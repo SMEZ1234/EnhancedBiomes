@@ -16,38 +16,30 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 public class KeyBindingHandler
 {
 	public static KeyBinding biomeInfo = new KeyBinding("Toggle Biome Information", Keyboard.KEY_I, "enhancedbiomes");
-	
-	public KeyBindingHandler() 
-	{
+
+	public KeyBindingHandler() {
 		ClientRegistry.registerKeyBinding(biomeInfo);
 	}
-	
-	@SubscribeEvent
-	public void KeyInputEvent(cpw.mods.fml.common.gameevent.InputEvent.KeyInputEvent event) 
-	{
-		if(biomeInfo.isPressed())
-		{
-			EntityPlayer player = FMLClientHandler.instance().getClient().thePlayer;
-			if (player == null) return;
 
-			if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD7))
-			{
+	@SubscribeEvent
+	public void KeyInputEvent(cpw.mods.fml.common.gameevent.InputEvent.KeyInputEvent event) {
+		if(biomeInfo.isPressed()) {
+			EntityPlayer player = FMLClientHandler.instance().getClient().thePlayer;
+			if(player == null) return;
+
+			if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD7)) {
 				player.getEntityData().setInteger("biomeInfoPos", 0);
 			}
-			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD9))
-			{
+			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD9)) {
 				player.getEntityData().setInteger("biomeInfoPos", 1);
 			}
-			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD1))
-			{
+			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD1)) {
 				player.getEntityData().setInteger("biomeInfoPos", 2);
 			}
-			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD3))
-			{
+			else if(Keyboard.isKeyDown(Keyboard.KEY_NUMPAD3)) {
 				player.getEntityData().setInteger("biomeInfoPos", 3);
 			}
-			else
-			{
+			else {
 				player.getEntityData().setBoolean("biomeInfoDisplay", !player.getEntityData().getBoolean("biomeInfoDisplay"));
 			}
 		}

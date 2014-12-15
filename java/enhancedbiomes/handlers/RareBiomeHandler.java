@@ -18,7 +18,7 @@ import enhancedbiomes.world.biome.base.BiomeGenWetlandBase;
 import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class RareBiomeHandler 
+public class RareBiomeHandler
 {
 	public static void registerRareBiomes() {
 		registerVanilla();
@@ -70,11 +70,11 @@ public class RareBiomeHandler
 	private static void setRareBiome(BiomeGenBase defaultBiome, BiomeGenBase rareBiome) {
 		BiomeGenManager.setRareBiome(defaultBiome.biomeID, rareBiome.biomeID);
 	}
-	
+
 	private static void setRareBiomeTo128(BiomeGenBase defaultBiome) {
 		BiomeGenManager.setRareBiome(defaultBiome.biomeID, get128(defaultBiome));
 	}
-	
+
 	private static int get128(BiomeGenBase defaultBiome) {
 		return defaultBiome.biomeID + 128;
 	}

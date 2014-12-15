@@ -16,54 +16,45 @@ public class WorldGenSphereIfEmpty extends WorldGenerator
 	boolean exception = false;
 	Block exceptionID = Blocks.air;
 	int meta = 0;
-	
-	public WorldGenSphereIfEmpty(Block fill, int meta, int radius)
-	{
+
+	public WorldGenSphereIfEmpty(Block fill, int meta, int radius) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.meta = meta;
 	}
-	
-	public WorldGenSphereIfEmpty(Block fill, int radius, boolean exception, Block exceptionID)
-	{
+
+	public WorldGenSphereIfEmpty(Block fill, int radius, boolean exception, Block exceptionID) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.exception = exception;
 		this.exceptionID = exceptionID;
 	}
-	
+
 	@Override
-	public boolean generate(World par1World, Random par2Random, int x, int y, int z) 
-	{
+	public boolean generate(World par1World, Random par2Random, int x, int y, int z) {
 		int baseX = x;
 		int baseY = y;
 		int baseZ = z;
 
 		int radiusSq = radius * radius;
 
-		for (int posX = -radius; posX <= radius; posX++) 
-		{
-			for (int posY = -radius; posY <= radius; posY++) 
-			{
-				for (int posZ = -radius; posZ <= radius; posZ++) 
-				{
+		for(int posX = -radius; posX <= radius; posX++) {
+			for(int posY = -radius; posY <= radius; posY++) {
+				for(int posZ = -radius; posZ <= radius; posZ++) {
 					int distance = posX * posX + posY * posY + posZ * posZ;
 
-					if (distance <= radiusSq) 
-					{
-						if(par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID && this.exception == true)
-						{
-							
+					if(distance <= radiusSq) {
+						if(par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID && this.exception == true) {
+
 						}
-						else
-						{
+						else {
 							setBlockIfEmpty(posX + baseX, posY + baseY, posZ + baseZ, this.fillId, this.meta, 3, par1World);
 						}
 					}
 				}
 			}
 		}
-		
+
 		return true;
 	}
 }

@@ -13,21 +13,18 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenWoodlands extends BiomeGenWoodlandBase
 {
-    public BiomeGenWoodlands(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
-        this.theBiomeDecorator.treesPerChunk = 5;
-        this.theBiomeDecorator.grassPerChunk = 10;
-    }
+	public BiomeGenWoodlands(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
+		this.theBiomeDecorator.treesPerChunk = 5;
+		this.theBiomeDecorator.grassPerChunk = 10;
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    @Override
-    public WorldGenAbstractTree func_150567_a(Random par1Random)
-    {
-        return par1Random.nextInt(5) == 0 ? TreeGen.aspen(par1Random) : 
-        	   par1Random.nextInt(4) == 0 ? TreeGen.birch() : (new WorldGenTrees(true, 5, 0, 0, false));
-    }
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	@Override
+	public WorldGenAbstractTree func_150567_a(Random par1Random) {
+		return par1Random.nextInt(5) == 0 ? TreeGen.aspen(par1Random) : par1Random.nextInt(4) == 0 ? TreeGen.birch() : (new WorldGenTrees(true, 5, 0, 0, false));
+	}
 }

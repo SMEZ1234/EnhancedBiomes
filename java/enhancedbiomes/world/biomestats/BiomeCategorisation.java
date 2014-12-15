@@ -81,6 +81,6 @@ public enum BiomeCategorisation {
 			System.err.println(list[a].biomeName);
 		}*/
 		
-		return list;	
+		return list;
 	}
 }

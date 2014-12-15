@@ -10,7 +10,7 @@ import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.world.MapGenCavesEnhancedBiomes;
 import enhancedbiomes.world.MapGenRavineEnhancedBiomes;
 
-public class UseHoeEventHandler 
+public class UseHoeEventHandler
 {
 	@SubscribeEvent
 	public void tillDirt(UseHoeEvent e) {

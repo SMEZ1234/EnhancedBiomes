@@ -31,10 +31,10 @@ public class ReplaceBiomeBlocksHandler
 	private static double[] stoneNoise = new double[256];
 	private static double[] stoneVariantNoise = new double[256];
 	private static NoiseGeneratorPerlin perlin;
-	
+
 	private final int maxDuneComp = 5;
 	private final int rateDuneComp = 4;
-	
+
 	public ReplaceBiomeBlocksHandler() {
 	}
 
@@ -43,11 +43,11 @@ public class ReplaceBiomeBlocksHandler
 	public void replaceBlocksForBiome(ReplaceBiomeBlocks e) {
 		if(e.biomeArray != null && (e.chunkProvider instanceof ChunkProviderGenerate || e.chunkProvider instanceof ChunkProviderEnhancedBiomes) && e.world.provider.dimensionId == 0) {
 			if(this.perlin == null) this.perlin = new NoiseGeneratorPerlin(e.world.rand, 4);
-			
+
 			double d0 = 0.03125D;
 			this.stoneNoise = this.perlin.func_151599_a(this.stoneNoise, (double) (e.chunkX * 16), (double) (e.chunkZ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 			this.stoneVariantNoise = this.perlin.func_151599_a(this.stoneVariantNoise, (double) (e.chunkX * 16), (double) (e.chunkZ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
-			
+
 			for(int xInChunk = 0; xInChunk < 16; ++xInChunk) {
 				for(int zInChunk = 0; zInChunk < 16; ++zInChunk) {
 					EnhancedBiomesMod.setStoneNoiseForCoords(e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, this.stoneVariantNoise[zInChunk + xInChunk * 16]);
@@ -116,36 +116,36 @@ public class ReplaceBiomeBlocksHandler
 	}
 
 	private int getTopBlock(Block[] blocks, int preHeightIndex, int heightRange) {
-		for (int h = heightRange - 1; h >= 0; h--)
-			if (blocks[preHeightIndex + h] != null && blocks[preHeightIndex + h].isOpaqueCube()) {
+		for(int h = heightRange - 1; h >= 0; h--)
+			if(blocks[preHeightIndex + h] != null && blocks[preHeightIndex + h].isOpaqueCube()) {
 				return h;
 			}
 		return -1;
 	}
-	
+
 	private int getDuneHeight(int pos) {
 		int[] heights = new int[] {5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 1, 2, 3, 4, 5, 6};
 		if(pos < heights.length) return heights[pos];
 		return 1;
 	}
-	
+
 	private int getDuneModification(int x, int z, boolean biome00, boolean biome01, boolean biome10, boolean biome11) {
 		int mod = 0;
 		if(biome00) {
 			int dis = x + z;
-			mod += Math.max(maxDuneComp - (dis/rateDuneComp), 0);
+			mod += Math.max(maxDuneComp - (dis / rateDuneComp), 0);
 		}
 		if(biome01) {
 			int dis = x + 16 - z;
-			mod += Math.max(maxDuneComp - (dis/rateDuneComp), 0);
+			mod += Math.max(maxDuneComp - (dis / rateDuneComp), 0);
 		}
 		if(biome10) {
 			int dis = 16 - x + z;
-			mod += Math.max(maxDuneComp - (dis/rateDuneComp), 0);
+			mod += Math.max(maxDuneComp - (dis / rateDuneComp), 0);
 		}
 		if(biome11) {
-			int dis =  32 - x - z;
-			mod += Math.max(maxDuneComp - (dis/rateDuneComp), 0);
+			int dis = 32 - x - z;
+			mod += Math.max(maxDuneComp - (dis / rateDuneComp), 0);
 		}
 		return mod;
 	}

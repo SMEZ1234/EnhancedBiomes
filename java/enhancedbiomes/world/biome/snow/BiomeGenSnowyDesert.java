@@ -11,13 +11,12 @@ import net.minecraft.world.gen.feature.WorldGenDesertWells;
 
 public class BiomeGenSnowyDesert extends BiomeGenSnowBase
 {
-    public BiomeGenSnowyDesert(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.clear();
-        this.topBlock = Blocks.sand;
-        this.fillerBlock = Blocks.sand;
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.theBiomeDecorator.deadBushPerChunk = 2;
-    }
+	public BiomeGenSnowyDesert(int par1) {
+		super(par1);
+		this.spawnableCreatureList.clear();
+		this.topBlock = Blocks.sand;
+		this.fillerBlock = Blocks.sand;
+		this.theBiomeDecorator.treesPerChunk = -999;
+		this.theBiomeDecorator.deadBushPerChunk = 2;
+	}
 }

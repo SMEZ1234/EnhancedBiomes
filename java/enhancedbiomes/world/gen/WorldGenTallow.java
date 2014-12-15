@@ -20,9 +20,8 @@ public class WorldGenTallow extends WorldGenAbstractTree
 	Block leavesId;
 	int leavesMeta;
 	int height;
-	
-	public WorldGenTallow(Block woodId, int woodMeta, Block leavesId, int leavesMeta, int height)
-	{
+
+	public WorldGenTallow(Block woodId, int woodMeta, Block leavesId, int leavesMeta, int height) {
 		super(true);
 		this.woodId = woodId;
 		this.woodMeta = woodMeta;
@@ -30,30 +29,25 @@ public class WorldGenTallow extends WorldGenAbstractTree
 		this.leavesMeta = leavesMeta;
 		this.height = height;
 	}
-	
+
 	@Override
-	public boolean generate(World var1, Random var2, int var3, int var4, int var5) 
-	{
-		if(!var1.getBlock(var3, var4 - 1, var5).canSustainPlant(var1, var3, var4 - 1, var5, ForgeDirection.UP, (BlockSaplingEnhancedBiomes)EnhancedBiomesBlocks.saplingEB))
-		{
+	public boolean generate(World var1, Random var2, int var3, int var4, int var5) {
+		if(!var1.getBlock(var3, var4 - 1, var5).canSustainPlant(var1, var3, var4 - 1, var5, ForgeDirection.UP, (BlockSaplingEnhancedBiomes) EnhancedBiomesBlocks.saplingEB)) {
 			return false;
 		}
-		
-		for(int i = 0; i < this.height; i++)
-		{
-			if(var1.getBlock(var3, var4 + i, var5) != Blocks.air)
-			{
+
+		for(int i = 0; i < this.height; i++) {
+			if(var1.getBlock(var3, var4 + i, var5) != Blocks.air) {
 				return false;
 			}
 		}
-		
+
 		new WorldGenHalfEllipsoidIfEmpty(leavesId, 3, 1.25F, leavesMeta).generate(var1, var2, var3, var4 + height - 2, var5);
-		
-		for(int i = 0; i < height; i++)
-		{
+
+		for(int i = 0; i < height; i++) {
 			var1.setBlock(var3, var4 + i, var5, this.woodId, this.woodMeta, 3);
-		}	
-		
+		}
+
 		return true;
 	}
 }

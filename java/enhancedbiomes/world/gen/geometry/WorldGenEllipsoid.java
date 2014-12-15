@@ -18,67 +18,56 @@ public class WorldGenEllipsoid extends WorldGenerator
 	Block exceptionID = Blocks.air;
 	int fillMeta = 0;
 	float variation = 1;
-	
-	public WorldGenEllipsoid(Block fill, int radius, float variation)
-	{
+
+	public WorldGenEllipsoid(Block fill, int radius, float variation) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.variation = variation;
 	}
-	
-	public WorldGenEllipsoid(Block fill, int radius, float variation, int meta)
-	{
+
+	public WorldGenEllipsoid(Block fill, int radius, float variation, int meta) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.fillMeta = meta;
 		this.variation = variation;
 	}
-	
-	public WorldGenEllipsoid(Block fill, int radius, float variation, boolean exception, Block exceptionID)
-	{
+
+	public WorldGenEllipsoid(Block fill, int radius, float variation, boolean exception, Block exceptionID) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.exception = exception;
 		this.exceptionID = exceptionID;
 		this.variation = variation;
 	}
-	
+
 	@Override
-	public boolean generate(World par1World, Random par2Random, int x, int y, int z) 
-	{
+	public boolean generate(World par1World, Random par2Random, int x, int y, int z) {
 		int baseX = x;
 		int baseY = y;
 		int baseZ = z;
 
 		int radiusSq = radius * radius;
 
-		for (int posX = -radius; posX <= radius; posX++) 
-		{
-			for (int posY = -radius; posY <= radius * variation; posY++) 
-			{
-				for (int posZ = -radius; posZ <= radius; posZ++) 
-				{
+		for(int posX = -radius; posX <= radius; posX++) {
+			for(int posY = -radius; posY <= radius * variation; posY++) {
+				for(int posZ = -radius; posZ <= radius; posZ++) {
 					int distance = (int) (posX * posX + posY * posY / variation / variation + posZ * posZ);
 
-					if (distance <= radiusSq) 
-					{
-						if(this.exception == true && par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID)
-						{
-							
+					if(distance <= radiusSq) {
+						if(this.exception == true && par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID) {
+
 						}
-						else if(fillId instanceof BlockLeavesBase)
-						{
+						else if(fillId instanceof BlockLeavesBase) {
 							setBlockIfEmpty(posX + baseX, posY + baseY, posZ + baseZ, this.fillId, this.fillMeta, 3, par1World);
 						}
-						else
-						{
+						else {
 							par1World.setBlock(posX + baseX, posY + baseY, posZ + baseZ, this.fillId, this.fillMeta, 3);
 						}
 					}
 				}
 			}
 		}
-		
+
 		return true;
 	}
 }

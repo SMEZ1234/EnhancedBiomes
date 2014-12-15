@@ -15,8 +15,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class ClientProxy extends CommonProxy
 {
 	@Override
-	public void init() 
-	{  
+	public void init() {
 		FMLCommonHandler.instance().bus().register(new KeyBindingHandler());
 		MinecraftForge.EVENT_BUS.register(new EnhancedBiomesGUIDisplay(Minecraft.getMinecraft()));
 	}

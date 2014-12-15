@@ -7,8 +7,8 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-public class BlockOreRenderer implements ISimpleBlockRenderingHandler {
-
+public class BlockOreRenderer implements ISimpleBlockRenderingHandler
+{
 	public static final int renderID = RenderingRegistry.getNextAvailableRenderId();
 
 	@Override
@@ -21,8 +21,7 @@ public class BlockOreRenderer implements ISimpleBlockRenderingHandler {
 	public boolean renderWorldBlock(IBlockAccess blockAccess, int x, int y, int z, Block block, int modelID, RenderBlocks renderer) {
 		RenderOreEB rendererEB = new RenderOreEB(renderer.blockAccess, renderer);
 
-		if (!renderer.hasOverrideBlockTexture())
-			rendererEB.renderOreBlock(block, x, y, z);
+		if(!renderer.hasOverrideBlockTexture()) rendererEB.renderOreBlock(block, x, y, z);
 		else renderer.renderStandardBlock(block, x, y, z);
 
 		return true;

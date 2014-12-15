@@ -15,25 +15,18 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenBorealArchipelago extends BiomeGenArchipelagoBase
 {
-    public BiomeGenBorealArchipelago(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
-        this.theBiomeDecorator.treesPerChunk = 10;
-        this.theBiomeDecorator.grassPerChunk = 5;
-    }
+	public BiomeGenBorealArchipelago(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
+		this.theBiomeDecorator.treesPerChunk = 10;
+		this.theBiomeDecorator.grassPerChunk = 5;
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    @Override
-    public WorldGenAbstractTree func_150567_a(Random par1Random)
-    {
-        return 	par1Random.nextInt(6) == 0 ? TreeGen.pine(par1Random) : 
-        		par1Random.nextInt(5) == 0 ? TreeGen.cypress(par1Random) : 
-        		par1Random.nextInt(4) == 0 ? TreeGen.fir_large(par1Random) :  
-        		par1Random.nextInt(3) == 0 ? new WorldGenTaiga2(false) :  
-        		par1Random.nextInt(10) == 0 ? TreeGen.silverPine(par1Random) :  
-        	    new WorldGenTaiga1();
-    }
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	@Override
+	public WorldGenAbstractTree func_150567_a(Random par1Random) {
+		return par1Random.nextInt(6) == 0 ? TreeGen.pine(par1Random) : par1Random.nextInt(5) == 0 ? TreeGen.cypress(par1Random) : par1Random.nextInt(4) == 0 ? TreeGen.fir_large(par1Random) : par1Random.nextInt(3) == 0 ? new WorldGenTaiga2(false) : par1Random.nextInt(10) == 0 ? TreeGen.silverPine(par1Random) : new WorldGenTaiga1();
+	}
 }

@@ -12,33 +12,28 @@ import enhancedbiomes.village.StructureVillagePiecesEB;
 
 public class House3 extends StructureVillagePiecesEB.Village
 {
-	public House3() {}
+	public House3() {
+	}
 
-	public House3(StructureVillagePiecesEB.Start p_i2106_1_, int p_i2106_2_, Random p_i2106_3_, StructureBoundingBox p_i2106_4_, int p_i2106_5_)
-	{
+	public House3(StructureVillagePiecesEB.Start p_i2106_1_, int p_i2106_2_, Random p_i2106_3_, StructureBoundingBox p_i2106_4_, int p_i2106_5_) {
 		super(p_i2106_1_, p_i2106_2_);
 		this.coordBaseMode = p_i2106_5_;
 		this.boundingBox = p_i2106_4_;
 	}
 
-	public static House3 getPiece(StructureVillagePiecesEB.Start p_74921_0_, List p_74921_1_, Random p_74921_2_, int p_74921_3_, int p_74921_4_, int p_74921_5_, int p_74921_6_, int p_74921_7_)
-	{
+	public static House3 getPiece(StructureVillagePiecesEB.Start p_74921_0_, List p_74921_1_, Random p_74921_2_, int p_74921_3_, int p_74921_4_, int p_74921_5_, int p_74921_6_, int p_74921_7_) {
 		StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74921_3_, p_74921_4_, p_74921_5_, 0, 0, 0, 9, 7, 12, p_74921_6_);
 		return canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(p_74921_1_, structureboundingbox) == null ? new House3(p_74921_0_, p_74921_7_, p_74921_2_, structureboundingbox, p_74921_6_) : null;
 	}
 
 	/**
-	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-	 * Mineshafts at the end, it adds Fences...
+	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes Mineshafts at the end, it adds Fences...
 	 */
-	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
-	{
-		if (this.field_143015_k < 0)
-		{
+	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_) {
+		if(this.field_143015_k < 0) {
 			this.field_143015_k = this.getAverageGroundLevel(p_74875_1_, p_74875_3_);
 
-			if (this.field_143015_k < 0)
-			{
+			if(this.field_143015_k < 0) {
 				return true;
 			}
 
@@ -70,14 +65,11 @@ public class House3 extends StructureVillagePiecesEB.Village
 		int k;
 		int l;
 
-		for (k = -1; k <= 2; ++k)
-		{
-			for (l = 0; l <= 8; ++l)
-			{
+		for(k = -1; k <= 2; ++k) {
+			for(l = 0; l <= 8; ++l) {
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, i, l, 4 + k, k, p_74875_3_);
 
-				if ((k > -1 || l <= 1) && (k > 0 || l <= 3) && (k > 1 || l <= 4 || l >= 6))
-				{
+				if((k > -1 || l <= 1) && (k > 0 || l <= 3) && (k > 1 || l <= 4 || l >= 6)) {
 					this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, j, l, 4 + k, 5 - k, p_74875_3_);
 				}
 			}
@@ -91,12 +83,10 @@ public class House3 extends StructureVillagePiecesEB.Village
 		k = this.getMetadataWithOffset(Blocks.oak_stairs, 0);
 		int i1;
 
-		for (l = 4; l >= 1; --l)
-		{
+		for(l = 4; l >= 1; --l) {
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.planks, 0, l, 2 + l, 7 - l, p_74875_3_);
 
-			for (i1 = 8 - l; i1 <= 10; ++i1)
-			{
+			for(i1 = 8 - l; i1 <= 10; ++i1) {
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, k, l, 2 + l, i1, p_74875_3_);
 			}
 		}
@@ -107,10 +97,8 @@ public class House3 extends StructureVillagePiecesEB.Village
 		this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, l, 6, 6, 4, p_74875_3_);
 		int j1;
 
-		for (i1 = 6; i1 <= 8; ++i1)
-		{
-			for (j1 = 5; j1 <= 10; ++j1)
-			{
+		for(i1 = 6; i1 <= 8; ++i1) {
+			for(j1 = 5; j1 <= 10; ++j1) {
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, l, i1, 12 - i1, j1, p_74875_3_);
 			}
 		}
@@ -145,24 +133,19 @@ public class House3 extends StructureVillagePiecesEB.Village
 		this.placeDoorAtCurrentPosition(p_74875_1_, p_74875_3_, p_74875_2_, 2, 1, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
 		this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 0, -1, 3, 2, -1, Blocks.air, Blocks.air, false);
 
-		if (this.getBlockAtCurrentPosition(p_74875_1_, 2, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 2, -1, -1, p_74875_3_).getMaterial() != Material.air)
-		{
+		if(this.getBlockAtCurrentPosition(p_74875_1_, 2, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 2, -1, -1, p_74875_3_).getMaterial() != Material.air) {
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), 2, 0, -1, p_74875_3_);
 		}
 
-		for (i1 = 0; i1 < 5; ++i1)
-		{
-			for (j1 = 0; j1 < 9; ++j1)
-			{
+		for(i1 = 0; i1 < 5; ++i1) {
+			for(j1 = 0; j1 < 9; ++j1) {
 				this.clearCurrentPositionBlocksUpwards(p_74875_1_, j1, 7, i1, p_74875_3_);
 				this.func_151554_b(p_74875_1_, Blocks.cobblestone, 0, j1, -1, i1, p_74875_3_);
 			}
 		}
 
-		for (i1 = 5; i1 < 11; ++i1)
-		{
-			for (j1 = 2; j1 < 9; ++j1)
-			{
+		for(i1 = 5; i1 < 11; ++i1) {
+			for(j1 = 2; j1 < 9; ++j1) {
 				this.clearCurrentPositionBlocksUpwards(p_74875_1_, j1, 7, i1, p_74875_3_);
 				this.func_151554_b(p_74875_1_, Blocks.cobblestone, 0, j1, -1, i1, p_74875_3_);
 			}

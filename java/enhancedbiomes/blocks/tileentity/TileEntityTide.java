@@ -3,10 +3,10 @@ package enhancedbiomes.blocks.tileentity;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityTide extends TileEntity 
+public class TileEntityTide extends TileEntity
 {
 	int c = 0;
-	
+
 	//TODO Tides
 	/*public void updateEntity() 
 	{

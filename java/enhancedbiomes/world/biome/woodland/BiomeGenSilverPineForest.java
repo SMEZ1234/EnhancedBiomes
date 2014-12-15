@@ -12,20 +12,18 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenSilverPineForest extends BiomeGenWoodlandBase
 {
-    public BiomeGenSilverPineForest(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
-        this.theBiomeDecorator.treesPerChunk = 10;
-        this.theBiomeDecorator.grassPerChunk = 5;
-    }
+	public BiomeGenSilverPineForest(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
+		this.theBiomeDecorator.treesPerChunk = 10;
+		this.theBiomeDecorator.grassPerChunk = 5;
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    @Override
-    public WorldGenAbstractTree func_150567_a(Random rand)
-    {
-        return rand.nextInt(2) == 0 ? TreeGen.cypress(rand) : TreeGen.silverPine(rand);
-    }
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	@Override
+	public WorldGenAbstractTree func_150567_a(Random rand) {
+		return rand.nextInt(2) == 0 ? TreeGen.cypress(rand) : TreeGen.silverPine(rand);
+	}
 }

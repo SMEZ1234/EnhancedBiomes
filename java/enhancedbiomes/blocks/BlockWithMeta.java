@@ -5,10 +5,11 @@ import static net.minecraft.init.Blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 
-public class BlockWithMeta {		
+public class BlockWithMeta
+{
 	public Block block;
 	public byte meta;
-	
+
 	public BlockWithMeta(Block block, int meta) {
 		this.block = block;
 		this.meta = (byte) meta;
@@ -21,7 +22,7 @@ public class BlockWithMeta {
 	public static BlockWithMeta limestone;
 	public static BlockWithMeta slate;
 	public static BlockWithMeta rhyolite;
-	
+
 	public static BlockWithMeta chalk;
 	public static BlockWithMeta marble;
 	public static BlockWithMeta dolomite;
@@ -42,7 +43,7 @@ public class BlockWithMeta {
 	public static BlockWithMeta[] rocksIgneous;
 	public static BlockWithMeta[] rocksMetamorphic;
 	public static BlockWithMeta[] rocksSedimentary;
-	
+
 	public static void createList() {
 		stone = new BlockWithMeta(Blocks.stone, 0);
 		basalt = new BlockWithMeta(stoneEB, 0);
@@ -51,7 +52,7 @@ public class BlockWithMeta {
 		limestone = new BlockWithMeta(stoneEB, 3);
 		slate = new BlockWithMeta(stoneEB, 4);
 		rhyolite = new BlockWithMeta(stoneEB, 5);
-		
+
 		chalk = new BlockWithMeta(stoneEB, 6);
 		marble = new BlockWithMeta(stoneEB, 7);
 		dolomite = new BlockWithMeta(stoneEB, 8);
@@ -69,8 +70,8 @@ public class BlockWithMeta {
 		mollisol = new BlockWithMeta(dirtEB, 6);
 		oxisol = new BlockWithMeta(dirtEB, 7);
 
-		rocksIgneous = new BlockWithMeta[]{basalt, rhyolite, gabbro, dacite};
-		rocksMetamorphic = new BlockWithMeta[]{slate, marble, schist};
-		rocksSedimentary = new BlockWithMeta[]{shale, sandstone, limestone, chalk, dolomite, chert};
+		rocksIgneous = new BlockWithMeta[] {basalt, rhyolite, gabbro, dacite};
+		rocksMetamorphic = new BlockWithMeta[] {slate, marble, schist};
+		rocksSedimentary = new BlockWithMeta[] {shale, sandstone, limestone, chalk, dolomite, chert};
 	}
 }

@@ -15,40 +15,34 @@ public class WorldGenCylinderIfEmpty extends WorldGenerator
 	int fillMeta = 0;
 	int radius;
 	int height;
-	
-	public WorldGenCylinderIfEmpty(Block fill, int meta, int radius, int height)
-	{
+
+	public WorldGenCylinderIfEmpty(Block fill, int meta, int radius, int height) {
 		this.fillId = fill;
 		this.fillMeta = meta;
 		this.radius = radius;
 		this.height = height;
 	}
-	
+
 	@Override
-	public boolean generate(World par1World, Random par2Random, int x, int y, int z) 
-	{
+	public boolean generate(World par1World, Random par2Random, int x, int y, int z) {
 		int baseX = x;
 		int baseY = y;
 		int baseZ = z;
 
 		int radiusSq = radius * radius;
 
-		for (int varY = 0; varY < height; varY++)
-		{
-			for (int posX = -radius; posX <= radius; posX++) 
-			{
-				for (int posZ = -radius; posZ <= radius; posZ++) 
-				{
+		for(int varY = 0; varY < height; varY++) {
+			for(int posX = -radius; posX <= radius; posX++) {
+				for(int posZ = -radius; posZ <= radius; posZ++) {
 					int distance = posX * posX + posZ * posZ;
 
-					if (distance <= radiusSq) 
-					{
+					if(distance <= radiusSq) {
 						setBlockIfEmpty(posX + baseX, varY + baseY, posZ + baseZ, this.fillId, this.fillMeta, 3, par1World);
 					}
 				}
 			}
 		}
-		
+
 		return true;
 	}
 }

@@ -11,10 +11,9 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenLowHills extends BiomeGenPlainsBase
 {
-    public BiomeGenLowHills(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 5, 2, 6));
-        this.theBiomeDecorator.grassPerChunk = -999;
-    }
+	public BiomeGenLowHills(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 5, 2, 6));
+		this.theBiomeDecorator.grassPerChunk = -999;
+	}
 }

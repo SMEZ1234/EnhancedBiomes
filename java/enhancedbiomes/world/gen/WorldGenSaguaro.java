@@ -9,7 +9,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.util.ForgeDirection;
 import static enhancedbiomes.blocks.EnhancedBiomesBlocks.saguaro;
 
-public class WorldGenSaguaro extends WorldGenerator {
+public class WorldGenSaguaro extends WorldGenerator
+{
 	@Override
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 		if(world.getBlock(x, y - 1, z).canSustainPlant(world, x, y - 1, z, ForgeDirection.UP, saguaro)) {
@@ -22,9 +23,9 @@ public class WorldGenSaguaro extends WorldGenerator {
 			}
 			if(world.getBlock(x, y, z) != Blocks.air) return false;
 			if(world.getBlock(x, y + 1, z) != Blocks.air) return false;
-			
+
 			int height = 1;
-			
+
 			world.setBlock(x, y, z, saguaro, 0, 3);
 			world.setBlock(x, y + 1, z, saguaro, 0, 3);
 			world.setBlock(x, y + 2, z, saguaro, 0, 3);
@@ -49,19 +50,19 @@ public class WorldGenSaguaro extends WorldGenerator {
 				world.setBlock(x + 2, y + 2 + height, z, saguaro, 2, 3);
 			}
 			else world.setBlock(x + 2, y + 1 + height, z, saguaro, 2, 3);
-			
+
 			if(rand.nextInt(2) == 0) {
 				world.setBlock(x - 2, y + 1 + height, z, saguaro, 0, 3);
 				world.setBlock(x - 2, y + 2 + height, z, saguaro, 2, 3);
 			}
 			else world.setBlock(x - 2, y + 1 + height, z, saguaro, 2, 3);
-			
+
 			if(rand.nextInt(2) == 0) {
 				world.setBlock(x, y + 1 + height, z + 2, saguaro, 0, 3);
 				world.setBlock(x, y + 2 + height, z + 2, saguaro, 2, 3);
 			}
 			else world.setBlock(x, y + 1 + height, z + 2, saguaro, 2, 3);
-			
+
 			if(rand.nextInt(2) == 0) {
 				world.setBlock(x, y + 1 + height, z - 2, saguaro, 0, 3);
 				world.setBlock(x, y + 2 + height, z - 2, saguaro, 2, 3);

@@ -10,15 +10,14 @@ import net.minecraft.world.gen.feature.*;
 
 public class BiomeGenIceSheet extends BiomeGenSnowBase
 {
-    public BiomeGenIceSheet(int par1)
-    {
-        super(par1);
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.topBlock = Blocks.ice;
-        this.fillerBlock = Blocks.ice;
-    }
-    
-    /**
+	public BiomeGenIceSheet(int par1) {
+		super(par1);
+		this.theBiomeDecorator.treesPerChunk = -999;
+		this.topBlock = Blocks.ice;
+		this.fillerBlock = Blocks.ice;
+	}
+
+	/**
 	 * takes temperature, returns color
 	 */
 	/*@Override

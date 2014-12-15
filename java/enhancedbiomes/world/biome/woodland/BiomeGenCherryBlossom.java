@@ -13,20 +13,18 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenCherryBlossom extends BiomeGenWoodlandBase
 {
-    public BiomeGenCherryBlossom(int par1)
-    {
-        super(par1);
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
-        this.theBiomeDecorator.treesPerChunk = 3;
-        this.theBiomeDecorator.grassPerChunk = 2;
-    }
+	public BiomeGenCherryBlossom(int par1) {
+		super(par1);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
+		this.theBiomeDecorator.treesPerChunk = 3;
+		this.theBiomeDecorator.grassPerChunk = 2;
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    @Override
-    public WorldGenAbstractTree func_150567_a(Random par1Random)
-    {
-    	return (WorldGenAbstractTree)(TreeGen.cherry(par1Random));
-    }
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	@Override
+	public WorldGenAbstractTree func_150567_a(Random par1Random) {
+		return (WorldGenAbstractTree) (TreeGen.cherry(par1Random));
+	}
 }

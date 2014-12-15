@@ -12,33 +12,28 @@ import enhancedbiomes.village.StructureVillagePiecesEB;
 
 public class Hall extends StructureVillagePiecesEB.Village
 {
-	public Hall() {}
+	public Hall() {
+	}
 
-	public Hall(StructureVillagePiecesEB.Start p_i2099_1_, int p_i2099_2_, Random p_i2099_3_, StructureBoundingBox p_i2099_4_, int p_i2099_5_)
-	{
+	public Hall(StructureVillagePiecesEB.Start p_i2099_1_, int p_i2099_2_, Random p_i2099_3_, StructureBoundingBox p_i2099_4_, int p_i2099_5_) {
 		super(p_i2099_1_, p_i2099_2_);
 		this.coordBaseMode = p_i2099_5_;
 		this.boundingBox = p_i2099_4_;
 	}
 
-	public static Hall getPiece(StructureVillagePiecesEB.Start p_74906_0_, List p_74906_1_, Random p_74906_2_, int p_74906_3_, int p_74906_4_, int p_74906_5_, int p_74906_6_, int p_74906_7_)
-	{
+	public static Hall getPiece(StructureVillagePiecesEB.Start p_74906_0_, List p_74906_1_, Random p_74906_2_, int p_74906_3_, int p_74906_4_, int p_74906_5_, int p_74906_6_, int p_74906_7_) {
 		StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74906_3_, p_74906_4_, p_74906_5_, 0, 0, 0, 9, 7, 11, p_74906_6_);
 		return canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(p_74906_1_, structureboundingbox) == null ? new Hall(p_74906_0_, p_74906_7_, p_74906_2_, structureboundingbox, p_74906_6_) : null;
 	}
 
 	/**
-	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-	 * Mineshafts at the end, it adds Fences...
+	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes Mineshafts at the end, it adds Fences...
 	 */
-	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
-	{
-		if (this.field_143015_k < 0)
-		{
+	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_) {
+		if(this.field_143015_k < 0) {
 			this.field_143015_k = this.getAverageGroundLevel(p_74875_1_, p_74875_3_);
 
-			if (this.field_143015_k < 0)
-			{
+			if(this.field_143015_k < 0) {
 				return true;
 			}
 
@@ -71,10 +66,8 @@ public class Hall extends StructureVillagePiecesEB.Village
 		int k;
 		int l;
 
-		for (k = -1; k <= 2; ++k)
-		{
-			for (l = 0; l <= 8; ++l)
-			{
+		for(k = -1; k <= 2; ++k) {
+			for(l = 0; l <= 8; ++l) {
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, i, l, 4 + k, k, p_74875_3_);
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, j, l, 4 + k, 5 - k, p_74875_3_);
 			}
@@ -105,8 +98,7 @@ public class Hall extends StructureVillagePiecesEB.Village
 		this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.torch, 0, 2, 3, 1, p_74875_3_);
 		this.placeDoorAtCurrentPosition(p_74875_1_, p_74875_3_, p_74875_2_, 2, 1, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
 
-		if (this.getBlockAtCurrentPosition(p_74875_1_, 2, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 2, -1, -1, p_74875_3_).getMaterial() != Material.air)
-		{
+		if(this.getBlockAtCurrentPosition(p_74875_1_, 2, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 2, -1, -1, p_74875_3_).getMaterial() != Material.air) {
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), 2, 0, -1, p_74875_3_);
 		}
 
@@ -115,10 +107,8 @@ public class Hall extends StructureVillagePiecesEB.Village
 		this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.torch, 0, 6, 3, 4, p_74875_3_);
 		this.placeDoorAtCurrentPosition(p_74875_1_, p_74875_3_, p_74875_2_, 6, 1, 5, this.getMetadataWithOffset(Blocks.wooden_door, 1));
 
-		for (k = 0; k < 5; ++k)
-		{
-			for (l = 0; l < 9; ++l)
-			{
+		for(k = 0; k < 5; ++k) {
+			for(l = 0; l < 9; ++l) {
 				this.clearCurrentPositionBlocksUpwards(p_74875_1_, l, 7, k, p_74875_3_);
 				this.func_151554_b(p_74875_1_, Blocks.cobblestone, 0, l, -1, k, p_74875_3_);
 			}
@@ -131,8 +121,7 @@ public class Hall extends StructureVillagePiecesEB.Village
 	/**
 	 * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
 	 */
-	protected int getVillagerType(int p_74888_1_)
-	{
+	protected int getVillagerType(int p_74888_1_) {
 		return p_74888_1_ == 0 ? 4 : 0;
 	}
 }

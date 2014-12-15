@@ -19,28 +19,24 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeGenFirForest extends BiomeGenSnowForestBase
 {
-	
-    public BiomeGenFirForest(int par1)
-    {
-        super(par1);
-        this.theBiomeDecorator.treesPerChunk = 5;
-        this.theBiomeDecorator.grassPerChunk = 10;
-    }
+	public BiomeGenFirForest(int par1) {
+		super(par1);
+		this.theBiomeDecorator.treesPerChunk = 5;
+		this.theBiomeDecorator.grassPerChunk = 10;
+	}
 
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    @Override
-    public WorldGenAbstractTree func_150567_a(Random par1Random)
-    {
-        return (WorldGenAbstractTree)(par1Random.nextInt(10) == 0 ? TreeGen.fir_large(par1Random) : TreeGen.fir(par1Random));
-    }
-    
-    /**
-     * Gets a WorldGen appropriate for this biome.
-     */
-    public WorldGenerator getRandomWorldGenForGrass(Random par1Random)
-    {
-        return new WorldGenTallGrass(Blocks.tallgrass, 2);
-    }
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	@Override
+	public WorldGenAbstractTree func_150567_a(Random par1Random) {
+		return (WorldGenAbstractTree) (par1Random.nextInt(10) == 0 ? TreeGen.fir_large(par1Random) : TreeGen.fir(par1Random));
+	}
+
+	/**
+	 * Gets a WorldGen appropriate for this biome.
+	 */
+	public WorldGenerator getRandomWorldGenForGrass(Random par1Random) {
+		return new WorldGenTallGrass(Blocks.tallgrass, 2);
+	}
 }

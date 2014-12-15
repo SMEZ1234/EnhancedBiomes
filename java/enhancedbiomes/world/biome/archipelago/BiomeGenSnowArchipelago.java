@@ -5,8 +5,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenSnowArchipelago extends BiomeGenArchipelagoBase
 {
-    public BiomeGenSnowArchipelago(int par1)
-    {
-        super(par1);
-    }
+	public BiomeGenSnowArchipelago(int par1) {
+		super(par1);
+	}
 }

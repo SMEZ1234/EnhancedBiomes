@@ -12,33 +12,28 @@ import enhancedbiomes.village.StructureVillagePiecesEB;
 
 public class House1 extends StructureVillagePiecesEB.Village
 {
-	public House1() {}
+	public House1() {
+	}
 
-	public House1(StructureVillagePiecesEB.Start p_i2094_1_, int p_i2094_2_, Random p_i2094_3_, StructureBoundingBox p_i2094_4_, int p_i2094_5_)
-	{
+	public House1(StructureVillagePiecesEB.Start p_i2094_1_, int p_i2094_2_, Random p_i2094_3_, StructureBoundingBox p_i2094_4_, int p_i2094_5_) {
 		super(p_i2094_1_, p_i2094_2_);
 		this.coordBaseMode = p_i2094_5_;
 		this.boundingBox = p_i2094_4_;
 	}
 
-	public static House1 getPiece(StructureVillagePiecesEB.Start p_74898_0_, List p_74898_1_, Random p_74898_2_, int p_74898_3_, int p_74898_4_, int p_74898_5_, int p_74898_6_, int p_74898_7_)
-	{
+	public static House1 getPiece(StructureVillagePiecesEB.Start p_74898_0_, List p_74898_1_, Random p_74898_2_, int p_74898_3_, int p_74898_4_, int p_74898_5_, int p_74898_6_, int p_74898_7_) {
 		StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74898_3_, p_74898_4_, p_74898_5_, 0, 0, 0, 9, 9, 6, p_74898_6_);
 		return canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(p_74898_1_, structureboundingbox) == null ? new House1(p_74898_0_, p_74898_7_, p_74898_2_, structureboundingbox, p_74898_6_) : null;
 	}
 
 	/**
-	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-	 * Mineshafts at the end, it adds Fences...
+	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes Mineshafts at the end, it adds Fences...
 	 */
-	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
-	{
-		if (this.field_143015_k < 0)
-		{
+	public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_) {
+		if(this.field_143015_k < 0) {
 			this.field_143015_k = this.getAverageGroundLevel(p_74875_1_, p_74875_3_);
 
-			if (this.field_143015_k < 0)
-			{
+			if(this.field_143015_k < 0) {
 				return true;
 			}
 
@@ -55,10 +50,8 @@ public class House1 extends StructureVillagePiecesEB.Village
 		int k;
 		int l;
 
-		for (k = -1; k <= 2; ++k)
-		{
-			for (l = 0; l <= 8; ++l)
-			{
+		for(k = -1; k <= 2; ++k) {
+			for(l = 0; l <= 8; ++l) {
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, i, l, 6 + k, k, p_74875_3_);
 				this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.oak_stairs, j, l, 6 + k, 5 - k, p_74875_3_);
 			}
@@ -113,15 +106,12 @@ public class House1 extends StructureVillagePiecesEB.Village
 		this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.air, 0, 1, 2, 0, p_74875_3_);
 		this.placeDoorAtCurrentPosition(p_74875_1_, p_74875_3_, p_74875_2_, 1, 1, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
 
-		if (this.getBlockAtCurrentPosition(p_74875_1_, 1, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 1, -1, -1, p_74875_3_).getMaterial() != Material.air)
-		{
+		if(this.getBlockAtCurrentPosition(p_74875_1_, 1, 0, -1, p_74875_3_).getMaterial() == Material.air && this.getBlockAtCurrentPosition(p_74875_1_, 1, -1, -1, p_74875_3_).getMaterial() != Material.air) {
 			this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), 1, 0, -1, p_74875_3_);
 		}
 
-		for (l = 0; l < 6; ++l)
-		{
-			for (int i1 = 0; i1 < 9; ++i1)
-			{
+		for(l = 0; l < 6; ++l) {
+			for(int i1 = 0; i1 < 9; ++i1) {
 				this.clearCurrentPositionBlocksUpwards(p_74875_1_, i1, 9, l, p_74875_3_);
 				this.func_151554_b(p_74875_1_, Blocks.cobblestone, 0, i1, -1, l, p_74875_3_);
 			}
@@ -134,8 +124,7 @@ public class House1 extends StructureVillagePiecesEB.Village
 	/**
 	 * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
 	 */
-	protected int getVillagerType(int p_74888_1_)
-	{
+	protected int getVillagerType(int p_74888_1_) {
 		return 1;
 	}
 }

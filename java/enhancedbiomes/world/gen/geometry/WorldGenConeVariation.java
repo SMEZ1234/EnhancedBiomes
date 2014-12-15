@@ -16,41 +16,35 @@ public class WorldGenConeVariation extends WorldGenerator
 	int height;
 	int dx;
 	int dz;
-	
-	public WorldGenConeVariation(Block fill, int radius, int height, int dx, int dz)
-	{
+
+	public WorldGenConeVariation(Block fill, int radius, int height, int dx, int dz) {
 		this.fillId = fill;
 		this.radius = radius;
 		this.height = height;
 		this.dx = dx;
 		this.dz = dz;
 	}
-	
+
 	@Override
-	public boolean generate(World par1World, Random par2Random, int x, int y, int z) 
-	{
+	public boolean generate(World par1World, Random par2Random, int x, int y, int z) {
 		double radiusSq = radius * radius;
 
-		for (int posX =  -radius; posX <=  radius; posX++) 
-		{
-			for (int posZ = -radius; posZ <= radius; posZ++) 
-			{
+		for(int posX = -radius; posX <= radius; posX++) {
+			for(int posZ = -radius; posZ <= radius; posZ++) {
 				int distance = posX * posX + posZ * posZ;
 
-				if (distance <= radiusSq) 
-				{
-					for(int b = 0; b < height; b++)
-					{
+				if(distance <= radiusSq) {
+					for(int b = 0; b < height; b++) {
 						double ax = (double) posX - dx / ((double) height) * ((double) height - b);
 						double az = (double) posZ - dz / ((double) height) * ((double) height - b);
 						System.out.println(ax + ", " + az);
-						
+
 						par1World.setBlock(x + (int) ax, b + y - 1, z + (int) az, this.fillId, 0, 3);
 					}
 				}
 			}
 		}
-		
+
 		/*for(int b = 1; b <= height; b++)
 		{
 			double i = (double) radius / ((double) height) * ((double) height - b);
@@ -70,7 +64,7 @@ public class WorldGenConeVariation extends WorldGenerator
 				}
 			}
 		}*/
-		
+
 		return true;
 	}
 }

@@ -10,38 +10,33 @@ import net.minecraft.util.IIcon;
 
 public class ItemBlockLogBirch extends ItemBlockWithMetadata
 {
-    private Block theBlock;
-    static String[] names = BlockLogBirch.woodType;
+	private Block theBlock;
+	static String[] names = BlockLogBirch.woodType;
 
-    public ItemBlockLogBirch(Block par2Block)
-    {
-        super(par2Block, par2Block);
-        this.theBlock = par2Block;
-        this.setMaxDamage(0);
-        this.setHasSubtypes(true);
-    }
-    
-    @Override
-    public String getUnlocalizedName(ItemStack itemstack)
-    {
-          return getUnlocalizedName() + "." + names[itemstack.getItemDamage()%4];
-    }
-    
-    @SideOnly(Side.CLIENT)
+	public ItemBlockLogBirch(Block par2Block) {
+		super(par2Block, par2Block);
+		this.theBlock = par2Block;
+		this.setMaxDamage(0);
+		this.setHasSubtypes(true);
+	}
 
-    /**
-     * Gets an icon index based on an item's damage value
-     */
-    public IIcon getIconFromDamage(int par1)
-    {
-        return this.theBlock.getIcon(2, par1);
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack itemstack) {
+		return getUnlocalizedName() + "." + names[itemstack.getItemDamage() % 4];
+	}
 
-    /**
-     * Returns the metadata of the block which this Item (ItemBlock) can place
-     */
-    public int getMetadata(int par1)
-    {
-        return par1;
-    }
+	@SideOnly(Side.CLIENT)
+	/**
+	 * Gets an icon index based on an item's damage value
+	 */
+	public IIcon getIconFromDamage(int par1) {
+		return this.theBlock.getIcon(2, par1);
+	}
+
+	/**
+	 * Returns the metadata of the block which this Item (ItemBlock) can place
+	 */
+	public int getMetadata(int par1) {
+		return par1;
+	}
 }

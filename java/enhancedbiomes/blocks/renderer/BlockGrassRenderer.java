@@ -8,10 +8,10 @@ import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import enhancedbiomes.blocks.BlockGrassEB;
 
-public class BlockGrassRenderer implements ISimpleBlockRenderingHandler {
-
+public class BlockGrassRenderer implements ISimpleBlockRenderingHandler
+{
 	public static final int renderID = RenderingRegistry.getNextAvailableRenderId();
-	
+
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
 		RenderGrassEB rendererEB = new RenderGrassEB(renderer.blockAccess, renderer);
@@ -22,8 +22,7 @@ public class BlockGrassRenderer implements ISimpleBlockRenderingHandler {
 	public boolean renderWorldBlock(IBlockAccess blockAccess, int x, int y, int z, Block block, int modelID, RenderBlocks renderer) {
 		RenderGrassEB rendererEB = new RenderGrassEB(renderer.blockAccess, renderer);
 
-		if (!renderer.hasOverrideBlockTexture())
-			rendererEB.renderGrassBlock(block, x, y, z);
+		if(!renderer.hasOverrideBlockTexture()) rendererEB.renderGrassBlock(block, x, y, z);
 		else renderer.renderStandardBlock(block, x, y, z);
 
 		return true;

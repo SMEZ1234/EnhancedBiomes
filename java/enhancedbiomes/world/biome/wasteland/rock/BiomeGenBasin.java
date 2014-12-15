@@ -14,12 +14,11 @@ import net.minecraft.world.gen.feature.*;
 
 public class BiomeGenBasin extends BiomeGenRockBase
 {
-    public BiomeGenBasin(int par1)
-    {
-        super(par1);
-        spawnableWaterCreatureList.clear();
-        spawnableCaveCreatureList.clear();
-        this.topBlock = Blocks.air;
-        this.fillerBlock = Blocks.stone;
-    }
+	public BiomeGenBasin(int par1) {
+		super(par1);
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
+		this.topBlock = Blocks.air;
+		this.fillerBlock = Blocks.stone;
+	}
 }
