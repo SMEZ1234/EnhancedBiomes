@@ -19,8 +19,10 @@ public class BiomeGenWoodlandBase extends BiomeGenEBBase
 		this.theBiomeDecorator = new BiomeDecoratorWoodland();
 	}
 
-	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double[] worldGenNoise) {
-		if(worldGenNoise[x * 16 + z] > 2.5D) treeCheck[x * 16 + z] = false;
+	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
+		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
+		
+		if(worldGenNoise > 2.5D) treeCheck[x * 16 + z] = false;
 		else treeCheck[x * 16 + z] = true;
 	}
 

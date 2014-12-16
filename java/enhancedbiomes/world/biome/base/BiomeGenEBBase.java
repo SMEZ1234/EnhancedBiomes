@@ -9,6 +9,6 @@ public class BiomeGenEBBase extends BiomeGenBase
 		super(id);
 	}
 	
-	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double[] worldGenNoise) {		
+	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {		
 	}
 }

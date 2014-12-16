@@ -50,8 +50,9 @@ public class BiomeGenSahara extends BiomeGenSandBase
 		}
 	}
 
-	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double[] worldGenNoise) {
+	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
 		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
+		
 		boolean biome00 = e.biomeArray[0] != EnhancedBiomesSand.biomeSahara;
 		boolean biome01 = e.biomeArray[15] != EnhancedBiomesSand.biomeSahara;
 		boolean biome10 = e.biomeArray[240] != EnhancedBiomesSand.biomeSahara;

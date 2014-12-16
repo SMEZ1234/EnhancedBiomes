@@ -67,7 +67,7 @@ public class ReplaceBiomeBlocksHandler
 					BiomeGenBase biomegenbase = e.biomeArray[zInChunk + xInChunk * 16];
 
 					if(biomegenbase instanceof BiomeGenEBBase) {
-						((BiomeGenEBBase) biomegenbase).replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
+						((BiomeGenEBBase) biomegenbase).replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise[x * 16 + z]);
 					}
 
 					biomegenbase.genTerrainBlocks(e.world, rand, e.blockArray, e.metaArray, e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, this.stoneNoise[zInChunk + xInChunk * 16]);
