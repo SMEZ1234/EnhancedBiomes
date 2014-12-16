@@ -112,51 +112,51 @@ public class EnhancedBiomesWetland
 	{
 		biomeMangrove = (BiomeGenWetlandBase) (new BiomeGenMangrove(mangroveId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.9F, 0.6F).setHeight(heightPartiallySubmerged).setBiomeName("Mangroves");
 		BiomeGenManager.addWarmBiome(biomeMangrove, mangroveGen);	  
-		if (villageMangrove == true) 			{  BiomeManager.addVillageBiome(biomeMangrove, true);  }
+		if (villageMangrove) BiomeManager.addVillageBiome(biomeMangrove, true);
 		BiomeManager.addStrongholdBiome(biomeMangrove);
 		BiomeWoods.register(biomeMangrove, EnhancedBiomesBlocks.planksEB, 3);
 		
 		biomeEphemeralLake = (BiomeGenWetlandBase) (new BiomeGenEphemeralLake(ephemeralLakeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightPartiallySubmerged).setBiomeName("Ephemeral Lake");
 		BiomeGenManager.addWarmBiome(biomeEphemeralLake, ephemeralLakeGen);
-		if (villageEphemeralLake == true) 			{  BiomeManager.addVillageBiome(biomeEphemeralLake, true);  }
+		if (villageEphemeralLake) BiomeManager.addVillageBiome(biomeEphemeralLake, true);
 		BiomeManager.addStrongholdBiome(biomeEphemeralLake);
 		BiomeWoods.register(biomeEphemeralLake, EnhancedBiomesBlocks.planksEB, 13);
 		
 		biomeEphemeralLakeEdge = (BiomeGenWetlandBase) (new BiomeGenEphemeralLake(ephemeralLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Ephemeral Lake Edge");
-		if (villageEphemeralLakeEdge == true) 			{  BiomeManager.addVillageBiome(biomeEphemeralLakeEdge, true);  }
+		if (villageEphemeralLakeEdge) BiomeManager.addVillageBiome(biomeEphemeralLakeEdge, true);
 		BiomeManager.addStrongholdBiome(biomeEphemeralLakeEdge);
 		BiomeWoods.register(biomeEphemeralLakeEdge, EnhancedBiomesBlocks.planksEB, 13);
 		
 		biomeFen = (BiomeGenWetlandBase) (new BiomeGenFen(fenId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.8F).setHeight(heightPartiallySubmerged).setBiomeName("Fens");
 		BiomeGenManager.addCoolBiome(biomeFen, fenGen);
-		if (villageFen == true) 			{  BiomeManager.addVillageBiome(biomeFen, true);  }
+		if (villageFen) BiomeManager.addVillageBiome(biomeFen, true);
 		BiomeManager.addStrongholdBiome(biomeFen);
 		BiomeWoods.register(biomeFen, EnhancedBiomesBlocks.planksEB, 3);
 		
 		biomeCarr = (BiomeGenWetlandBase) (new BiomeGenCarr(carrId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.8F).setHeight(heightPartiallySubmerged).setBiomeName("Carr");
 		BiomeGenManager.addCoolBiome(biomeCarr, carrGen);
-		if (villageCarr == true) 			{  BiomeManager.addVillageBiome(biomeCarr, true);  }
+		if (villageCarr) BiomeManager.addVillageBiome(biomeCarr, true);
 		BiomeManager.addStrongholdBiome(biomeCarr);	
 		BiomeWoods.register(biomeCarr, EnhancedBiomesBlocks.planksEB, 8);
 		
 		biomeLake = (BiomeGenWetlandBase) (new BiomeGenLake(lakeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.6F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Lake");
-		if (villageLake == true) 			{  BiomeManager.addVillageBiome(biomeLake, true);  }
+		if (villageLake) BiomeManager.addVillageBiome(biomeLake, true);
 		BiomeManager.addStrongholdBiome(biomeLake);
 		BiomeWoods.register(biomeLake, EnhancedBiomesBlocks.planksEB, 8);
 		
 		biomeWoodlandLake = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodlandLakeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightPartiallySubmerged).setBiomeName("Woodland Lake");
-		if (villageWoodlandLake == true) 			{  BiomeManager.addVillageBiome(biomeWoodlandLake, true);  }
+		if (villageWoodlandLake) BiomeManager.addVillageBiome(biomeWoodlandLake, true);
 		BiomeManager.addStrongholdBiome(biomeWoodlandLake);
 		BiomeWoods.register(biomeWoodlandLake, Blocks.planks, 0);
 		
 		biomeWoodlandLakeEdge = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodlandLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Woodland Lake Edge");
-		if (villageWoodlandLakeEdge == true) 			{  BiomeManager.addVillageBiome(biomeWoodlandLakeEdge, true);  }
+		if (villageWoodlandLakeEdge) BiomeManager.addVillageBiome(biomeWoodlandLakeEdge, true);
 		BiomeManager.addStrongholdBiome(biomeWoodlandLakeEdge);
 		BiomeWoods.register(biomeWoodlandLakeEdge, Blocks.planks, 0);
 
 		biomeMarsh = (BiomeGenWetlandBase) (new BiomeGenMarsh(marshId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.9F, 0.6F).setHeight(heightLowPlains).setBiomeName("Marsh");
 		BiomeGenManager.addWarmBiome(biomeMarsh, marshGen);
-		if (villageMarsh == true) 			{  BiomeManager.addVillageBiome(biomeMarsh, true);  }
+		if (villageMarsh) BiomeManager.addVillageBiome(biomeMarsh, true);
 		BiomeManager.addStrongholdBiome(biomeMarsh);
 		BiomeWoods.register(biomeMarsh, Blocks.planks, 0);
 	}

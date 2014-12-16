@@ -28,16 +28,19 @@ public class BiomeGenBadlands extends BiomeGenGrassBase
 		this.theBiomeDecorator.deadBushPerChunk = 2;
 		this.theBiomeDecorator.reedsPerChunk = 50;
 		this.theBiomeDecorator.cactiPerChunk = 10;
+		this.fillerBlock = Blocks.hardened_clay;
 	}
-	
+
 	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
 		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
-		
+
 		if(worldGenNoise > 1) {
-			for(int a = 0; a < 2 * worldGenNoise + 3; a++) e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) + 1] = Blocks.stone;
+			for(int a = 0; a < 2 * worldGenNoise + 3; a++)
+				e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) + 1] = Blocks.stone;
 		}
 		else if(Math.abs(worldGenNoise) % 3 < 1) {
-			for(int a = 0; a < 2 * Math.abs(worldGenNoise) + 3; a++) e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange)] = ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) < 63 ? Blocks.flowing_water : null;
+			for(int a = 0; a < 2 * Math.abs(worldGenNoise) + 3; a++)
+				e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange)] = ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) < 63 ? Blocks.flowing_water : null;
 		}
 	}
 }

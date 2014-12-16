@@ -138,64 +138,64 @@ public class EnhancedBiomesSnow
 	{
 		biomeAlpine = (BiomeGenSnowBase) (new BiomeGenAlpine(alpineId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighHills).setEnableSnow().setBiomeName("Alpine Mountains");
 		BiomeGenManager.addFrozenBiome(biomeAlpine, alpineGen);		  
-		if (villageAlpine)				{  BiomeManager.addVillageBiome(biomeAlpine, true);  }
+		if (villageAlpine)	BiomeManager.addVillageBiome(biomeAlpine, true);
 		BiomeManager.addStrongholdBiome(biomeAlpine);
 		BiomeWoods.register(biomeAlpine, EnhancedBiomesBlocks.planksEB, 6);
 		
 		biomeGlacier = (BiomeGenSnowBase) (new BiomeGenGlacier(glacierId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.0F)).setHeight(heightMidPlateaus).setEnableSnow().setBiomeName("Glacier");
-		if (villageGlacier)				{  BiomeManager.addVillageBiome(biomeGlacier, true);  }	
+		if (villageGlacier)	BiomeManager.addVillageBiome(biomeGlacier, true);	
 		BiomeManager.addStrongholdBiome(biomeGlacier);
 		BiomeWoods.register(biomeGlacier, EnhancedBiomesBlocks.planksEB, 6);
 		
 		biomeIceSheet = (BiomeGenSnowBase) (new BiomeGenIceSheet(iceSheetId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.0F)).setHeight(heightSeaPlateaus).setEnableSnow().setBiomeName("Ice Sheet");
-		if (villageIceSheet)			{  BiomeManager.addVillageBiome(biomeIceSheet, true);  }
+		if (villageIceSheet)BiomeManager.addVillageBiome(biomeIceSheet, true);
 		BiomeManager.addStrongholdBiome(biomeIceSheet);
 		BiomeWoods.register(biomeIceSheet, Blocks.planks, 1);
 		
 		biomeTundra = (BiomeGenSnowBase) (new BiomeGenTundra(tundraId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.5F).setHeight(heightSeaPlateaus).setEnableSnow().setBiomeName("Tundra");
 		BiomeGenManager.addFrozenBiome(biomeTundra, tundraGen);
-		if (villageTundra)				{  BiomeManager.addVillageBiome(biomeTundra, true);  }
+		if (villageTundra)	BiomeManager.addVillageBiome(biomeTundra, true);
 		BiomeManager.addStrongholdBiome(biomeTundra);
 		BiomeWoods.register(biomeTundra, Blocks.planks, 1);
 		
 		biomePlateauSnow = (BiomeGenSnowBase) (new BiomeGenSnowyPlateau(plateauSnowId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.8F).setHeight(heightMidPlateaus).setBiomeName("Snowy Plateau");
 		BiomeGenManager.addFrozenBiome(biomePlateauSnow, plateauSnowGen);
-		if (villagePlateauSnow)			{  BiomeManager.addVillageBiome(biomePlateauSnow, true);  }
+		if (villagePlateauSnow)BiomeManager.addVillageBiome(biomePlateauSnow, true);
 		BiomeManager.addStrongholdBiome(biomePlateauSnow);
 		BiomeWoods.register(biomePlateauSnow, EnhancedBiomesBlocks.planksEB, 4);	
 		
 		biomeSnowDesert = (BiomeGenSnowBase) (new BiomeGenSnowyDesert(snowDesertId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.0F).setHeight(heightDefault).setEnableSnow().setBiomeName("Snowy Desert");
-		if (villageSnowDesert)				{  BiomeManager.addVillageBiome(biomeSnowDesert, true);  }
+		if (villageSnowDesert)	BiomeManager.addVillageBiome(biomeSnowDesert, true);
 		BiomeManager.addStrongholdBiome(biomeSnowDesert);	
 		BiomeWoods.register(biomeSnowDesert, EnhancedBiomesBlocks.planksEB, 13);
 
 		biomePolarDesert = (BiomeGenSnowBase) (new BiomeGenPolarDesert(polarDesertId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.0F)).setHeight(heightDefault).setBiomeName("Polar Desert");
 		BiomeGenManager.addFrozenBiome(biomePolarDesert, polarDesertGen);	
-		if (villagePolarDesert)			{  BiomeManager.addVillageBiome(biomePolarDesert, true);  }
+		if (villagePolarDesert)BiomeManager.addVillageBiome(biomePolarDesert, true);
 		BiomeManager.addStrongholdBiome(biomePolarDesert);		
 		BiomeWoods.register(biomePolarDesert, EnhancedBiomesBlocks.planksEB, 13);
 		//BiomeGenManager.addCaveExceptionBiome(biomePolarDesert);	
 		
 		biomeWasteLandsSnowy = (BiomeGenRockBase) (new BiomeGenWasteLands(wasteLandsSnowyId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.2F)).setHeight(heightDefault).setBiomeName("Snowy Wastelands");
-		if (villageWasteLandsSnowy) 			{  BiomeManager.addVillageBiome(biomeWasteLandsSnowy, true);  }
+		if (villageWasteLandsSnowy) BiomeManager.addVillageBiome(biomeWasteLandsSnowy, true);
 		BiomeManager.addStrongholdBiome(biomeWasteLandsSnowy);	
 		BiomeWoods.register(biomeWasteLandsSnowy, EnhancedBiomesBlocks.planksEB, 13);
 		
 		biomeAlpineM = (BiomeGenSnowBase) (new BiomeGenAlpineM(alpineMId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighHills).setEnableSnow().setBiomeName("Alpine Mountains M");
-		if (villageAlpineM)				{  BiomeManager.addVillageBiome(biomeAlpineM, true);  }
+		if (villageAlpineM)	BiomeManager.addVillageBiome(biomeAlpineM, true);
 		BiomeManager.addStrongholdBiome(biomeAlpineM);
 		BiomeWoods.register(biomeAlpineM, EnhancedBiomesBlocks.planksEB, 6);
 		
 		/*biomeDrifts = (BiomeGenSnowBase) (new BiomeGenDrifts(driftsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightDefault).setEnableSnow().setBiomeName("Drifts");
 		registerBiomeType(biomeDrifts, Type.FROZEN);							
 		BiomeGenManager.addFrozenBiome(biomeDrifts, driftsGen);
-		if (villageDrifts)				{  BiomeManager.addVillageBiome(biomeDrifts, true);  }
+		if (villageDrifts)	BiomeManager.addVillageBiome(biomeDrifts, true);
 		BiomeManager.addStrongholdBiome(biomeDrifts);
 		BiomeWoods.register(biomeDrifts, EnhancedBiomesBlocks.planksEB, 4);*/
 		
 		biomeSnowyRanges = (BiomeGenSnowBase) (new BiomeGenSnowyRanges(snowyRangesId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.3F).setHeight(heightHighSlopes).setBiomeName("Snowy Ranges");
 		BiomeGenManager.addFrozenBiome(biomeSnowyRanges, snowyRangesGen);
-		if (villageSnowyRanges == true) 	{  BiomeManager.addVillageBiome(biomeSnowyRanges, true);  }
+		if (villageSnowyRanges) BiomeManager.addVillageBiome(biomeSnowyRanges, true);
 		BiomeManager.addStrongholdBiome(biomeSnowyRanges);
 		BiomeWoods.register(biomeSnowyRanges, EnhancedBiomesBlocks.planksEB, 6);
 		

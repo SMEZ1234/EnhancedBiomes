@@ -91,39 +91,39 @@ public class EnhancedBiomesSandstone
 	{  	
 		biomeSandStoneRanges = (BiomeGenSandstoneBase) (new BiomeGenSandStoneRanges(sandStoneRangesId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.5F).setHeight(heightMidHills).setBiomeName("Sandstone Ranges");
 		BiomeGenManager.addHotBiome(biomeSandStoneRanges, sandStoneRangesGen);
-		if (villageSandStoneRanges == true) 	{  BiomeManager.addVillageBiome(biomeSandStoneRanges, true);  }
+		if (villageSandStoneRanges) BiomeManager.addVillageBiome(biomeSandStoneRanges, true);
 		BiomeManager.addStrongholdBiome(biomeSandStoneRanges);
 		BiomeWoods.register(biomeSandStoneRanges, EnhancedBiomesBlocks.planksEB, 9);
 		
 		biomeScree = (BiomeGenSandstoneBase) (new BiomeGenSandStoneRanges(screeId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.5F).setHeight(heightLowHills).setBiomeName("Scree");
-		if (villageScree == true) 				{  BiomeManager.addVillageBiome(biomeScree, true);  }
+		if (villageScree) BiomeManager.addVillageBiome(biomeScree, true);
 		BiomeManager.addStrongholdBiome(biomeScree);
 		BiomeWoods.register(biomeScree, EnhancedBiomesBlocks.planksEB, 9);
 		
 		biomeSandStoneCanyon = (BiomeGenSandstoneBase) (new BiomeGenSandStoneCanyon(sandStoneCanyonId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.95F, 0.15F).setHeight(heightMidPlateaus).setBiomeName("Sandstone Canyons");
 		BiomeGenManager.addHotBiome(biomeSandStoneCanyon, sandStoneCanyonGen);
-		if (villageSandStoneCanyon == true) 	{  BiomeManager.addVillageBiome(biomeSandStoneCanyon, true);  }
+		if (villageSandStoneCanyon) BiomeManager.addVillageBiome(biomeSandStoneCanyon, true);
 		BiomeManager.addStrongholdBiome(biomeSandStoneCanyon);
 		BiomeWoods.register(biomeSandStoneCanyon, Blocks.planks, 2);
 		
 		biomeSandStoneGorge = (BiomeGenSandstoneBase) (new BiomeGenSandStoneGorge(sandStoneGorgeId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.15F).setHeight(heightShallowWaters).setBiomeName("Sandstone Canyon");
-		if (villageSandStoneGorge == true) 		{  BiomeManager.addVillageBiome(biomeSandStoneGorge, true);  }
+		if (villageSandStoneGorge) BiomeManager.addVillageBiome(biomeSandStoneGorge, true);
 		BiomeManager.addStrongholdBiome(biomeSandStoneGorge);	
 		BiomeWoods.register(biomeSandStoneGorge, Blocks.planks, 2);	  
 		
 		biomeClayHills = (BiomeGenSandstoneBase) (new BiomeGenClayHills(clayHillsId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightMidHills).setBiomeName("Clay Hills");
 		BiomeGenManager.addHotBiome(biomeClayHills, clayHillsGen);		  
-		if (villageClayHills == true) 			{  BiomeManager.addVillageBiome(biomeClayHills, true);  }
+		if (villageClayHills) BiomeManager.addVillageBiome(biomeClayHills, true);
 		BiomeManager.addStrongholdBiome(biomeClayHills);
 		BiomeWoods.register(biomeClayHills, EnhancedBiomesBlocks.planksEB, 13);
 
 		biomeCreekBed = (BiomeGenSandstoneBase) (new BiomeGenCreekBed(creekBedId)).setDisableRain().setColor(9286496).setTemperatureRainfall(1.0F, 0.4F).setHeight(heightShallowWaters).setBiomeName("Creek Bed");
-		if (villageCreekBed == true)			{  BiomeManager.addVillageBiome(biomeCreekBed, true);  }
+		if (villageCreekBed) BiomeManager.addVillageBiome(biomeCreekBed, true);
 		BiomeManager.addStrongholdBiome(biomeCreekBed);
 		BiomeWoods.register(biomeCreekBed, EnhancedBiomesBlocks.planksEB, 9);
 
 		biomeSandStoneRangesM = (BiomeGenSandstoneBase) (new BiomeGenSandStoneRanges(sandStoneRangesMId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.5F).setHeight(heightMidHills).setBiomeName("Sandstone Ranges M");
-		if (villageSandStoneRangesM == true) 	{  BiomeManager.addVillageBiome(biomeSandStoneRangesM, true);  }
+		if (villageSandStoneRangesM) BiomeManager.addVillageBiome(biomeSandStoneRangesM, true);
 		BiomeManager.addStrongholdBiome(biomeSandStoneRangesM);
 		BiomeWoods.register(biomeSandStoneRangesM, EnhancedBiomesBlocks.planksEB, 9);
 	}

@@ -220,119 +220,119 @@ public class EnhancedBiomesWoodland
 	{
 		biomeBlossomWoods = (BiomeGenWoodlandBase) (new BiomeGenCherryBlossom(blossomWoodsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightLowPlains).setBiomeName("Blossom Woods");
 		BiomeGenManager.addWarmBiome(biomeBlossomWoods, blossomWoodsGen);
-		if (villageBlossomWoods == true) 		{  BiomeManager.addVillageBiome(biomeBlossomWoods, true);  }	
+		if (villageBlossomWoods) BiomeManager.addVillageBiome(biomeBlossomWoods, true);	
 		BiomeManager.addStrongholdBiome(biomeBlossomWoods);
 		BiomeWoods.register(biomeBlossomWoods, EnhancedBiomesBlocks.planksEB, 14);
 
 		biomeBlossomHills = (BiomeGenWoodlandBase) (new BiomeGenCherryBlossom(blossomHillsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightLowHills).setBiomeName("Blossom Hills");
-		if (villageBlossomHills == true) 		{  BiomeManager.addVillageBiome(biomeBlossomHills, true);  }	
+		if (villageBlossomHills) BiomeManager.addVillageBiome(biomeBlossomHills, true);	
 		BiomeManager.addStrongholdBiome(biomeBlossomHills);
 		BiomeWoods.register(biomeBlossomHills, EnhancedBiomesBlocks.planksEB, 14);
 		
 		biomeWoodLands = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodLandsId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightDefault).setBiomeName("Woodlands");
 		BiomeGenManager.addWarmBiome(biomeWoodLands, woodLandsGen);
-		if (villageWoodLands == true) 			{  BiomeManager.addVillageBiome(biomeWoodLands, true);  }	
+		if (villageWoodLands) BiomeManager.addVillageBiome(biomeWoodLands, true);	
 		BiomeManager.addStrongholdBiome(biomeWoodLands);
 		BiomeWoods.register(biomeWoodLands, Blocks.planks, 0);
 		
 		biomeWoodLandHills = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodLandHillsId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightLowHills).setBiomeName("Woodland Hills");
-		if (villageWoodLandHills == true) 		{  BiomeManager.addVillageBiome(biomeWoodLandHills, true);  }	
+		if (villageWoodLandHills) BiomeManager.addVillageBiome(biomeWoodLandHills, true);	
 		BiomeManager.addStrongholdBiome(biomeWoodLandHills);
 		BiomeWoods.register(biomeWoodLandHills, Blocks.planks, 0);
 
 		biomePineForest = (BiomeGenWoodlandBase) (new BiomeGenPineForest(pineForestId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.7F).setHeight(heightLowHills).setBiomeName("Pine Forest");
 		BiomeGenManager.addCoolBiome(biomePineForest, pineForestGen);
-		if (villagePineForest == true) 			{  BiomeManager.addVillageBiome(biomePineForest, true);  }	
+		if (villagePineForest) BiomeManager.addVillageBiome(biomePineForest, true);	
 		BiomeManager.addStrongholdBiome(biomePineForest);
 		BiomeWoods.register(biomePineForest, EnhancedBiomesBlocks.planksEB, 6);
 		
 		biomeOakForest = (BiomeGenWoodlandBase) (new BiomeGenOakForest(oakForestId)).setColor(9286496).setTemperatureRainfall(0.6F, 0.7F).setHeight(heightMidPlains).setBiomeName("Oak Forest");
 		BiomeGenManager.addWarmBiome(biomeOakForest, oakForestGen);
-		if (villageOakForest == true) 			{  BiomeManager.addVillageBiome(biomeOakForest, true);  }	
+		if (villageOakForest) BiomeManager.addVillageBiome(biomeOakForest, true);	
 		BiomeManager.addStrongholdBiome(biomeOakForest);
 		BiomeWoods.register(biomeOakForest, EnhancedBiomesBlocks.planksEB, 0);	
 		
 		biomeBorealForest = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealForestId)).setColor(9286496).setTemperatureRainfall(0.5F, 0.6F).setHeight(heightHighPlains).setBiomeName("Boreal Forest");
 		BiomeGenManager.addWarmBiome(biomeBorealForest, borealForestGen);
-		if (villageBorealForest == true) 			{  BiomeManager.addVillageBiome(biomeBorealForest, true);  }	
+		if (villageBorealForest) BiomeManager.addVillageBiome(biomeBorealForest, true);	
 		BiomeManager.addStrongholdBiome(biomeBorealForest);
 		BiomeWoods.register(biomeBorealForest, Blocks.planks, 1);	
 		
 		biomeKakadu = (BiomeGenWoodlandBase) (new BiomeGenKakadu(kakaduId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.8F).setHeight(heightMidPlains).setBiomeName("Kakadu");
 		BiomeGenManager.addWarmBiome(biomeKakadu, kakaduGen);
-		if (villageKakadu == true) 			{  BiomeManager.addVillageBiome(biomeKakadu, true);  }	
+		if (villageKakadu) BiomeManager.addVillageBiome(biomeKakadu, true);	
 		BiomeManager.addStrongholdBiome(biomeKakadu);
 		BiomeWoods.register(biomeKakadu, Blocks.planks, 0);
 
 		biomeSilverPineForest = (BiomeGenWoodlandBase) (new BiomeGenSilverPineForest(silverPineForestId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.6F).setHeight(heightMidPlains).setBiomeName("Silver Pine Forest");
 		BiomeGenManager.addWarmBiome(biomeSilverPineForest, silverPineForestGen);
-		if (villageSilverPineForest == true) 			{  BiomeManager.addVillageBiome(biomeSilverPineForest, true);  }	
+		if (villageSilverPineForest) BiomeManager.addVillageBiome(biomeSilverPineForest, true);	
 		BiomeManager.addStrongholdBiome(biomeSilverPineForest);
 		BiomeWoods.register(biomeSilverPineForest, EnhancedBiomesBlocks.planksEB, 7);
 
 		biomeSilverPineHills = (BiomeGenWoodlandBase) (new BiomeGenSilverPineForest(silverPineHillsId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.6F).setHeight(heightLowHills).setBiomeName("Silver Pine Hills");
-		if (villageSilverPineHills == true) 			{  BiomeManager.addVillageBiome(biomeSilverPineHills, true);  }	
+		if (villageSilverPineHills) BiomeManager.addVillageBiome(biomeSilverPineHills, true);	
 		BiomeManager.addStrongholdBiome(biomeSilverPineHills);
 		BiomeWoods.register(biomeSilverPineHills, EnhancedBiomesBlocks.planksEB, 7);
 
 		biomeAspenForest = (BiomeGenWoodlandBase) (new BiomeGenAspenForest(aspenForestId)).setColor(9286496).setTemperatureRainfall(0.2F, 0.6F).setHeight(heightLowPlains).setBiomeName("Aspen Forest");
 		BiomeGenManager.addCoolBiome(biomeAspenForest, aspenForestGen);
-		if (villageAspenForest == true) 			{  BiomeManager.addVillageBiome(biomeAspenForest, true);  }	
+		if (villageAspenForest) BiomeManager.addVillageBiome(biomeAspenForest, true);	
 		BiomeManager.addStrongholdBiome(biomeAspenForest);
 		BiomeWoods.register(biomeAspenForest, EnhancedBiomesBlocks.planksEB, 10);
 
 		biomeAspenHills = (BiomeGenWoodlandBase) (new BiomeGenAspenForest(aspenHillsId)).setColor(9286496).setTemperatureRainfall(0.2F, 0.6F).setHeight(heightLowHills).setBiomeName("Aspen Hills");
-		if (villageAspenHills == true) 			{  BiomeManager.addVillageBiome(biomeAspenHills, true);  }	
+		if (villageAspenHills) BiomeManager.addVillageBiome(biomeAspenHills, true);	
 		BiomeManager.addStrongholdBiome(biomeAspenHills);
 		BiomeWoods.register(biomeAspenHills, EnhancedBiomesBlocks.planksEB, 10);
 
 		biomeCypressForest = (BiomeGenWoodlandBase) (new BiomeGenCypressForest(cypressForestId)).setColor(9286496).setTemperatureRainfall(0.6F, 0.7F).setHeight(heightLowHills).setBiomeName("Cypress Forest");
 		BiomeGenManager.addWarmBiome(biomeCypressForest, cypressForestGen);
-		if (villageCypressForest == true) 			{  BiomeManager.addVillageBiome(biomeCypressForest, true);  }	
+		if (villageCypressForest) BiomeManager.addVillageBiome(biomeCypressForest, true);	
 		BiomeManager.addStrongholdBiome(biomeCypressForest);
 		BiomeWoods.register(biomeCypressForest, EnhancedBiomesBlocks.planksEB, 5);
 
 		biomeShield = (BiomeGenWoodlandBase) (new BiomeGenShield(shieldId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.6F).setHeight(heightMidPlains).setBiomeName("Shield");
 		BiomeGenManager.addCoolBiome(biomeShield, shieldGen);
-		if (villageShield == true) 			{  BiomeManager.addVillageBiome(biomeShield, true);  }	
+		if (villageShield) BiomeManager.addVillageBiome(biomeShield, true);	
 		BiomeManager.addStrongholdBiome(biomeShield);
 		BiomeWoods.register(biomeShield, EnhancedBiomesBlocks.planksEB, 4);
 		
 		biomeForestMountains = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(forestMountainsId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightHighPlateaus).setBiomeName("Forested Mountains");    		
-		if (villageForestMountains == true) 	{  BiomeManager.addVillageBiome(biomeForestMountains, true);  }
+		if (villageForestMountains) BiomeManager.addVillageBiome(biomeForestMountains, true);
 		BiomeManager.addStrongholdBiome(biomeForestMountains);	
 		BiomeWoods.register(biomeForestMountains, Blocks.planks, 0);
 		
 		biomeWoodlandField = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodlandFieldId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightMidPlains).setBiomeName("Woodland Field");
 		biomeWoodlandField.theBiomeDecorator.treesPerChunk = 1;
 		BiomeGenManager.addWarmBiome(biomeWoodlandField, woodlandFieldGen);
-		if (villageWoodlandField == true) 			{  BiomeManager.addVillageBiome(biomeWoodlandField, true);  }
+		if (villageWoodlandField) BiomeManager.addVillageBiome(biomeWoodlandField, true);
 		BiomeWoods.register(biomeWoodlandField, Blocks.planks, 0);	
 		
 		biomeBorealPlateau = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealPlateauId)).setColor(9286496).setTemperatureRainfall(0.5F, 0.6F).setHeight(heightHighPlateaus).setBiomeName("Boreal Plateau");
 		BiomeGenManager.addWarmBiome(biomeBorealPlateau, borealPlateauGen);
-		if (villageBorealPlateau == true) 			{  BiomeManager.addVillageBiome(biomeBorealPlateau, true);  }	
+		if (villageBorealPlateau) BiomeManager.addVillageBiome(biomeBorealPlateau, true);	
 		BiomeManager.addStrongholdBiome(biomeBorealPlateau);	
 		BiomeWoods.register(biomeBorealPlateau, Blocks.planks, 1);
 		
 		biomeAlpineEdge = (BiomeGenSnowForestBase) (new BiomeGenAlpineEdge(alpineEdgeId)).setColor(7501978).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.3F).setHeight(heightMidHills).setBiomeName("Alpine Mountains Edge");
-		if (villageAlpineEdge == true)			{  BiomeManager.addVillageBiome(biomeAlpineEdge, true);  }
+		if (villageAlpineEdge)BiomeManager.addVillageBiome(biomeAlpineEdge, true);
 		BiomeManager.addStrongholdBiome(biomeAlpineEdge);
 		BiomeWoods.register(biomeAlpineEdge, EnhancedBiomesBlocks.planksEB, 6);
 		
 		biomeFirForest = (BiomeGenSnowForestBase) (new BiomeGenFirForest(firForestId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.3F).setHeight(heightHighPlains).setBiomeName("Fir Forest");
 		BiomeGenManager.addCoolBiome(biomeFirForest, firForestGen);
-		if (villageFirForest == true)			{  BiomeManager.addVillageBiome(biomeFirForest, true);  }
+		if (villageFirForest) BiomeManager.addVillageBiome(biomeFirForest, true);
 		BiomeManager.addStrongholdBiome(biomeFirForest);	
 		BiomeWoods.register(biomeFirForest, EnhancedBiomesBlocks.planksEB, 4);	
 		
 		biomeBorealPlateauM = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealPlateauMId)).setColor(9286496).setTemperatureRainfall(0.2F, 0.6F).setHeight(heightHighPlateaus).setBiomeName("Boreal Plateau M");
-		if (villageBorealPlateau == true) 			{  BiomeManager.addVillageBiome(biomeBorealPlateauM, true);  }	
+		if (villageBorealPlateau) BiomeManager.addVillageBiome(biomeBorealPlateauM, true);	
 		BiomeManager.addStrongholdBiome(biomeBorealPlateauM);	
 		BiomeWoods.register(biomeBorealPlateauM, Blocks.planks, 1);
 		
 		biomeForestValley = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(forestValleyId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightMidPlains).setBiomeName("Forested Valley");    		
-		if (villageForestValley == true) 	{  BiomeManager.addVillageBiome(biomeForestValley, true);  }
+		if (villageForestValley) BiomeManager.addVillageBiome(biomeForestValley, true);
 		BiomeManager.addStrongholdBiome(biomeForestValley);	
 		BiomeWoods.register(biomeForestValley, Blocks.planks, 0);
 		

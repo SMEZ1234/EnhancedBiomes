@@ -80,30 +80,30 @@ public class EnhancedBiomesGrass
 	{		
 		biomeBadlands = (BiomeGenGrassBase) (new BiomeGenBadlands(badlandsId)).setColor(9286496).setTemperatureRainfall(2.0F, 0.1F).setHeight(heightDefault).setDisableRain().setBiomeName("Badlands");
 		BiomeGenManager.addHotBiome(biomeBadlands, badlandsGen);
-		if (villageBadlands)			{  BiomeManager.addVillageBiome(biomeBadlands, true);  }
+		if (villageBadlands) BiomeManager.addVillageBiome(biomeBadlands, true);
 		BiomeManager.addStrongholdBiome(biomeBadlands);
 		BiomeWoods.register(biomeBadlands, EnhancedBiomesBlocks.planksEB, 13);
 		
 		biomePlateau = (BiomeGenGrassBase) (new BiomeGenPlateau(plateauId)).setColor(9286496).setTemperatureRainfall(0.3F, 0.6F).setHeight(heightMidPlateaus).setBiomeName("Plateau");
 		BiomeGenManager.addCoolBiome(biomePlateau, plateauGen);
-		if (villagePlateau) 			{  BiomeManager.addVillageBiome(biomePlateau, true);  }
+		if (villagePlateau) BiomeManager.addVillageBiome(biomePlateau, true);
 		BiomeManager.addStrongholdBiome(biomePlateau);
 		BiomeWoods.register(biomePlateau, Blocks.planks, 0);
 		
 		biomeMountains = (BiomeGenGrassBase) (new BiomeGenMountains(mountainsId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.6F).setHeight(heightHighHills).setBiomeName("Mountains");
 		BiomeGenManager.addCoolBiome(biomeMountains, mountainsGen);
-		if (villageMountains) 			{  BiomeManager.addVillageBiome(biomeMountains, true);  }
+		if (villageMountains) BiomeManager.addVillageBiome(biomeMountains, true);
 		BiomeManager.addStrongholdBiome(biomeMountains);
 		BiomeWoods.register(biomeMountains, Blocks.planks, 1);
 		
 		biomeMountainsEdge = (BiomeGenGrassBase) (new BiomeGenMountains(mountainsEdgeId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.6F).setHeight(heightMidHills).setBiomeName("Mountains Edge");
-		if (villageMountainsEdge) 		{  BiomeManager.addVillageBiome(biomeMountainsEdge, true);  }
+		if (villageMountainsEdge) BiomeManager.addVillageBiome(biomeMountainsEdge, true);
 		BiomeManager.addStrongholdBiome(biomeMountainsEdge);
 		BiomeWoods.register(biomeMountainsEdge, Blocks.planks, 1);
 		
 		biomeMountainTundra = (BiomeGenGrassBase) (new BiomeGenAlpineTundra(mountainTundraId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.5F).setHeight(heightHighHills).setBiomeName("Alpine Tundra");
 		BiomeGenManager.addCoolBiome(biomeMountainTundra, mountainTundraGen);
-		if (villageMountainTundra) 			{  BiomeManager.addVillageBiome(biomeMountainTundra, true);  }
+		if (villageMountainTundra) BiomeManager.addVillageBiome(biomeMountainTundra, true);
 		BiomeManager.addStrongholdBiome(biomeMountainTundra);
 		BiomeWoods.register(biomeMountainTundra, EnhancedBiomesBlocks.planksEB, 5);
 		

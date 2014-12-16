@@ -109,47 +109,47 @@ public class EnhancedBiomesPlains
 	{
 		biomeGrasslands = (BiomeGenPlainsBase) (new BiomeGenGrasslands(grasslandsId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightDefault).setBiomeName("Shrublands");
 		BiomeGenManager.addWarmBiome(biomeGrasslands, grasslandsGen);
-		if (villageGrasslands) 			{  BiomeManager.addVillageBiome(biomeGrasslands, true);  }
+		if (villageGrasslands) BiomeManager.addVillageBiome(biomeGrasslands, true);
 		BiomeManager.addStrongholdBiome(biomeGrasslands);
 		BiomeWoods.register(biomeGrasslands, Blocks.planks, 0);
 		
 		biomeSavannah = (BiomeGenPlainsBase) (new BiomeGenSavannah(savannahId)).setDisableRain().setColor(9286496).setTemperatureRainfall(1.5F, 0.05F).setHeight(heightLowPlains).setBiomeName("Xeric Savannah");
 		BiomeGenManager.addHotBiome(biomeSavannah, savannahGen);	  
-		if (villageSavannah) 			{  BiomeManager.addVillageBiome(biomeSavannah, true);  }	  
+		if (villageSavannah) BiomeManager.addVillageBiome(biomeSavannah, true);	  
 		BiomeManager.addStrongholdBiome(biomeSavannah);
 		BiomeWoods.register(biomeSavannah, EnhancedBiomesBlocks.planksEB, 1);
 		
 		biomeSteppe = (BiomeGenPlainsBase) (new BiomeGenSteppe(steppeId)).setColor(9286496).setTemperatureRainfall(0.3F, 1.0F).setHeight(heightLowPlateaus).setBiomeName("Steppe");
 		BiomeGenManager.addCoolBiome(biomeSteppe, steppeGen); 	  
-		if (villageSteppe) 				{  BiomeManager.addVillageBiome(biomeSteppe, true);  }		  
+		if (villageSteppe) BiomeManager.addVillageBiome(biomeSteppe, true);		  
 		BiomeManager.addStrongholdBiome(biomeSteppe);
 		BiomeWoods.register(biomeSteppe, EnhancedBiomesBlocks.planksEB, 2);
 		
 		biomePrairie = (BiomeGenPlainsBase) (new BiomeGenPrairie(prairieId)).setColor(9286496).setTemperatureRainfall(0.9F, 0.0F).setHeight(heightLowPlains).setBiomeName("Prairie");
 		BiomeGenManager.addWarmBiome(biomePrairie, prairieGen);	  
-		if (villagePrairie) 			{  BiomeManager.addVillageBiome(biomePrairie, true);  }		  
+		if (villagePrairie) BiomeManager.addVillageBiome(biomePrairie, true);		  
 		BiomeManager.addStrongholdBiome(biomePrairie);
 		BiomeWoods.register(biomePrairie, EnhancedBiomesBlocks.planksEB, 12);
 		
 		biomeLowHills = (BiomeGenPlainsBase) (new BiomeGenLowHills(lowHillsId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightMidPlains).setBiomeName("Low Hills");
 		BiomeGenManager.addWarmBiome(biomeLowHills, lowHillsGen);
-		if (villageLowHills) 			{  BiomeManager.addVillageBiome(biomeLowHills, true);  }
+		if (villageLowHills) BiomeManager.addVillageBiome(biomeLowHills, true);
 		BiomeManager.addStrongholdBiome(biomeLowHills);
 		BiomeWoods.register(biomeLowHills, Blocks.planks, 0);
 		
 		biomeMeadow = (BiomeGenPlainsBase) (new BiomeGenMeadow(meadowId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightDefault).setBiomeName("Meadow");
 		BiomeGenManager.addWarmBiome(biomeMeadow, meadowGen);
-		if (villageMeadow) 				{  BiomeManager.addVillageBiome(biomeMeadow, true);  }
+		if (villageMeadow) BiomeManager.addVillageBiome(biomeMeadow, true);
 		BiomeManager.addStrongholdBiome(biomeMeadow);
 		BiomeWoods.register(biomeMeadow, EnhancedBiomesBlocks.planksEB, 2);
 		
 		biomeGrasslandsRoofed = (BiomeGenPlainsBase) (new BiomeGenGrasslandsRoofed(grasslandsRoofedId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightDefault).setBiomeName("Roofed Shrublands");
-		if (villageGrasslandsRoofed) 			{  BiomeManager.addVillageBiome(biomeGrasslandsRoofed, true);  }
+		if (villageGrasslandsRoofed) BiomeManager.addVillageBiome(biomeGrasslandsRoofed, true);
 		BiomeManager.addStrongholdBiome(biomeGrasslandsRoofed);	
 		BiomeWoods.register(biomeGrasslandsRoofed, Blocks.planks, 5);
 		
 		biomeMeadowM = (BiomeGenPlainsBase) (new BiomeGenMeadowM(meadowMId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightDefault).setBiomeName("Meadow M");
-		if (villageMeadowM) 				{  BiomeManager.addVillageBiome(biomeMeadowM, true);  }
+		if (villageMeadowM) BiomeManager.addVillageBiome(biomeMeadowM, true);
 		BiomeManager.addStrongholdBiome(biomeMeadowM);	
 		BiomeWoods.register(biomeMeadowM, EnhancedBiomesBlocks.planksEB, 2);
 	}

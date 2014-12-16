@@ -54,7 +54,7 @@ public class WorldGenEllipsoid extends WorldGenerator
 					int distance = (int) (posX * posX + posY * posY / variation / variation + posZ * posZ);
 
 					if(distance <= radiusSq) {
-						if(this.exception == true && par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID) {
+						if(this.exception && par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID) {
 
 						}
 						else if(fillId instanceof BlockLeavesBase) {

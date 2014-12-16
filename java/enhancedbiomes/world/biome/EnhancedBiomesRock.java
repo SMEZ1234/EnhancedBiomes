@@ -90,40 +90,40 @@ public class EnhancedBiomesRock
 	public static void load()
 	{			
 		biomeVolcano = (BiomeGenRockBase) (new BiomeGenVolcano(volcanoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightMidHills).setDisableRain().setBiomeName("Volcano");
-		if (villageVolcano) 			{  BiomeManager.addVillageBiome(biomeVolcano, true);  }
-		BiomeManager.addStrongholdBiome(biomeVolcano);	
+		if (villageVolcano) BiomeManager.addVillageBiome(biomeVolcano, true);
+		BiomeManager.addStrongholdBiome(biomeVolcano);
 		BiomeWoods.register(biomeVolcano, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeWasteLands = (BiomeGenRockBase) (new BiomeGenWasteLands(wasteLandsId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightDefault).setDisableRain().setBiomeName("Wastelands");
 		BiomeGenManager.addHotBiome(biomeWasteLands, wasteLandsGen);  		  
-		if (villageWasteLands) 			{  BiomeManager.addVillageBiome(biomeWasteLands, true);  }
+		if (villageWasteLands) BiomeManager.addVillageBiome(biomeWasteLands, true);
 		BiomeManager.addStrongholdBiome(biomeWasteLands);
 		BiomeWoods.register(biomeWasteLands, EnhancedBiomesBlocks.planksEB, 13);		  
 		
 		biomeRockHills = (BiomeGenRockBase) (new BiomeGenRockHills(rockHillsId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.4F).setHeight(heightMidHills).setBiomeName("Rocky Hills");
 		BiomeGenManager.addCoolBiome(biomeRockHills, rockHillsGen);		  
-		if (villageRockHills) 			{  BiomeManager.addVillageBiome(biomeRockHills, true);  }
-		BiomeManager.addStrongholdBiome(biomeRockHills);	
+		if (villageRockHills) BiomeManager.addVillageBiome(biomeRockHills, true);
+		BiomeManager.addStrongholdBiome(biomeRockHills);
 		BiomeWoods.register(biomeRockHills, EnhancedBiomesBlocks.planksEB, 13, false);
 
 		biomeBasin = (BiomeGenRockBase) (new BiomeGenBasin(basinId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.7F).setHeight(heightMidPlains).setBiomeName("Basin");
-		if (villageBasin) 				{  BiomeManager.addVillageBiome(biomeBasin, true);  }
+		if (villageBasin) BiomeManager.addVillageBiome(biomeBasin, true);
 		BiomeManager.addStrongholdBiome(biomeBasin);
 		BiomeWoods.register(biomeBasin, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeStoneCanyon = (BiomeGenRockBase) (new BiomeGenStoneCanyon(stoneCanyonId)).setColor(9286496).setDisableRain().setTemperatureRainfall(1.5F, 0.0F).setHeight(heightMidPlateaus).setBiomeName("Stone Canyons");
-		if (villageStoneCanyon) 	{  BiomeManager.addVillageBiome(biomeStoneCanyon, true);  }
+		if (villageStoneCanyon) BiomeManager.addVillageBiome(biomeStoneCanyon, true);
 		BiomeManager.addStrongholdBiome(biomeStoneCanyon);
 		BiomeWoods.register(biomeStoneCanyon, Blocks.planks, 2);
 		
 		biomeStoneGorge = (BiomeGenRockBase) (new BiomeGenStoneCanyon(stoneGorgeId)).setColor(9286496).setDisableRain().setTemperatureRainfall(1.0F, 0.05F).setHeight(heightShallowWaters).setBiomeName("Stone Canyon");
-		if (villageStoneGorge) 		{  BiomeManager.addVillageBiome(biomeStoneGorge, true);  }
-		BiomeManager.addStrongholdBiome(biomeStoneGorge);	
+		if (villageStoneGorge) BiomeManager.addVillageBiome(biomeStoneGorge, true);
+		BiomeManager.addStrongholdBiome(biomeStoneGorge);
 		BiomeWoods.register(biomeStoneGorge, Blocks.planks, 2);
 
 		biomeVolcanoM = (BiomeGenRockBase) (new BiomeGenVolcano(volcanoMId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightMidPlains).setDisableRain().setBiomeName("Volcano M");
-		if (villageVolcanoM) 			{  BiomeManager.addVillageBiome(biomeVolcanoM, true);  }
-		BiomeManager.addStrongholdBiome(biomeVolcanoM);	
+		if (villageVolcanoM) BiomeManager.addVillageBiome(biomeVolcanoM, true);
+		BiomeManager.addStrongholdBiome(biomeVolcanoM);
 		BiomeWoods.register(biomeVolcanoM, EnhancedBiomesBlocks.planksEB, 13, false);
 	}
 }

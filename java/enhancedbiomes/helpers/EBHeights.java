@@ -23,8 +23,8 @@ public class EBHeights
 	public static final BiomeGenBase.Height heightSeaPlateaus = new BiomeGenBase.Height(0.0F, 0.025F);
 	public static final BiomeGenBase.Height heightLowPlateaus = new BiomeGenBase.Height(0.5F, 0.025F);
 	public static final BiomeGenBase.Height heightHighPlains = new BiomeGenBase.Height(0.5F, 0.1F);
-	public static final BiomeGenBase.Height heightHighArchipelago = new BiomeGenBase.Height(0.4F, 1.8F);
-	public static final BiomeGenBase.Height heightMidArchipelago = new BiomeGenBase.Height(0.1F, 1.1F);
-	public static final BiomeGenBase.Height heightLowArchipelago = new BiomeGenBase.Height(-0.2F, 0.6F);
+	public static final BiomeGenBase.Height heightHighArchipelago = new BiomeGenBase.Height(2.5F, 0);
+	public static final BiomeGenBase.Height heightMidArchipelago = new BiomeGenBase.Height(1.0F, 0);
+	public static final BiomeGenBase.Height heightLowArchipelago = new BiomeGenBase.Height(0.5F, 0);
 	public static final BiomeGenBase.Height heightHighSlopes = new BiomeGenBase.Height(1.8F, 0.7F);
 }

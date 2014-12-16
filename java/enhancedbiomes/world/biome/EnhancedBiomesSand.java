@@ -81,33 +81,33 @@ public class EnhancedBiomesSand
 	{		
 		biomeRockyDesert = (BiomeGenSandBase) (new BiomeGenRockyDesert(rockyDesertId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.8F, 0.0F)).setHeight(heightDefault).setBiomeName("Rocky Desert");
 		BiomeGenManager.addHotBiome(biomeRockyDesert, rockyDesertGen);	
-		if (villageRockyDesert)			{  BiomeManager.addVillageBiome(biomeRockyDesert, true);  }
+		if (villageRockyDesert) BiomeManager.addVillageBiome(biomeRockyDesert, true);
 		BiomeManager.addStrongholdBiome(biomeRockyDesert);		
 		//BiomeGenManager.addCaveExceptionBiome(biomeRockyDesert);
 		BiomeWoods.register(biomeRockyDesert, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeScrub = (BiomeGenSandBase) (new BiomeGenScrub(scrubId)).setDisableRain().setColor(9286496).setTemperatureRainfall(1.0F, 0.25F).setHeight(heightDefault).setBiomeName("Scrub");
 		BiomeGenManager.addHotBiome(biomeScrub, scrubGen);
-		if (villageScrub)				{  BiomeManager.addVillageBiome(biomeScrub, true);  }
+		if (villageScrub) BiomeManager.addVillageBiome(biomeScrub, true);
 		BiomeManager.addStrongholdBiome(biomeScrub);
 		BiomeWoods.register(biomeScrub, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeSahara = (BiomeGenSandBase) (new BiomeGenSahara(saharaId)).setDisableRain().setColor(9286496).setTemperatureRainfall(2.0F, 0.0F).setHeight(heightDefault).setBiomeName("Sahara");
 		BiomeGenManager.addHotBiome(biomeSahara, saharaGen);
-		if (villageSahara)				{  BiomeManager.addVillageBiome(biomeSahara, true);  }
+		if (villageSahara) BiomeManager.addVillageBiome(biomeSahara, true);
 		BiomeManager.addStrongholdBiome(biomeSahara);
 		//BiomeGenManager.addCaveExceptionBiome(biomeSahara);
 		BiomeWoods.register(biomeSahara, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeRedDesert = (BiomeGenSandBase) (new BiomeGenRedDesert(redDesertId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.8F, 0.0F)).setHeight(heightDefault).setBiomeName("Red Desert");
 		BiomeGenManager.addHotBiome(biomeRedDesert, redDesertGen);	
-		if (villageRedDesert)			{  BiomeManager.addVillageBiome(biomeRedDesert, true);  }
+		if (villageRedDesert) BiomeManager.addVillageBiome(biomeRedDesert, true);
 		BiomeManager.addStrongholdBiome(biomeRedDesert);
 		BiomeWoods.register(biomeRedDesert, EnhancedBiomesBlocks.planksEB, 13, false);
 		
 		biomeXericShrubland = (BiomeGenSandBase) (new BiomeGenXericShrubland(xericShrublandId)).setDisableRain().setColor(9286496).setTemperatureRainfall(1.0F, 0.25F).setHeight(heightDefault).setBiomeName("Xeric Shrubland");
 		BiomeGenManager.addHotBiome(biomeXericShrubland, xericShrublandGen);
-		if (villageXericShrubland)				{  BiomeManager.addVillageBiome(biomeXericShrubland, true);  }
+		if (villageXericShrubland) BiomeManager.addVillageBiome(biomeXericShrubland, true);
 		BiomeManager.addStrongholdBiome(biomeXericShrubland);
 		BiomeWoods.register(biomeXericShrubland, Blocks.planks, 0, false);
 	}

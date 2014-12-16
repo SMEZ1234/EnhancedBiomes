@@ -61,7 +61,7 @@ public class EnhancedBiomesBiome
 	public static void load()
 	{
 		biomeRiparian = (BiomeGenEBBase) (new BiomeGenRiparianZone(riparianId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Riparian Zone");
-		if (villageRiparian == true) 			{  BiomeManager.addVillageBiome(biomeRiparian, true);  }
+		if (villageRiparian) BiomeManager.addVillageBiome(biomeRiparian, true);
 		BiomeManager.addStrongholdBiome(biomeRiparian);
 		BiomeWoods.register(biomeRiparian, EnhancedBiomesBlocks.planksEB, 8);
 		

@@ -55,18 +55,18 @@ public class EnhancedBiomesTropical
 	public static void load()
 	{
 		biomeOasis = (BiomeGenTropicalBase) (new BiomeGenOasis(oasisId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.95F, 0.6F)).setHeight(heightDefault).setBiomeName("Oasis");													
-		if (villageOasis == true) 				{  BiomeManager.addVillageBiome(biomeOasis, true);  }
+		if (villageOasis) BiomeManager.addVillageBiome(biomeOasis, true);
 		BiomeManager.addStrongholdBiome(biomeOasis);
 		BiomeWoods.register(biomeOasis, Blocks.planks, 3);
 		
 		biomeRainforest = (BiomeGenTropicalBase) (new BiomeGenRainforest(rainforestId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.95F, 0.9F).setHeight(heightLowPlateaus).setBiomeName("Rainforest");
 		BiomeGenManager.addWarmBiome(biomeRainforest, rainforestGen);	
-		if (villageRainforest == true) 			{  BiomeManager.addVillageBiome(biomeRainforest, true);  }	
+		if (villageRainforest) BiomeManager.addVillageBiome(biomeRainforest, true);	
 		BiomeManager.addStrongholdBiome(biomeRainforest);
 		BiomeWoods.register(biomeRainforest, Blocks.planks, 3);
 		
 		biomeRainforestValley = (BiomeGenTropicalBase) (new BiomeGenRainforest(rainforestValleyId)).setColor(2900485).func_76733_a(5470985).setTemperatureRainfall(0.95F, 1.2F).setHeight(heightPartiallySubmerged).setBiomeName("Rainforest Valley");
-		if (villageRainforestValley == true) 	{  BiomeManager.addVillageBiome(biomeRainforestValley, true);  }	
+		if (villageRainforestValley) BiomeManager.addVillageBiome(biomeRainforestValley, true);	
 		BiomeManager.addStrongholdBiome(biomeRainforestValley);
 		BiomeWoods.register(biomeRainforestValley, Blocks.planks, 3);
 	}

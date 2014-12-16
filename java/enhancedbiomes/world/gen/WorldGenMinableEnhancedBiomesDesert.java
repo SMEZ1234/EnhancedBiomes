@@ -74,7 +74,7 @@ public class WorldGenMinableEnhancedBiomesDesert extends WorldGenerator
 								Block block = par1World.getBlock(var38, var41, var44);
 								Block stone = par1World.getBlock(var38, var41, var44);
 								if(var39 * var39 + var42 * var42 + var45 * var45 < 1.0D && stone == this.stoneBlockId) {
-									if(this.topLayerOnly == true) {
+									if(this.topLayerOnly) {
 										if(par1World.getBlock(var38, var41 + 1, var44) != Blocks.cactus && par1World.getBlock(var38, var41 + 1, var44) != Blocks.tallgrass) {
 											par1World.setBlock(var38, var41, var44, this.minableBlockId, minableBlockMeta, 2);
 										}

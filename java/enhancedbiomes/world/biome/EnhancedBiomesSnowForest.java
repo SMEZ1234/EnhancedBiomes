@@ -63,22 +63,22 @@ public class EnhancedBiomesSnowForest
 	public static void load()
 	{		
 		biomeColdPineForest = (BiomeGenWoodlandBase) (new BiomeGenPineForest(coldPineForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightLowHills).setBiomeName("Cold Pine Forest");
-		if (villageColdPineForest) 			{  BiomeManager.addVillageBiome(biomeColdPineForest, true);  }	
+		if (villageColdPineForest) BiomeManager.addVillageBiome(biomeColdPineForest, true);	
 		BiomeManager.addStrongholdBiome(biomeColdPineForest);
 		BiomeWoods.register(biomeColdPineForest, EnhancedBiomesBlocks.planksEB, 6);
 
 		biomeColdFirForest = (BiomeGenSnowForestBase) (new BiomeGenFirForest(coldFirForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighPlains).setBiomeName("Cold Fir Forest");
-		if (villageColdFirForest) 			{  BiomeManager.addVillageBiome(biomeColdFirForest, true);  }	
+		if (villageColdFirForest) BiomeManager.addVillageBiome(biomeColdFirForest, true);	
 		BiomeManager.addStrongholdBiome(biomeColdFirForest);	
 		BiomeWoods.register(biomeColdFirForest, EnhancedBiomesBlocks.planksEB, 4);
 
 		biomeColdCypressForest = (BiomeGenWoodlandBase) (new BiomeGenCypressForest(coldCypressForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightLowHills).setBiomeName("Cold Cypress Forest");
-		if (villageColdCypressForest) 			{  BiomeManager.addVillageBiome(biomeColdCypressForest, true);  }	
+		if (villageColdCypressForest) BiomeManager.addVillageBiome(biomeColdCypressForest, true);	
 		BiomeManager.addStrongholdBiome(biomeColdCypressForest);
 		BiomeWoods.register(biomeColdCypressForest, EnhancedBiomesBlocks.planksEB, 5);	
 
 		biomeColdBorealForest = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(coldBorealForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.6F).setHeight(heightHighPlains).setBiomeName("Cold Boreal Forest");
-		if (villageColdBorealForest) 			{  BiomeManager.addVillageBiome(biomeColdBorealForest, true);  }	
+		if (villageColdBorealForest) BiomeManager.addVillageBiome(biomeColdBorealForest, true);	
 		BiomeManager.addStrongholdBiome(biomeColdBorealForest);	
 		BiomeWoods.register(biomeColdBorealForest, Blocks.planks, 1);
 	}

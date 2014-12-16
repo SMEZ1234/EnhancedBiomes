@@ -44,7 +44,7 @@ public class WorldGenSphereIfEmpty extends WorldGenerator
 					int distance = posX * posX + posY * posY + posZ * posZ;
 
 					if(distance <= radiusSq) {
-						if(par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID && this.exception == true) {
+						if(par1World.getBlock(posX + baseX, posY + baseY, posZ + baseZ) == this.exceptionID && this.exception) {
 
 						}
 						else {
