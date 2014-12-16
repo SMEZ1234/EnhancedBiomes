@@ -100,10 +100,6 @@ public class GenLayerEBHills extends GenLayer
 						if(this.nextInt(6) == 0 && (BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenGrassBase || BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenWoodlandBase) && BiomeGenBase.getBiomeGenArray()[k1 % 256].temperature < 1.0F) {
 							i2 = biomeLake.biomeID;
 						}
-
-						else if(this.nextInt(6) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenWoodlandBase && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight <= 0.8F) {
-							i2 = biomeClearing.biomeID;
-						}
 					}
 
 					if(k1 == biomeRockyDesert.biomeID) {

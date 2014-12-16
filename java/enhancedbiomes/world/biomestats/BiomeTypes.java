@@ -34,7 +34,6 @@ public class BiomeTypes {
 		registerBiomeType(biomePlateau, 				MOUNTAIN, HILLS);
 		registerBiomeType(biomeMountains, 				MOUNTAIN);
 		registerBiomeType(biomeMountainsEdge, 			MOUNTAIN, HILLS);
-		registerBiomeType(biomeClearing, 				PLAINS);
 		registerBiomeType(biomeMountainTundra, 			MOUNTAIN, COLD);
 		registerBiomeType(biomeGrasslands, 				PLAINS); 	  
 		registerBiomeType(biomeSavannah, 				HOT, SAVANNA, PLAINS, SPARSE);	  	  

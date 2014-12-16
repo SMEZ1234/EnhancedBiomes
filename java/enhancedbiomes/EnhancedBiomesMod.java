@@ -224,7 +224,6 @@ public class EnhancedBiomesMod
 
 		MinecraftForge.TERRAIN_GEN_BUS.register(new SubBiomeEventHandler());
 		MinecraftForge.EVENT_BUS.register(new ReplaceBiomeBlocksHandler());
-		MinecraftForge.TERRAIN_GEN_BUS.register(new ReplaceBiomeBlocksHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new CaveHandler());
 		MinecraftForge.EVENT_BUS.register(new PreDecorationHandler());
 

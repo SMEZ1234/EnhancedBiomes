@@ -72,7 +72,6 @@ public class BiomeIDs {
 	public static final int aspenHills = getNextID();
 	public static final int basin = getNextID();
 	public static final int lake = getNextID();
-	public static final int clearing = getNextID();
 	public static final int marsh = getNextID();
 	public static final int alpineTundra = getNextID();
 	public static final int snowyRanges = getNextID();

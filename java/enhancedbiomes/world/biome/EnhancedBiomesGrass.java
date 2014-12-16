@@ -40,10 +40,6 @@ public class EnhancedBiomesGrass
 	public static int mountainsEdgeId;
 	public static boolean villageMountainsEdge;
 	public static BiomeGenGrassBase biomeMountainsEdge;
- 	
-	public static int clearingId;
-	public static boolean villageClearing;
-	public static BiomeGenGrassBase biomeClearing;
 	
 	public static int mountainTundraId;
 	public static int mountainTundraGen;
@@ -70,9 +66,6 @@ public class EnhancedBiomesGrass
 
 		mountainsEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains Edge", BiomeIDs.mountainsEdge).getInt();
 		villageMountainsEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Mountains Edge biome", true).getBoolean(true);
-
-		clearingId = config.get(config.CATEGORY_GENERAL, "Biome ID of Clearing", BiomeIDs.clearing).getInt();
-		villageClearing = config.get(config.CATEGORY_GENERAL, "Generate villages in Clearing biome", true).getBoolean(true);
 
 		mountainTundraId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Tundra", BiomeIDs.alpineTundra).getInt();
 		mountainTundraGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Alpine Tundra biome", 10).getInt();
@@ -107,11 +100,6 @@ public class EnhancedBiomesGrass
 		if (villageMountainsEdge) 		{  BiomeManager.addVillageBiome(biomeMountainsEdge, true);  }
 		BiomeManager.addStrongholdBiome(biomeMountainsEdge);
 		BiomeWoods.register(biomeMountainsEdge, Blocks.planks, 1);
-		
-		biomeClearing = (BiomeGenGrassBase) (new BiomeGenGrassBase(clearingId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightDefault).setBiomeName("Clearing");
-		if (villageClearing) 		{  BiomeManager.addVillageBiome(biomeClearing, true);  }
-		BiomeManager.addStrongholdBiome(biomeClearing);
-		BiomeWoods.register(biomeClearing, Blocks.planks, 0);
 		
 		biomeMountainTundra = (BiomeGenGrassBase) (new BiomeGenAlpineTundra(mountainTundraId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.5F).setHeight(heightHighHills).setBiomeName("Alpine Tundra");
 		BiomeGenManager.addCoolBiome(biomeMountainTundra, mountainTundraGen);

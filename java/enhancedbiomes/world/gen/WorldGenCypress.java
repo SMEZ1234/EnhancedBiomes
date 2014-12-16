@@ -51,10 +51,7 @@ public class WorldGenCypress extends WorldGenAbstractTree
 			//Large Layer
 			for(int y = -2; y < 3; y++) {
 				for(int z = -2; z < 3; z++) {
-					if((y == -2 || y == 2) && (z == -2 || z == 2)) {
-
-					}
-					else {
+					if(!((y == -2 || y == 2) && (z == -2 || z == 2))) {
 						setBlockIfEmpty(var3 + y, var4 + largeLayer, var5 + z, this.leavesId, this.leavesMeta, 3, var1);
 					}
 				}
@@ -63,10 +60,7 @@ public class WorldGenCypress extends WorldGenAbstractTree
 			//Small Layer
 			for(int y = -1; y < 2; y++) {
 				for(int z = -1; z < 2; z++) {
-					if((y == -1 || y == 1) && (z == -1 || z == 1)) {
-
-					}
-					else {
+					if(!((y == -1 || y == 1) && (z == -1 || z == 1))) {
 						setBlockIfEmpty(var3 + y, var4 + smallLayer, var5 + z, this.leavesId, this.leavesMeta, 3, var1);
 					}
 				}
