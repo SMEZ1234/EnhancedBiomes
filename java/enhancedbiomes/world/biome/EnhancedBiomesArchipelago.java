@@ -116,8 +116,6 @@ public class EnhancedBiomesArchipelago
 	}
 	
 	public static void load() {
-		archipelagoBiomes.add(BiomeGenBase.deepOcean);
-		
 		biomeMountainArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenMountainsArchipelago(mountainArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.6F)).setHeight(heightHighArchipelago).setBiomeName("Mountainous Archipelago")).setupArchipelago();
 		if (villageMountainArchipelago) BiomeManager.addVillageBiome(biomeMountainArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeMountainArchipelago);

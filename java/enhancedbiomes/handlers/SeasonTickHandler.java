@@ -111,19 +111,7 @@ public class SeasonTickHandler
 		if(event.side == Side.CLIENT) {
 			Minecraft.getMinecraft().renderGlobal.loadRenderers();
 			System.out.println("Re-rendering for updated season");
-		}/*
-			else if(event.side == Side.SERVER)
-			{
-			for(int a = 0; a < MinecraftServer.getServer().worldServers.length; a++)
-			{
-				WorldServer ws = MinecraftServer.getServer().worldServers[a];
-				for(int b = 0; b < ws.playerEntities.size(); b++)
-				{
-					EntityPlayer player = (EntityPlayer) ws.playerEntities.get(b);
-					player.
-				}
-			}
-			}*/
+		}
 	}
 
 	private void setFoliageColourMap(String loc) {
