@@ -4,9 +4,9 @@ import static net.minecraftforge.common.BiomeDictionary.registerBiomeType;
 import static enhancedbiomes.helpers.EBHeights.*;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.handlers.BiomeGenManager;
 import enhancedbiomes.world.biome.archipelago.BiomeGenBorealArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenDesertArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenFlowerArchipelago;
@@ -21,12 +21,15 @@ import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
 public class EnhancedBiomesArchipelago 
 {	
+	public static ArrayList<BiomeGenBase> archipelagoBiomes = new ArrayList<BiomeGenBase>();
+	
 	public static int mountainArchipelagoId;
 	public static int mountainArchipelagoGen;	
 	public static boolean villageMountainArchipelago;
@@ -70,8 +73,7 @@ public class EnhancedBiomesArchipelago
 	public static boolean villageBorealArchipelago;
 	public static BiomeGenArchipelagoBase biomeBorealArchipelago;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -113,59 +115,55 @@ public class EnhancedBiomesArchipelago
 		config.save();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
+		archipelagoBiomes.add(BiomeGenBase.deepOcean);
 		
-		biomeMountainArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenMountainsArchipelago(mountainArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.6F)).setHeight(heightHighArchipelago).setBiomeName("Mountainous Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addCoolBiome(biomeMountainArchipelago, mountainArchipelagoGen);
+		biomeMountainArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenMountainsArchipelago(mountainArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.6F)).setHeight(heightHighArchipelago).setBiomeName("Mountainous Archipelago")).setupArchipelago();
 		if (villageMountainArchipelago) BiomeManager.addVillageBiome(biomeMountainArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeMountainArchipelago);
 		BiomeWoods.register(biomeMountainArchipelago, Blocks.planks, 1);
 		
-		biomeDesertArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenDesertArchipelago(desertArchipelagoId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(2.0F, 0.0F)).setHeight(heightLowArchipelago).setBiomeName("Desert Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addHotBiome(biomeDesertArchipelago, desertArchipelagoGen);
+		biomeDesertArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenDesertArchipelago(desertArchipelagoId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(2.0F, 0.0F)).setHeight(heightLowArchipelago).setBiomeName("Desert Archipelago")).setupArchipelago();
 		if (villageDesertArchipelago) BiomeManager.addVillageBiome(biomeDesertArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeDesertArchipelago);
 		BiomeWoods.register(biomeDesertArchipelago, EnhancedBiomesBlocks.planksEB, 13, false);
 		
-		biomeForestArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenForestArchipelago(forestArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F)).setHeight(heightLowArchipelago).setBiomeName("Forested Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addWarmBiome(biomeForestArchipelago, forestArchipelagoGen);
+		biomeForestArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenForestArchipelago(forestArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F)).setHeight(heightLowArchipelago).setBiomeName("Forested Archipelago")).setupArchipelago();
 		if (villageForestArchipelago) BiomeManager.addVillageBiome(biomeForestArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeForestArchipelago);
 		BiomeWoods.register(biomeForestArchipelago, Blocks.planks, 0);
 		
-		biomeJungleArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenJungleArchipelago(jungleArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.95F, 0.9F)).setHeight(heightMidArchipelago).setBiomeName("Tropical Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addWarmBiome(biomeJungleArchipelago, jungleArchipelagoGen);
+		biomeJungleArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenJungleArchipelago(jungleArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.95F, 0.9F)).setHeight(heightMidArchipelago).setBiomeName("Tropical Archipelago")).setupArchipelago();
 		if (villageJungleArchipelago) BiomeManager.addVillageBiome(biomeJungleArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeJungleArchipelago);
 		BiomeWoods.register(biomeJungleArchipelago, Blocks.planks, 3);
 		
-		biomePineArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenPineForestArchipelago(pineArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.7F)).setHeight(heightLowArchipelago).setBiomeName("Pine Forest Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addCoolBiome(biomePineArchipelago, pineArchipelagoGen);
+		biomePineArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenPineForestArchipelago(pineArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.7F)).setHeight(heightLowArchipelago).setBiomeName("Pine Forest Archipelago")).setupArchipelago();
 		if (villagePineArchipelago) BiomeManager.addVillageBiome(biomePineArchipelago, true);		
 		BiomeManager.addStrongholdBiome(biomePineArchipelago);	
 		BiomeWoods.register(biomePineArchipelago, EnhancedBiomesBlocks.planksEB, 6);
 		
-		biomeSnowArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenSnowArchipelago(snowArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.5F)).setHeight(heightLowArchipelago).setBiomeName("Frozen Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addFrozenBiome(biomeSnowArchipelago, snowArchipelagoGen);
+		biomeSnowArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenSnowArchipelago(snowArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.5F)).setHeight(heightLowArchipelago).setBiomeName("Frozen Archipelago")).setupArchipelago();
 		if (villageSnowArchipelago) BiomeManager.addVillageBiome(biomeSnowArchipelago, true);		
 		BiomeManager.addStrongholdBiome(biomeSnowArchipelago);	
 		BiomeWoods.register(biomeSnowArchipelago, Blocks.planks, 1);
 		
-		biomePlainsArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenPlainsArchipelago(plainsArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.4F)).setHeight(heightLowArchipelago).setBiomeName("Grassy Archipelago")).correctHeightToOcean();
-		BiomeGenManager.addWarmBiome(biomePlainsArchipelago, plainsArchipelagoGen);
+		biomePlainsArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenPlainsArchipelago(plainsArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.4F)).setHeight(heightLowArchipelago).setBiomeName("Grassy Archipelago")).setupArchipelago();
 		if (villagePlainsArchipelago) BiomeManager.addVillageBiome(biomePlainsArchipelago, true);		
 		BiomeManager.addStrongholdBiome(biomePlainsArchipelago);
 		BiomeWoods.register(biomePlainsArchipelago, Blocks.planks, 0);
 		
-		biomeFlowerArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenFlowerArchipelago(flowerArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.4F)).setHeight(heightLowArchipelago).setBiomeName("Flowery Archipelago")).correctHeightToOcean();
+		biomeFlowerArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenFlowerArchipelago(flowerArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.4F)).setHeight(heightLowArchipelago).setBiomeName("Flowery Archipelago")).setupArchipelago();
 		if (villageFlowerArchipelago) BiomeManager.addVillageBiome(biomeFlowerArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeFlowerArchipelago);
 		BiomeWoods.register(biomeFlowerArchipelago, Blocks.planks, 0);
 		
-		biomeBorealArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenBorealArchipelago(borealArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.7F)).setHeight(heightLowArchipelago).setBiomeName("Boreal Archipelago")).correctHeightToOcean();
+		biomeBorealArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenBorealArchipelago(borealArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.7F)).setHeight(heightLowArchipelago).setBiomeName("Boreal Archipelago")).setupArchipelago();
 		if (villageBorealArchipelago) BiomeManager.addVillageBiome(biomeBorealArchipelago, true);
 		BiomeManager.addStrongholdBiome(biomeBorealArchipelago);
-		BiomeWoods.register(biomeBorealArchipelago, Blocks.planks, 1);	
+		BiomeWoods.register(biomeBorealArchipelago, Blocks.planks, 1);
+		
+		for(int a = 0; a < archipelagoBiomes.size(); a++)
+			BiomeManager.oceanBiomes.add(archipelagoBiomes.get(a));
 	}
 }

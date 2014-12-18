@@ -16,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.handlers.BiomeGenManager;
 import enhancedbiomes.world.WorldTypeEnhancedBiomes;
+import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
 import enhancedbiomes.world.biome.base.BiomeGenGrassBase;
 import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
@@ -77,18 +78,11 @@ public class GenLayerEBHills extends GenLayer
 					int i2 = k1;
 					int j2;
 
-					/*if (k1 == BiomeGenBase.ocean.biomeID)
-					{
-						if(EnhancedBiomesMod.ratioIsland > this.nextInt(EnhancedBiomesMod.ratioOcean + EnhancedBiomesMod.ratioIsland))
-						{
-							int v = this.nextInt(4);
-							List<BiomeEntry> glbList = v == 0 ? BiomeManager.getBiomes(BiomeType.ICY) : v == 1 ? BiomeManager.getBiomes(BiomeType.COOL) : v == 2 ? BiomeManager.getBiomes(BiomeType.WARM) : BiomeManager.getBiomes(BiomeType.DESERT);
-							BiomeGenBase biome = glbList.get(this.nextInt(glbList.size())).biome;
-							if(biome != null && EnhancedBiomesMod.isValidIslandBiome(biome)) i2 = biome.biomeID;
-						}
+					if(k1 == BiomeGenBase.ocean.biomeID) {
+						i2 = this.nextInt(5) < 2 ? BiomeGenBase.deepOcean.biomeID : EnhancedBiomesArchipelago.archipelagoBiomes.get(this.nextInt(EnhancedBiomesArchipelago.archipelagoBiomes.size())).biomeID;
 					}
 
-					else */if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
+					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
 						i2 = biomeVolcano.biomeID;
 					}
 
@@ -96,13 +90,11 @@ public class GenLayerEBHills extends GenLayer
 						i2 = biomeBasin.biomeID;
 					}
 
-					for(int a = 0; a < 20; a++) {
-						if(this.nextInt(6) == 0 && (BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenGrassBase || BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenWoodlandBase) && BiomeGenBase.getBiomeGenArray()[k1 % 256].temperature < 1.0F) {
-							i2 = biomeLake.biomeID;
-						}
+					else if((BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenGrassBase || BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenWoodlandBase) && BiomeGenBase.getBiomeGenArray()[k1 % 256].temperature < 1.0F) {
+						i2 = biomeLake.biomeID;
 					}
 
-					if(k1 == biomeRockyDesert.biomeID) {
+					else if(k1 == biomeRockyDesert.biomeID) {
 						i2 = biomeOasis.biomeID;
 					}
 
@@ -185,9 +177,6 @@ public class GenLayerEBHills extends GenLayer
 					else if(k1 == BiomeGenBase.jungle.biomeID) {
 						i2 = BiomeGenBase.jungleHills.biomeID;
 					}
-					else if(k1 == BiomeGenBase.ocean.biomeID) {
-						i2 = BiomeGenBase.deepOcean.biomeID;
-					}
 					else if(k1 == BiomeGenBase.extremeHills.biomeID) {
 						i2 = BiomeGenBase.extremeHillsPlus.biomeID;
 					}
@@ -198,9 +187,7 @@ public class GenLayerEBHills extends GenLayer
 						i2 = BiomeGenBase.mesa.biomeID;
 					}
 					else if(k1 == BiomeGenBase.deepOcean.biomeID && this.nextInt(3) == 0) {
-						j2 = this.nextInt(2);
-
-						if(j2 == 0) {
+						if(this.nextInt(2) == 0) {
 							i2 = BiomeGenBase.plains.biomeID;
 						}
 						else {
