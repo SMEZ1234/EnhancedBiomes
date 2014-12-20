@@ -46,8 +46,7 @@ public class EnhancedBiomesGrass
 	public static boolean villageMountainTundra;
 	public static BiomeGenGrassBase biomeMountainTundra; 
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -76,8 +75,7 @@ public class EnhancedBiomesGrass
 		EnhancedBiomesPlains.config();
 	}
 	
-	public static void load()
-	{		
+	public static void load() {
 		biomeBadlands = (BiomeGenGrassBase) (new BiomeGenBadlands(badlandsId)).setColor(9286496).setTemperatureRainfall(2.0F, 0.1F).setHeight(heightDefault).setDisableRain().setBiomeName("Badlands");
 		BiomeGenManager.addHotBiome(biomeBadlands, badlandsGen);
 		if (villageBadlands) BiomeManager.addVillageBiome(biomeBadlands, true);

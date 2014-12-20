@@ -129,8 +129,7 @@ public class EnhancedBiomesWoodland
 	public static boolean villageForestValley;
 	public static BiomeGenWoodlandBase biomeForestValley;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -216,8 +215,7 @@ public class EnhancedBiomesWoodland
 		EnhancedBiomesTropical.config();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeBlossomWoods = (BiomeGenWoodlandBase) (new BiomeGenCherryBlossom(blossomWoodsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightLowPlains).setBiomeName("Blossom Woods");
 		BiomeGenManager.addWarmBiome(biomeBlossomWoods, blossomWoodsGen);
 		if (villageBlossomWoods) BiomeManager.addVillageBiome(biomeBlossomWoods, true);	

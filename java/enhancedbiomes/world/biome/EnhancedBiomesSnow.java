@@ -84,8 +84,7 @@ public class EnhancedBiomesSnow
 	public static boolean villageSnowyRanges;
 	public static BiomeGenSnowBase biomeSnowyRanges;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -134,8 +133,7 @@ public class EnhancedBiomesSnow
 		EnhancedBiomesSnowForest.config();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeAlpine = (BiomeGenSnowBase) (new BiomeGenAlpine(alpineId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighHills).setEnableSnow().setBiomeName("Alpine Mountains");
 		BiomeGenManager.addFrozenBiome(biomeAlpine, alpineGen);		  
 		if (villageAlpine)	BiomeManager.addVillageBiome(biomeAlpine, true);

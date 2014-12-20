@@ -55,8 +55,7 @@ public class EnhancedBiomesRock
 	public static boolean villageVolcanoM; 
 	public static BiomeGenRockBase biomeVolcanoM;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -87,8 +86,7 @@ public class EnhancedBiomesRock
 		config.save();
 	}
 	
-	public static void load()
-	{			
+	public static void load() {
 		biomeVolcano = (BiomeGenRockBase) (new BiomeGenVolcano(volcanoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightMidHills).setDisableRain().setBiomeName("Volcano");
 		if (villageVolcano) BiomeManager.addVillageBiome(biomeVolcano, true);
 		BiomeManager.addStrongholdBiome(biomeVolcano);

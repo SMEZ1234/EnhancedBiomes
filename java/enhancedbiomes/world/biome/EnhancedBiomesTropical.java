@@ -33,8 +33,7 @@ public class EnhancedBiomesTropical
 	public static boolean villageRainforestValley;
 	public static BiomeGenTropicalBase biomeRainforestValley; 	
 	 
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -52,8 +51,7 @@ public class EnhancedBiomesTropical
 		config.save();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeOasis = (BiomeGenTropicalBase) (new BiomeGenOasis(oasisId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.95F, 0.6F)).setHeight(heightDefault).setBiomeName("Oasis");													
 		if (villageOasis) BiomeManager.addVillageBiome(biomeOasis, true);
 		BiomeManager.addStrongholdBiome(biomeOasis);

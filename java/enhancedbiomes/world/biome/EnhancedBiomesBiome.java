@@ -35,8 +35,7 @@ public class EnhancedBiomesBiome
 	
 	public static boolean volcanoGen;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -58,8 +57,7 @@ public class EnhancedBiomesBiome
 		EnhancedBiomesWoodland.config();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeRiparian = (BiomeGenEBBase) (new BiomeGenRiparianZone(riparianId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Riparian Zone");
 		if (villageRiparian) BiomeManager.addVillageBiome(biomeRiparian, true);
 		BiomeManager.addStrongholdBiome(biomeRiparian);

@@ -48,8 +48,7 @@ public class EnhancedBiomesSand
 	public static boolean villageXericShrubland;
 	public static BiomeGenSandBase biomeXericShrubland;	
 
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -77,8 +76,7 @@ public class EnhancedBiomesSand
 		config.save();
 	}
 	
-	public static void load()
-	{		
+	public static void load() {
 		biomeRockyDesert = (BiomeGenSandBase) (new BiomeGenRockyDesert(rockyDesertId).setDisableRain().setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.8F, 0.0F)).setHeight(heightDefault).setBiomeName("Rocky Desert");
 		BiomeGenManager.addHotBiome(biomeRockyDesert, rockyDesertGen);	
 		if (villageRockyDesert) BiomeManager.addVillageBiome(biomeRockyDesert, true);

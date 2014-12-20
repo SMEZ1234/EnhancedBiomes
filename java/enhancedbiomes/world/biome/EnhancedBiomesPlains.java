@@ -65,8 +65,7 @@ public class EnhancedBiomesPlains
 	public static boolean villageMeadowM;
 	public static BiomeGenPlainsBase biomeMeadowM;
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -105,8 +104,7 @@ public class EnhancedBiomesPlains
 		config.save();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeGrasslands = (BiomeGenPlainsBase) (new BiomeGenGrasslands(grasslandsId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightDefault).setBiomeName("Shrublands");
 		BiomeGenManager.addWarmBiome(biomeGrasslands, grasslandsGen);
 		if (villageGrasslands) BiomeManager.addVillageBiome(biomeGrasslands, true);

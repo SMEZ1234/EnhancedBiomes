@@ -54,8 +54,7 @@ public class EnhancedBiomesSandstone
 	public static boolean villageSandStoneRangesM;
 	public static BiomeGenSandstoneBase biomeSandStoneRangesM;
 
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -87,8 +86,7 @@ public class EnhancedBiomesSandstone
 		config.save();
 	}
 	
-	public static void load()
-	{  	
+	public static void load() {
 		biomeSandStoneRanges = (BiomeGenSandstoneBase) (new BiomeGenSandStoneRanges(sandStoneRangesId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.5F).setHeight(heightMidHills).setBiomeName("Sandstone Ranges");
 		BiomeGenManager.addHotBiome(biomeSandStoneRanges, sandStoneRangesGen);
 		if (villageSandStoneRanges) BiomeManager.addVillageBiome(biomeSandStoneRanges, true);

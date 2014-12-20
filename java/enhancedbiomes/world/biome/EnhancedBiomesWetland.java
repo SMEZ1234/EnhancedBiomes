@@ -67,8 +67,7 @@ public class EnhancedBiomesWetland
 	public static boolean villageMarsh;
 	public static BiomeGenWetlandBase biomeMarsh; 	
 	
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -108,8 +107,7 @@ public class EnhancedBiomesWetland
 		config.save();
 	}
 	
-	public static void load()
-	{
+	public static void load() {
 		biomeMangrove = (BiomeGenWetlandBase) (new BiomeGenMangrove(mangroveId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.9F, 0.6F).setHeight(heightPartiallySubmerged).setBiomeName("Mangroves");
 		BiomeGenManager.addWarmBiome(biomeMangrove, mangroveGen);	  
 		if (villageMangrove) BiomeManager.addVillageBiome(biomeMangrove, true);

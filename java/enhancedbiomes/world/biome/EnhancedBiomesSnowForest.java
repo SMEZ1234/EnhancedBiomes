@@ -39,8 +39,7 @@ public class EnhancedBiomesSnowForest
 	public static boolean villageColdBorealForest;
 	public static BiomeGenWoodlandBase biomeColdBorealForest;
 
-	public static void config()
-	{
+	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
 		config.load();
@@ -60,8 +59,7 @@ public class EnhancedBiomesSnowForest
 		config.save();
 	}
 	
-	public static void load()
-	{		
+	public static void load() {
 		biomeColdPineForest = (BiomeGenWoodlandBase) (new BiomeGenPineForest(coldPineForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightLowHills).setBiomeName("Cold Pine Forest");
 		if (villageColdPineForest) BiomeManager.addVillageBiome(biomeColdPineForest, true);	
 		BiomeManager.addStrongholdBiome(biomeColdPineForest);
