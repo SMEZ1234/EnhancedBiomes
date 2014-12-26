@@ -4,6 +4,7 @@ import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
+import enhancedbiomes.handlers.ReplaceBiomeBlocksHandler;
 import enhancedbiomes.helpers.TreeGen;
 import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
@@ -17,6 +18,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 
 public class BiomeGenSandStoneCanyon extends BiomeGenSandstoneBase
 {
@@ -28,6 +30,22 @@ public class BiomeGenSandStoneCanyon extends BiomeGenSandstoneBase
 		this.topBlock = Blocks.sandstone;
 		this.fillerBlock = Blocks.sandstone;
 		this.theBiomeDecorator.treesPerChunk = 30;
+	}
+
+	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
+		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
+
+		int h = ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange);
+
+		if(worldGenNoise > 2 && h > 88) {
+			for(h += 0; h > 75 - worldGenNoise * 3; h--)
+				e.blockArray[preHeightIndex + h] = h < 63 ? Blocks.flowing_water : Blocks.air;
+			e.blockArray[preHeightIndex + h] = worldGenNoise > 4.2 ? Blocks.flowing_water : worldGenNoise > 3 ? Blocks.dirt : Blocks.stone;
+		}
+		else if(h >= 75 && (worldGenNoise > 1.85D || (h < 85 && worldGenNoise > 1.35D))) {
+			for(int h1 = h; h1 >= (75 + h) / 2; h1--)
+				e.blockArray[preHeightIndex + h1] = Blocks.air;
+		}
 	}
 
 	/**
