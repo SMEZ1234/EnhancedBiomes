@@ -11,7 +11,6 @@ import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenClayHills;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenCreekBed;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenSandStoneCanyon;
-import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenSandStoneGorge;
 import enhancedbiomes.world.biome.wasteland.sandstone.BiomeGenSandStoneRanges;
 import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
@@ -36,10 +35,6 @@ public class EnhancedBiomesSandstone
 	public static int sandStoneCanyonGen;
 	public static boolean villageSandStoneCanyon; 
 	public static BiomeGenSandstoneBase biomeSandStoneCanyon;
-	
-	public static int sandStoneGorgeId;
-	public static boolean villageSandStoneGorge; 	  
-	public static BiomeGenSandstoneBase biomeSandStoneGorge; 
 	
 	public static int clayHillsId;	 
 	public static int clayHillsGen; 
@@ -69,9 +64,6 @@ public class EnhancedBiomesSandstone
 		sandStoneCanyonId = config.get(config.CATEGORY_GENERAL, "Biome ID of Sandstone Canyon", BiomeIDs.sandstoneCanyons).getInt();
 		sandStoneCanyonGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Sandstone Canyon biome", 10).getInt();
 		villageSandStoneCanyon = config.get(config.CATEGORY_GENERAL, "Generate villages in Sandstone Canyon biome", true).getBoolean(true);
-		
-		sandStoneGorgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Sandstone Canyon 2", BiomeIDs.sandstoneCanyon).getInt();
-		villageSandStoneGorge = config.get(config.CATEGORY_GENERAL, "Generate villages in Sandstone Canyon 2 biome", true).getBoolean(true);
 		
 		clayHillsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Clay Hills", BiomeIDs.clayHills).getInt();
 		clayHillsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Clay Hills biome", 10).getInt();
@@ -103,11 +95,6 @@ public class EnhancedBiomesSandstone
 		if (villageSandStoneCanyon) BiomeManager.addVillageBiome(biomeSandStoneCanyon, true);
 		BiomeManager.addStrongholdBiome(biomeSandStoneCanyon);
 		BiomeWoods.register(biomeSandStoneCanyon, Blocks.planks, 2);
-		
-		biomeSandStoneGorge = (BiomeGenSandstoneBase) (new BiomeGenSandStoneGorge(sandStoneGorgeId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.15F).setHeight(heightShallowWaters).setBiomeName("Sandstone Canyon");
-		if (villageSandStoneGorge) BiomeManager.addVillageBiome(biomeSandStoneGorge, true);
-		BiomeManager.addStrongholdBiome(biomeSandStoneGorge);	
-		BiomeWoods.register(biomeSandStoneGorge, Blocks.planks, 2);	  
 		
 		biomeClayHills = (BiomeGenSandstoneBase) (new BiomeGenClayHills(clayHillsId)).setDisableRain().setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightMidHills).setBiomeName("Clay Hills");
 		BiomeGenManager.addHotBiome(biomeClayHills, clayHillsGen);		  

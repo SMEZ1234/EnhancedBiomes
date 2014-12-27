@@ -65,12 +65,10 @@ public class BiomeTypes {
 		registerBiomeType(biomeRockHills, 				WASTELAND, MOUNTAIN);
 		registerBiomeType(biomeBasin, 					WASTELAND);
 		registerBiomeType(biomeStoneCanyon, 			WASTELAND, HILLS);
-		registerBiomeType(biomeStoneGorge, 				WASTELAND);
 		registerBiomeType(biomeVolcanoM,				NETHER, WASTELAND);
 		registerBiomeType(biomeSandStoneRanges, 		HOT, SANDY, MESA, HILLS, SPARSE);
 		registerBiomeType(biomeScree, 					HOT, SANDY, MESA, SPARSE);
 		registerBiomeType(biomeSandStoneCanyon, 		HOT, MESA, DRY);
-		registerBiomeType(biomeSandStoneGorge, 			HOT, MESA, DRY, SPARSE);
 		registerBiomeType(biomeClayHills, 				HOT, MESA);
 		registerBiomeType(biomeCreekBed, 				HOT, SPARSE);
 		registerBiomeType(biomeSandStoneRangesM, 		HOT, SANDY, MESA, HILLS, SPARSE);

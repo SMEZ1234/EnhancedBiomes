@@ -47,10 +47,6 @@ public class EnhancedBiomesRock
 	public static boolean villageStoneCanyon; 
 	public static BiomeGenRockBase biomeStoneCanyon;
 	
-	public static int stoneGorgeId;
-	public static boolean villageStoneGorge; 	  
-	public static BiomeGenRockBase biomeStoneGorge; 
-	
 	public static int volcanoMId;
 	public static boolean villageVolcanoM; 
 	public static BiomeGenRockBase biomeVolcanoM;
@@ -76,9 +72,6 @@ public class EnhancedBiomesRock
 		
 		stoneCanyonId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon", BiomeIDs.stoneCanyons).getInt();
 		villageStoneCanyon = config.get(config.CATEGORY_GENERAL, "Generate villages in Stone Canyon biome", true).getBoolean(true);
-		
-		stoneGorgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon 2", BiomeIDs.stoneCanyon).getInt();
-		villageStoneGorge = config.get(config.CATEGORY_GENERAL, "Generate villages in Stone Canyon 2 biome", true).getBoolean(true);
 		
 		volcanoMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano M", BiomeIDs.volcanoM).getInt();
 		villageVolcanoM = config.get(config.CATEGORY_GENERAL, "Generate villages in Volcano M biome", false).getBoolean(false);
@@ -114,11 +107,6 @@ public class EnhancedBiomesRock
 		BiomeManager.addStrongholdBiome(biomeStoneCanyon);
 		BiomeWoods.register(biomeStoneCanyon, Blocks.planks, 2);
 		
-		biomeStoneGorge = (BiomeGenRockBase) (new BiomeGenStoneCanyon(stoneGorgeId)).setColor(9286496).setDisableRain().setTemperatureRainfall(1.0F, 0.05F).setHeight(heightShallowWaters).setBiomeName("Stone Canyon");
-		if (villageStoneGorge) BiomeManager.addVillageBiome(biomeStoneGorge, true);
-		BiomeManager.addStrongholdBiome(biomeStoneGorge);
-		BiomeWoods.register(biomeStoneGorge, Blocks.planks, 2);
-
 		biomeVolcanoM = (BiomeGenRockBase) (new BiomeGenVolcano(volcanoMId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightMidPlains).setDisableRain().setBiomeName("Volcano M");
 		if (villageVolcanoM) BiomeManager.addVillageBiome(biomeVolcanoM, true);
 		BiomeManager.addStrongholdBiome(biomeVolcanoM);

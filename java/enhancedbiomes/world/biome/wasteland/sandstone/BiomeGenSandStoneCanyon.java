@@ -53,7 +53,7 @@ public class BiomeGenSandStoneCanyon extends BiomeGenSandstoneBase
 	 */
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random) {
-		return (WorldGenAbstractTree) TreeGen.birch();
+		return par1Random.nextInt(3) == 0 ? TreeGen.eucalyptus_shrub(par1Random) : TreeGen.birch();
 	}
 
 	public void decorate(World par1World, Random par2Random, int par3, int par4) {

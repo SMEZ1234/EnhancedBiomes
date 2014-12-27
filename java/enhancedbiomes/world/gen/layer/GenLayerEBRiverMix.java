@@ -54,12 +54,6 @@ public class GenLayerEBRiverMix extends GenLayer
 					else if(aint[i1] == EnhancedBiomesSnow.biomeAlpine.biomeID) {
 						aint2[i1] = EnhancedBiomesSnow.biomeGlacier.biomeID;
 					}
-					else if(aint[i1] == EnhancedBiomesSandstone.biomeSandStoneCanyon.biomeID) {
-						aint2[i1] = EnhancedBiomesSandstone.biomeSandStoneGorge.biomeID;
-					}
-					else if(aint[i1] == EnhancedBiomesRock.biomeStoneCanyon.biomeID) {
-						aint2[i1] = EnhancedBiomesRock.biomeStoneGorge.biomeID;
-					}
 					else if(aint[i1] == EnhancedBiomesWetland.biomeEphemeralLake.biomeID) {
 						aint2[i1] = EnhancedBiomesWetland.biomeEphemeralLake.biomeID;
 					}

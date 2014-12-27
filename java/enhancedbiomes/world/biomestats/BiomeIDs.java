@@ -28,7 +28,6 @@ public class BiomeIDs {
 	public static final int firForest = getNextID();				public static final int coldFirForest = firForest + 128;
 	public static final int wastelands = getNextID();				public static final int snowyWastelands = wastelands + 128;
 	public static final int sandstoneCanyons = getNextID();			public static final int stoneCanyons = sandstoneCanyons + 128;
-	public static final int sandstoneCanyon = getNextID();			public static final int stoneCanyon = sandstoneCanyon + 128;
 	public static final int ephemeralLake = getNextID();			public static final int woodlandLake = ephemeralLake + 128;
 	public static final int ephemeralLakeEdge = getNextID();		public static final int woodlandLakeEdge = ephemeralLakeEdge + 128;
 	public static final int borealPlateau = getNextID();			public static final int borealPlateauM = borealPlateau + 128;
