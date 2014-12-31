@@ -15,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.handlers.BiomeGenManager;
+import enhancedbiomes.handlers.SubBiomeEventHandler;
 import enhancedbiomes.world.WorldTypeEnhancedBiomes;
 import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
@@ -37,11 +38,13 @@ public class GenLayerEBHills extends GenLayer
 {
 	private static final Logger logger = LogManager.getLogger();
 	private GenLayer field_151628_d;
+	private GenLayer heatLayer;
 
-	public GenLayerEBHills(long p_i45479_1_, GenLayer p_i45479_3_, GenLayer p_i45479_4_) {
+	public GenLayerEBHills(long p_i45479_1_, GenLayer p_i45479_3_, GenLayer p_i45479_4_, GenLayer heatLayer) {
 		super(p_i45479_1_);
 		this.parent = p_i45479_3_;
 		this.field_151628_d = p_i45479_4_;
+		this.heatLayer = heatLayer;
 	}
 
 	/**
@@ -51,7 +54,9 @@ public class GenLayerEBHills extends GenLayer
 		int[] aint = this.parent.getInts(par1 - 1, par2 - 1, par3 + 2, par4 + 2);
 		int[] aint1 = this.field_151628_d.getInts(par1 - 1, par2 - 1, par3 + 2, par4 + 2);
 		int[] aint2 = IntCache.getIntCache(par3 * par4);
-
+		
+		int[] aintHeat = this.heatLayer.getInts(par1, par2, par3, par4);
+		
 		for(int i1 = 0; i1 < par4; ++i1) {
 			for(int j1 = 0; j1 < par3; ++j1) {
 				this.initChunkSeed((long) (j1 + par1), (long) (i1 + par2));
@@ -79,7 +84,21 @@ public class GenLayerEBHills extends GenLayer
 					int j2;
 
 					if(k1 == BiomeGenBase.ocean.biomeID) {
-						i2 = this.nextInt(5) < 2 ? BiomeGenBase.deepOcean.biomeID : EnhancedBiomesArchipelago.archipelagoBiomes.get(this.nextInt(EnhancedBiomesArchipelago.archipelagoBiomes.size())).biomeID;
+						if(this.nextInt(5) < 2) i2 = BiomeGenBase.deepOcean.biomeID;
+						else switch(aintHeat[j1 + i1 * par3] & -3841) {
+							case 1:
+								i2 = EnhancedBiomesArchipelago.ab_hot.get(this.nextInt(EnhancedBiomesArchipelago.ab_hot.size())).biomeID;
+								break;
+							case 2:
+								i2 = EnhancedBiomesArchipelago.ab_warm.get(this.nextInt(EnhancedBiomesArchipelago.ab_warm.size())).biomeID;
+								break;
+							case 3:
+								i2 = EnhancedBiomesArchipelago.ab_cool.get(this.nextInt(EnhancedBiomesArchipelago.ab_cool.size())).biomeID;
+								break;
+							case 4:
+								i2 = EnhancedBiomesArchipelago.ab_frozen.get(this.nextInt(EnhancedBiomesArchipelago.ab_frozen.size())).biomeID;
+								break;
+						}
 					}
 
 					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {

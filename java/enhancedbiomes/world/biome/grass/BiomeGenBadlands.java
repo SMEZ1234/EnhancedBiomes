@@ -9,7 +9,6 @@ import enhancedbiomes.handlers.ReplaceBiomeBlocksHandler;
 import enhancedbiomes.helpers.EnhancedBiomesWorldHelper;
 import enhancedbiomes.world.biome.base.BiomeGenGrassBase;
 import enhancedbiomes.world.gen.WorldGenBadlands;
-import enhancedbiomes.world.gen.WorldGenInselberg;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;

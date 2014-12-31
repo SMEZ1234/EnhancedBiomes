@@ -1,5 +1,7 @@
 package enhancedbiomes.world.biome.base;
 
+import java.util.ArrayList;
+
 import enhancedbiomes.handlers.ReplaceBiomeBlocksHandler;
 import enhancedbiomes.world.biome.EnhancedBiomesArchipelago;
 import net.minecraft.init.Blocks;
@@ -22,8 +24,9 @@ public class BiomeGenArchipelagoBase extends BiomeGenEBBase
 		}
 	}
 
-	public BiomeGenArchipelagoBase setupArchipelago() {
+	public BiomeGenArchipelagoBase setupArchipelago(ArrayList<BiomeGenArchipelagoBase> list) {
 		EnhancedBiomesArchipelago.archipelagoBiomes.add(this);
+		list.add(this);
 		this.archipelagoHeight = this.rootHeight;
 		this.rootHeight = height_Oceans.rootHeight;
 		this.heightVariation = height_Oceans.variation;

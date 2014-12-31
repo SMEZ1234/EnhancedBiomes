@@ -62,7 +62,7 @@ public abstract class GenLayerEB extends GenLayer
 		Object object = par2WorldType.getBiomeLayer(par0, genlayer3);
 
 		GenLayer genlayer1 = GenLayerEBZoom.magnify(1000L, genlayerriverinit, 2);
-		GenLayerEBHills genlayerhills = new GenLayerEBHills(1000L, (GenLayer) object, genlayer1);
+		GenLayerEBHills genlayerhills = new GenLayerEBHills(1000L, (GenLayer) object, genlayer1, genlayer3);
 		genlayer = GenLayerEBZoom.magnify(1000L, genlayerriverinit, 2);
 		genlayer = GenLayerEBZoom.magnify(1000L, genlayer, b0);
 		GenLayerEBRiver genlayerriver = new GenLayerEBRiver(1L, genlayer);
