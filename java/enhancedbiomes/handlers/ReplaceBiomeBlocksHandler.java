@@ -14,12 +14,18 @@ import enhancedbiomes.world.ChunkProviderEnhancedBiomes;
 import enhancedbiomes.world.MapGenCavesEnhancedBiomes;
 import enhancedbiomes.world.MapGenRavineEnhancedBiomes;
 import enhancedbiomes.world.biome.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesWoodland;
 import enhancedbiomes.world.biome.base.BiomeGenEBBase;
+import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
+import enhancedbiomes.world.biome.decorators.BiomeDecoratorWoodland;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenForest;
+import net.minecraft.world.biome.BiomeGenJungle;
+import net.minecraft.world.biome.BiomeGenTaiga;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -32,10 +38,10 @@ public class ReplaceBiomeBlocksHandler
 	private double[] stoneNoise = new double[256];
 	private double[] stoneVariantNoise = new double[256];
 	private NoiseGeneratorPerlin stonePerlin;
-	
+
 	private NoiseGeneratorPerlin worldGenPerlin;
 	private double[] worldGenNoise = new double[256];
-	
+
 	private Random rand;
 
 	public ReplaceBiomeBlocksHandler() {
@@ -53,13 +59,13 @@ public class ReplaceBiomeBlocksHandler
 			this.stoneNoise = this.stonePerlin.func_151599_a(this.stoneNoise, (double) (e.chunkX * 16), (double) (e.chunkZ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 			this.stoneVariantNoise = this.stonePerlin.func_151599_a(this.stoneVariantNoise, (double) (e.chunkX * 16), (double) (e.chunkZ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 			this.worldGenNoise = this.worldGenPerlin.func_151599_a(this.worldGenNoise, (double) (e.chunkX * 16), (double) (e.chunkZ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
-			
+
 			for(int xInChunk = 0; xInChunk < 16; ++xInChunk) {
 				for(int zInChunk = 0; zInChunk < 16; ++zInChunk) {
 					EnhancedBiomesMod.setStoneNoiseForCoords(e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, this.stoneVariantNoise[zInChunk + xInChunk * 16]);
 
 					int heightRange = e.blockArray.length / 256;
-					
+
 					int x = (e.chunkX * 16 + xInChunk) & 15;
 					int z = (e.chunkZ * 16 + zInChunk) & 15;
 					int preHeightIndex = (z * 16 + x) * heightRange;
@@ -68,6 +74,9 @@ public class ReplaceBiomeBlocksHandler
 
 					if(biomegenbase instanceof BiomeGenEBBase) {
 						((BiomeGenEBBase) biomegenbase).replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise[x * 16 + z]);
+					}
+					else if(biomegenbase instanceof BiomeGenForest || biomegenbase instanceof BiomeGenTaiga || biomegenbase instanceof BiomeGenJungle) {
+						((BiomeDecoratorVanillaWoodland) biomegenbase.theBiomeDecorator).setTreeCheck(worldGenNoise[x * 16 + z] <= 2.5D, x * 16 + z);
 					}
 
 					biomegenbase.genTerrainBlocks(e.world, rand, e.blockArray, e.metaArray, e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, this.stoneNoise[zInChunk + xInChunk * 16]);

@@ -4,7 +4,7 @@ import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.Ev
 
 import java.util.Random;
 
-import enhancedbiomes.world.biome.BiomeDecoratorWoodland;
+import enhancedbiomes.world.biome.decorators.BiomeDecoratorWoodland;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -21,9 +21,7 @@ public class BiomeGenWoodlandBase extends BiomeGenEBBase
 
 	public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
 		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
-		
-		if(worldGenNoise > 2.5D) treeCheck[x * 16 + z] = false;
-		else treeCheck[x * 16 + z] = true;
+		treeCheck[x * 16 + z] = worldGenNoise <= 2.5D;
 	}
 
 	public void generateTrees(World world, Random rand, int chunk_X, int chunk_Z) {

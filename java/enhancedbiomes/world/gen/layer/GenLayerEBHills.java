@@ -53,8 +53,7 @@ public class GenLayerEBHills extends GenLayer
 	public int[] getInts(int par1, int par2, int par3, int par4) {
 		int[] aint = this.parent.getInts(par1 - 1, par2 - 1, par3 + 2, par4 + 2);
 		int[] aint1 = this.field_151628_d.getInts(par1 - 1, par2 - 1, par3 + 2, par4 + 2);
-		int[] aint2 = IntCache.getIntCache(par3 * par4);
-		
+		int[] aint2 = IntCache.getIntCache(par3 * par4);		
 		int[] aintHeat = this.heatLayer.getInts(par1, par2, par3, par4);
 		
 		for(int i1 = 0; i1 < par4; ++i1) {
