@@ -1,5 +1,5 @@
-﻿tile.logOakEB.greatOak.name=Древесина великого дуба
-tile.logOakEB.savannah.name=Древесина колючего дерева
+tile.logOakEB.greatOak.name=Древесина великого дуба
+tile.logOakEB.savannah.name=Древесина караганы
 tile.logOakEB.poplar.name=Древесина тополя
 tile.logOakEB.mangrove.name=Древесина мангрового дерева
 
@@ -20,7 +20,7 @@ tile.logJungleEB.kapok.name=Древесина хлопкового дерева
 
 
 tile.leavesOakEB_0.name=Листва великого дуба
-tile.leavesOakEB_1.name=Листва колючего дерева
+tile.leavesOakEB_1.name=Листва караганы
 tile.leavesOakEB_2.name=Листва тополя
 tile.leavesOakEB_3.name=Листва мангрового дерева
 
@@ -41,7 +41,7 @@ tile.leavesJungleEB_3.name=Листва хлопкового дерева
 
 
 tile.planksEB_0.name=Доски из великого дуба
-tile.planksEB_1.name=Доски из колючего дерева
+tile.planksEB_1.name=Доски из караганы
 tile.planksEB_2.name=Доски из тополя
 tile.planksEB_3.name=Доски из мангрового дерева
 
@@ -62,7 +62,7 @@ tile.planksEB_15.name=Доски из хлопкового дерева
 
 
 tile.stairsWoodEB0.name=Ступеньки из великого дуба
-tile.stairsWoodEB1.name=Ступеньки из колючего дерева
+tile.stairsWoodEB1.name=Ступеньки из караганы
 tile.stairsWoodEB2.name=Ступеньки из тополя
 tile.stairsWoodEB3.name=Ступеньки из мангрового дерева
 
@@ -83,7 +83,7 @@ tile.stairsWoodEB15.name=Ступеньки из хлопкового дерев
 
 
 tile.slab1EB_0.name=Плита из великого дуба
-tile.slab1EB_1.name=Плита из колючего дерева
+tile.slab1EB_1.name=Плита из караганы
 tile.slab1EB_2.name=Плита из тополя
 tile.slab1EB_3.name=Плита из мангрового дерева
 
@@ -104,7 +104,7 @@ tile.slab2EB_7.name=Плита из хлопкового дерева
 
 
 tile.saplingEB_0.name=Саженец великого дуба
-tile.saplingEB_1.name=Саженец колючего дерева
+tile.saplingEB_1.name=Саженец караганы
 tile.saplingEB_2.name=Саженец тополя
 tile.saplingEB_3.name=Саженец мангрового дерева
 
@@ -126,7 +126,7 @@ tile.saplingEB_15.name=Саженец хлопкового дерева
 
 tile.stoneEB_0.name=Базальт
 tile.stoneEB_1.name=Сланец
-tile.stoneEB_2.name=Затвердевший песок
+tile.stoneEB_2.name=Закалённый песчаник
 tile.stoneEB_3.name=Известняк
 tile.stoneEB_4.name=Шифер
 tile.stoneEB_5.name=Риолит
@@ -141,7 +141,7 @@ tile.stoneEB_12.name=Дацит
 
 tile.stoneBrickEB_0.name=Базальтовый кирпич
 tile.stoneBrickEB_1.name=Сланцевый кирпич
-tile.stoneBrickEB_2.name=Кирпич из затвердевшего песка
+tile.stoneBrickEB_2.name=Кирпич из закалённого песчаника
 tile.stoneBrickEB_3.name=Известняковый кирпич
 tile.stoneBrickEB_4.name=Шиферный кирпич
 tile.stoneBrickEB_5.name=Риолитовый кирпич
@@ -156,7 +156,7 @@ tile.stoneBrickEB_12.name=Дацитовый кирпич
 
 tile.stoneCobbleEB_0.name=Мощёный базальт
 tile.stoneCobbleEB_1.name=Мощёный сланец
-tile.stoneCobbleEB_2.name=Мощёный песок
+tile.stoneCobbleEB_2.name=Мощёный закалённый песчаник
 tile.stoneCobbleEB_3.name=Мощёный известняк
 tile.stoneCobbleEB_4.name=Мощёный шифер
 tile.stoneCobbleEB_5.name=Мощёный риолит
@@ -165,7 +165,7 @@ tile.stoneCobbleEB_7.name=Мощёный мрамор
 tile.stoneCobbleEB_8.name=Мощёный доломит
 tile.stoneCobbleEB_9.name=Мощёный аспидный сланец
 tile.stoneCobbleEB_10.name=Мощёный кремнистый известняк
-tile.stoneCobbleEB_11.name=Мощёный габбро
+tile.stoneCobbleEB_11.name=Мощёная габбро
 tile.stoneCobbleEB_12.name=Мощёный дацит
 
 
@@ -276,7 +276,7 @@ tile.oreEmeraldEB_12.name=Изумрудная руда
 
 tile.slabSEB_0.name=Базальтовая плита
 tile.slabSEB_1.name=Сланцевая плита
-tile.slabSEB_2.name=Плита из затвердевшего песка
+tile.slabSEB_2.name=Плита из закалённого песчаника
 tile.slabSEB_3.name=Известняковая плита
 tile.slabSEB_4.name=Шиферная плита
 tile.slabSEB_5.name=Риолитовая плита
@@ -291,7 +291,7 @@ tile.slabSEB2_6.name=Дацитовая плита
 
 tile.slabSEBB_0.name=Плита из базальтового кирпича
 tile.slabSEBB_1.name=Плита из сланцевого кирпича
-tile.slabSEBB_2.name=Плита из кирпича затвердевшего песка
+tile.slabSEBB_2.name=Плита из кирпича закалённого песчаника
 tile.slabSEBB_3.name=Плита из известнякового кирпича
 tile.slabSEBB_4.name=Плита из шиферного кирпича
 tile.slabSEBB_5.name=Плита из риолитового кирпича
@@ -306,6 +306,7 @@ tile.slabSEBB2_6.name=Плита из дацитового кирпича
 
 tile.slabSCEB_0.name=Мощёная базальтовая плита
 tile.slabSCEB_1.name=Мощёная сланцевая плита
+tile.slabSCEB_2.name=Мощёная песчаниковая плита
 tile.slabSCEB_3.name=Мощёная известняковая плита
 tile.slabSCEB_4.name=Мощёная шиферная плита
 tile.slabSCEB_5.name=Мощёная риолитовая плита
@@ -320,7 +321,7 @@ tile.slabSCEB2_6.name=Мощёная дацитовая плита
 
 tile.stairsSEBB0.name=Ступеньки из базальтового кирпича
 tile.stairsSEBB1.name=Ступеньки из сланцевого кирпича
-tile.stairsSEBB2.name=Ступеньки из кирпича затвердевшего песка
+tile.stairsSEBB2.name=Ступеньки из кирпича закалённого песчаника
 tile.stairsSEBB3.name=Ступеньки из известнякового кирпича
 tile.stairsSEBB4.name=Ступеньки из шиферного кирпича
 tile.stairsSEBB5.name=Ступеньки из риолитового кирпича
@@ -335,6 +336,7 @@ tile.stairsSEBB12.name=Ступеньки из дацитового кирпич
 
 tile.stairsSCEB0.name=Мощёные базальтовые ступеньки
 tile.stairsSCEB1.name=Мощёные сланцевые ступеньки
+tile.stairsSCEB2.name=Мощёные песчаниковые ступеньки
 tile.stairsSCEB3.name=Мощёные известняковые ступеньки
 tile.stairsSCEB4.name=Мощёные шиферные ступеньки
 tile.stairsSCEB5.name=Мощёные риолитовые ступеньки
@@ -379,3 +381,4 @@ tile.util.name=НЕ ИСПОЛЬЗУЙТЕ ЭТОТ БЛОК. СКАЖИТЕ SME
 itemGroup.enhancedBiomesOrganic=Enhanced Biomes: Основа
 itemGroup.enhancedBiomesMineral=Enhanced Biomes: Минералы
 generator.typeEB=Enhanced Biomes
+generator.typeOneBiome=Одиночный биом
