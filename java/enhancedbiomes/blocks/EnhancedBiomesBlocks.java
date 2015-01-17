@@ -184,7 +184,7 @@ public class EnhancedBiomesBlocks {
 	    oreRedstoneLitEB = (new BlockRedstoneOreEB(true)).setLightLevel(0.625F).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreRedstoneLitEB").setBlockTextureName("redstone_ore").setCreativeTab(tabEnhancedBiomesMineral);
 	    oreDiamondEB = (new BlockOreEB()).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreDiamondEB").setBlockTextureName("diamond_ore").setCreativeTab(tabEnhancedBiomesMineral);
 	    oreEmeraldEB = (new BlockOreEB()).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreEmeraldEB").setBlockTextureName("emerald_ore").setCreativeTab(tabEnhancedBiomesMineral);
-	    //TODO Remove for release
+	    //FIXME Remove for release
 	    /*EnhancedBiomesApi.createOre("enhancedbiomes", "oreTest", "test_ore", Blocks.redstone_block, 1, false, Items.redstone, 0, 2, 5, 1, 3, 0, 128, 30, 16);
 	    EnhancedBiomesApi.createOre("enhancedbiomes", "oreTest2", "test2_ore", Blocks.glowstone, 1, false, Items.glowstone_dust, 0, 2, 5, 1, 3, 0, 128, 30, 16);*/
 		
@@ -218,7 +218,7 @@ public class EnhancedBiomesBlocks {
 	    shoji = (new BlockShoji("enhancedbiomes:shoji", "enhancedbiomes:shoji", Material.cloth, false)).setHardness(0.2F).setStepSound(soundTypeCloth).setBlockName("shoji").setCreativeTab(tabEnhancedBiomesOrganic);
 	    shojiLamp = (BlockShojiLamp) new BlockShojiLamp().setHardness(0.5F).setLightLevel(0.9375F).setStepSound(soundTypeCloth).setBlockName("shojiLamp").setCreativeTab(tabEnhancedBiomesOrganic);
 	    
-	    //TODO Remove for release
+	    //FIXME Remove for release
 		//util = new BlockUtil().setBlockName("util"); inputBlock(util);
 		
 		inputWoodBlock(logOak, 		ItemBlockLogOak.class);			Blocks.fire.setFireInfo(logOak, 5, 5);

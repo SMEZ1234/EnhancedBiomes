@@ -62,7 +62,7 @@ import static net.minecraftforge.common.BiomeDictionary.*;
 import net.minecraftforge.common.config.Configuration;
 
 @Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "2.5 for MC 1.7.10", useMetadata = true)
-//TODO Update version for release
+//FIXME Update version for release
 public class EnhancedBiomesMod
 {
 	@SidedProxy(clientSide = "enhancedbiomes.proxy.ClientProxy", serverSide = "enhancedbiomes.proxy.CommonProxy")
