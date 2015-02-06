@@ -121,7 +121,7 @@ public class GenLayerEBHills extends GenLayer
 					}
 
 					else if(k1 == biomeTundra.biomeID) {
-						i2 = biomeIceSheet.biomeID;
+						i2 = BiomeGenBase.frozenOcean.biomeID;
 					}
 
 					else if(k1 == biomeBlossomWoods.biomeID) {

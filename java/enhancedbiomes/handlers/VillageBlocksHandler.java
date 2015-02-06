@@ -5,6 +5,7 @@ import java.util.Random;
 import com.google.common.eventbus.Subscribe;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockStoneEB;
 import enhancedbiomes.village.VillagePieceSelection;
 import enhancedbiomes.world.biome.EnhancedBiomesRock;
 import enhancedbiomes.world.biomestats.BiomeCategorisation;
@@ -56,12 +57,12 @@ public class VillageBlocksHandler
 					else if(ameta == 5) event.replacement = doubleSlabSB;
 				}
 				else if(a == stone_stairs) event.replacement = stairsSEB[rmeta];
-				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + 6];
+				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + BlockStoneEB.totalStones];
 
 				else if(a == log || a == log2) event.replacement = stoneBrickEB;
 				else if(a == planks) event.replacement = stoneBrickEB;
 				else if(a == wooden_slab) event.replacement = slabSC;
-				else if(a == acacia_stairs || a == birch_stairs || a == dark_oak_stairs || a == jungle_stairs || a == oak_stairs || a == spruce_stairs) event.replacement = stairsSEB[rmeta + 6];
+				else if(a == acacia_stairs || a == birch_stairs || a == dark_oak_stairs || a == jungle_stairs || a == oak_stairs || a == spruce_stairs) event.replacement = stairsSEB[rmeta + BlockStoneEB.totalStones];
 			}
 		}
 		else {
@@ -79,8 +80,8 @@ public class VillageBlocksHandler
 					else if(ameta == 3) event.replacement = doubleSlabSB;
 					else if(ameta == 5) event.replacement = doubleSlabSB;
 				}
-				else if(a == stone_stairs) event.replacement = stairsSEB[rmeta + 6];
-				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + 6];
+				else if(a == stone_stairs) event.replacement = stairsSEB[rmeta + BlockStoneEB.totalStones];
+				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + BlockStoneEB.totalStones];
 			}
 			else if(rock == stoneEB) {
 				if(a == stone) event.replacement = stoneEB;
@@ -97,7 +98,7 @@ public class VillageBlocksHandler
 					else if(ameta == 5) event.replacement = doubleSlabSB;
 				}
 				else if(a == stone_stairs) event.replacement = stairsSEB[rmeta];
-				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + 6];
+				else if(a == stone_brick_stairs) event.replacement = stairsSEB[rmeta + BlockStoneEB.totalStones];
 			}
 
 			if(wood == planksEB) {

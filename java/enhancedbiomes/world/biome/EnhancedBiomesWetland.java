@@ -15,7 +15,7 @@ import enhancedbiomes.world.biome.wetland.BiomeGenFen;
 import enhancedbiomes.world.biome.wetland.BiomeGenLake;
 import enhancedbiomes.world.biome.wetland.BiomeGenMangrove;
 import enhancedbiomes.world.biome.wetland.BiomeGenMarsh;
-import enhancedbiomes.world.biome.woodland.BiomeGenWoodlands;
+import enhancedbiomes.world.biome.wetland.BiomeGenWoodlandLake;
 import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -56,11 +56,12 @@ public class EnhancedBiomesWetland
 	
 	public static int woodlandLakeId;
 	public static boolean villageWoodlandLake;
-	public static BiomeGenWoodlandBase biomeWoodlandLake;
+	public static BiomeGenWetlandBase biomeWoodlandLake;
 	
 	public static int woodlandLakeEdgeId;
+	public static int woodlandLakeGen;
 	public static boolean villageWoodlandLakeEdge;
-	public static BiomeGenWoodlandBase biomeWoodlandLakeEdge;
+	public static BiomeGenWetlandBase biomeWoodlandLakeEdge;
 
 	public static int marshId;	
 	public static int marshGen;	
@@ -95,6 +96,7 @@ public class EnhancedBiomesWetland
 		villageLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Lake biome", false).getBoolean(true);
 		
 		woodlandLakeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake", BiomeIDs.woodlandLake).getInt();
+		woodlandLakeGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Woodland Lake biome", 10).getInt();
 		villageWoodlandLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake biome", true).getBoolean(true);
 		
 		woodlandLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake Edge", BiomeIDs.woodlandLakeEdge).getInt();
@@ -142,12 +144,13 @@ public class EnhancedBiomesWetland
 		BiomeManager.addStrongholdBiome(biomeLake);
 		BiomeWoods.register(biomeLake, EnhancedBiomesBlocks.planksEB, 8);
 		
-		biomeWoodlandLake = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodlandLakeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightPartiallySubmerged).setBiomeName("Woodland Lake");
+		biomeWoodlandLake = (BiomeGenWetlandBase) (new BiomeGenWoodlandLake(woodlandLakeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightPartiallySubmerged).setBiomeName("Woodland Lake");
+		BiomeGenManager.addWarmBiome(biomeWoodlandLake, woodlandLakeGen);
 		if (villageWoodlandLake) BiomeManager.addVillageBiome(biomeWoodlandLake, true);
 		BiomeManager.addStrongholdBiome(biomeWoodlandLake);
 		BiomeWoods.register(biomeWoodlandLake, Blocks.planks, 0);
 		
-		biomeWoodlandLakeEdge = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(woodlandLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Woodland Lake Edge");
+		biomeWoodlandLakeEdge = (BiomeGenWetlandBase) (new BiomeGenWoodlandLake(woodlandLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Woodland Lake Edge");
 		if (villageWoodlandLakeEdge) BiomeManager.addVillageBiome(biomeWoodlandLakeEdge, true);
 		BiomeManager.addStrongholdBiome(biomeWoodlandLakeEdge);
 		BiomeWoods.register(biomeWoodlandLakeEdge, Blocks.planks, 0);

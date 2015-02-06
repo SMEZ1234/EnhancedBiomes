@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import enhancedbiomes.EnhancedBiomesMod;
-import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
+//import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
 import enhancedbiomes.world.biome.decorators.BiomeDecoratorWoodland;
 import enhancedbiomes.world.biomestats.BiomeWoods;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -235,12 +235,12 @@ public class VanillaHandler
 		register(mesaPlateau, Blocks.planks, 0);
 		register(mesaPlateau_F, Blocks.planks, 0);
 		
-		for(int id = 0; id < BiomeGenBase.getBiomeGenArray().length; id++) {
+		/*for(int id = 0; id < BiomeGenBase.getBiomeGenArray().length; id++) {
 			BiomeGenBase biomegenbase = BiomeGenBase.getBiomeGenArray()[id];
 			if(biomegenbase instanceof BiomeGenForest || biomegenbase instanceof BiomeGenTaiga || biomegenbase instanceof BiomeGenJungle) {
 				biomegenbase.theBiomeDecorator = new BiomeDecoratorVanillaWoodland(biomegenbase.theBiomeDecorator);
 			}
-		}
+		}*/
 	}
 
 	public static void register(BiomeGenBase biome, Block planksID, int planksMeta) {

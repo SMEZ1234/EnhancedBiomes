@@ -23,6 +23,7 @@ import enhancedbiomes.village.VillagePieceSelection;
 import enhancedbiomes.world.WorldTypeEnhancedBiomes;
 import enhancedbiomes.world.WorldTypeSingleBiome;
 import enhancedbiomes.world.biome.EnhancedBiomesBiome;
+import enhancedbiomes.world.biome.EnhancedBiomesSnow;
 import enhancedbiomes.world.biome.base.BiomeGenEBBase;
 import enhancedbiomes.world.biomestats.BiomeTypes;
 import static enhancedbiomes.world.biome.EnhancedBiomesArchipelago.*;
@@ -314,7 +315,7 @@ public class EnhancedBiomesMod
 		if(!useNewGrass) return BlockWithMeta.dirt;
 		else {
 			BiomeGenBase biome = BiomeGenBase.getBiomeGenArray()[id];
-			if(biome == null) return BlockWithMeta.dirt;
+			if(biome == null || biome == EnhancedBiomesSnow.biomeTundra) return BlockWithMeta.dirt;
 			switch(getCatForBiome(biome)) {
 				case GRASS:
 					return mollisol;

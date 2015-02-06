@@ -19,6 +19,7 @@ public class BlockStoneEB extends BlockStone
 {
 	public static String[] stones = new String[] {"basalt", "shale", "sandstone", "limestone", "slate", "rhyolite"};
 	public static String[] stones2 = new String[] {"chalk", "marble", "dolomite", "schist", "chert", "gabbro", "dacite"};
+	public static int totalStones = stones.length + stones2.length;
 
 	private IIcon[] iconArray = new IIcon[stones.length + stones2.length];
 

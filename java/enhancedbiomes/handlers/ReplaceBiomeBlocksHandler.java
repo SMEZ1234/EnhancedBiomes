@@ -14,9 +14,10 @@ import enhancedbiomes.world.ChunkProviderEnhancedBiomes;
 import enhancedbiomes.world.MapGenCavesEnhancedBiomes;
 import enhancedbiomes.world.MapGenRavineEnhancedBiomes;
 import enhancedbiomes.world.biome.EnhancedBiomesSand;
+import enhancedbiomes.world.biome.EnhancedBiomesSnow;
 import enhancedbiomes.world.biome.EnhancedBiomesWoodland;
 import enhancedbiomes.world.biome.base.BiomeGenEBBase;
-import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
+//import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
 import enhancedbiomes.world.biome.decorators.BiomeDecoratorWoodland;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -74,10 +75,10 @@ public class ReplaceBiomeBlocksHandler
 
 					if(biomegenbase instanceof BiomeGenEBBase) {
 						((BiomeGenEBBase) biomegenbase).replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise[x * 16 + z]);
-					}
+					}/*
 					else if(biomegenbase instanceof BiomeGenForest || biomegenbase instanceof BiomeGenTaiga || biomegenbase instanceof BiomeGenJungle) {
 						((BiomeDecoratorVanillaWoodland) biomegenbase.theBiomeDecorator).setTreeCheck(worldGenNoise[x * 16 + z] <= 2.5D, x * 16 + z);
-					}
+					}*/
 
 					biomegenbase.genTerrainBlocks(e.world, rand, e.blockArray, e.metaArray, e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, this.stoneNoise[zInChunk + xInChunk * 16]);
 
@@ -92,7 +93,7 @@ public class ReplaceBiomeBlocksHandler
 							e.blockArray[index] = EnhancedBiomesMod.getCobbleFromStone(EnhancedBiomesMod.getRockForCoordsAndBiome(e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, biomegenbase.biomeID));
 							e.metaArray[index] = EnhancedBiomesMod.getRockMetaForCoordsAndBiome(e.chunkX * 16 + xInChunk, e.chunkZ * 16 + zInChunk, biomegenbase.biomeID);
 						}
-						else if(e.blockArray[index] == Blocks.dirt) {
+						else if(e.blockArray[index] == Blocks.dirt && e.metaArray[index] == 0) {
 							e.blockArray[index] = EnhancedBiomesMod.soilList[biomegenbase.biomeID];
 							e.metaArray[index] = EnhancedBiomesMod.soilMetaList[biomegenbase.biomeID];
 						}

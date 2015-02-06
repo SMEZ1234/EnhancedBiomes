@@ -43,7 +43,7 @@ public class GenLayerEBBiome extends GenLayer
 		if(bl_cool.length == 0) bl_cool = bl_backup;
 		if(bl_frozen.length == 0) bl_frozen = bl_backup;
 		//FIXME Remove for release
-		bl_frozen = /*getAllBiomesOfCat(SEA);*/new BiomeGenBase[]{forest, taiga, jungle};
+		bl_frozen = /*getAllBiomesOfCat(SEA);*/new BiomeGenBase[]{biomeGrasslandsRoofed, biomeWoodlandLake};
 		bl_hot = bl_warm = bl_cool = bl_frozen;/**/
 		/*bl_warm = bl_cool = bl_frozen = bl_hot;/**/
 		/*bl_hot = bl_frozen = bl_cool = bl_warm;/**/

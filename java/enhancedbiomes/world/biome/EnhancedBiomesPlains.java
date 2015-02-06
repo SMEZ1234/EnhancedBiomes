@@ -57,8 +57,9 @@ public class EnhancedBiomesPlains
 	public static boolean villageMeadow;
 	public static BiomeGenPlainsBase biomeMeadow;
 	
-	public static int grasslandsRoofedId;   
-	public static boolean villageGrasslandsRoofed;    
+	public static int grasslandsRoofedId;
+	public static int grasslandsRoofedGen;
+	public static boolean villageGrasslandsRoofed;
 	public static BiomeGenPlainsBase biomeGrasslandsRoofed;
 	 
 	public static int meadowMId;
@@ -96,6 +97,7 @@ public class EnhancedBiomesPlains
 		villageMeadow = config.get(config.CATEGORY_GENERAL, "Generate villages in Meadow biome", true).getBoolean(true);
 		
 		grasslandsRoofedId = config.get(config.CATEGORY_GENERAL, "Biome ID of Roofed Shrublands", BiomeIDs.roofedShrublands).getInt();
+		grasslandsRoofedGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Roofed Shrublands biome", 10).getInt();
 		villageGrasslandsRoofed = config.get(config.CATEGORY_GENERAL, "Generate villages in Roofed Shrublands biome", true).getBoolean(true);
 		
 		meadowMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Meadow M", BiomeIDs.meadowM).getInt();
@@ -142,6 +144,7 @@ public class EnhancedBiomesPlains
 		BiomeWoods.register(biomeMeadow, EnhancedBiomesBlocks.planksEB, 2);
 		
 		biomeGrasslandsRoofed = (BiomeGenPlainsBase) (new BiomeGenGrasslandsRoofed(grasslandsRoofedId)).setColor(9286496).setTemperatureRainfall(0.8F, 0.4F).setHeight(heightDefault).setBiomeName("Roofed Shrublands");
+		BiomeGenManager.addWarmBiome(biomeGrasslandsRoofed, grasslandsRoofedGen);
 		if (villageGrasslandsRoofed) BiomeManager.addVillageBiome(biomeGrasslandsRoofed, true);
 		BiomeManager.addStrongholdBiome(biomeGrasslandsRoofed);	
 		BiomeWoods.register(biomeGrasslandsRoofed, Blocks.planks, 5);

@@ -1,4 +1,4 @@
-package enhancedbiomes.world.biome.decorators;
+/*package enhancedbiomes.world.biome.decorators;
 
 import java.util.Random;
 
@@ -242,7 +242,7 @@ public class BiomeDecoratorVanillaWoodland extends BiomeDecorator
 
 	/**
 	 * Generates ores in the current chunk
-	 */
+	 *//*
 	protected void generateOres() {
 		MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
 		if(TerrainGen.generateOre(currentWorld, randomGenerator, oldbiomedeco.dirtGen, chunk_X, chunk_Z, DIRT)) this.genStandardOre1(20, oldbiomedeco.dirtGen, 0, 256);
@@ -255,4 +255,4 @@ public class BiomeDecoratorVanillaWoodland extends BiomeDecorator
 		if(TerrainGen.generateOre(currentWorld, randomGenerator, oldbiomedeco.lapisGen, chunk_X, chunk_Z, LAPIS)) this.genStandardOre2(1, oldbiomedeco.lapisGen, 16, 16);
 		MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
 	}
-}
+}*/
