@@ -27,7 +27,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BlockSoilEB extends Block
 {
 	public static final String[] soils = new String[] {"alfisol", "andisol", "entisol", "gelisol", "histosol", "inceptisol", "mollisol", "oxisol"};
-	public IIcon[] icons = new IIcon[soils.length];
+	public IIcon[] icons = new IIcon[soils.length * 2];
 
 	public BlockSoilEB() {
 		super(Material.ground);
@@ -39,7 +39,7 @@ public class BlockSoilEB extends Block
 	 * Ticks the block if it's been scheduled
 	 */
 	public void updateTick(World p_149674_1_, int x, int y, int z, Random p_149674_5_) {
-		if(!p_149674_1_.isRemote) {
+		if(!p_149674_1_.isRemote && p_149674_1_.getBlockMetadata(x, y, z) < 8) {
 			/*if (p_149674_1_.getBlockLightValue(x, y + 1, z) >= 4 && p_149674_1_.getBlockLightOpacity(x, y + 1, z) <= 2)
 			{
 			    int count = 0;
@@ -93,15 +93,15 @@ public class BlockSoilEB extends Block
 	 */
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_) {
-		for(int a = 0; a < soils.length; a++) {
-			if(a != 2) p_149666_3_.add(new ItemStack(this, 1, a));
+		for(int a = 0; a < soils.length * 2; a++) {
+			if(a % 8 != 2) p_149666_3_.add(new ItemStack(this, 1, a));
 		}
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister p_149651_1_) {
-		for(int a = 0; a < soils.length; a++) {
-			if(soils[a] != "entisol") icons[a] = p_149651_1_.registerIcon("enhancedbiomes:dirt_" + soils[a]);
+		for(int a = 0; a < soils.length * 2; a++) {
+			if(soils[a % 8] != "entisol") icons[a] = p_149651_1_.registerIcon("enhancedbiomes:" + (a < 8 ? "dirt_" : "coarse_dirt_") + soils[a % 8]);
 		}
 	}
 
@@ -109,9 +109,7 @@ public class BlockSoilEB extends Block
 	 * Get the block's damage value (for use with pick block).
 	 */
 	public int getDamageValue(World p_149643_1_, int p_149643_2_, int p_149643_3_, int p_149643_4_) {
-		int l = p_149643_1_.getBlockMetadata(p_149643_2_, p_149643_3_, p_149643_4_);
-
-		return l;
+		return p_149643_1_.getBlockMetadata(p_149643_2_, p_149643_3_, p_149643_4_);
 	}
 
 	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {

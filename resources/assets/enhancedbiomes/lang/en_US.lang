@@ -356,6 +356,13 @@ tile.dirtEB_4.name=Histosol
 tile.dirtEB_5.name=Inceptisol
 tile.dirtEB_6.name=Mollisol
 tile.dirtEB_7.name=Oxisol
+tile.dirtEB_8.name=Coarse Alfisol
+tile.dirtEB_9.name=Coarse Andisol
+tile.dirtEB_11.name=Coarse Gelisol
+tile.dirtEB_12.name=Coarse Histosol
+tile.dirtEB_13.name=Coarse Inceptisol
+tile.dirtEB_14.name=Coarse Mollisol
+tile.dirtEB_15.name=Coarse Oxisol
 
 
 tile.grassEB_0.name=Alfisol Grass Block

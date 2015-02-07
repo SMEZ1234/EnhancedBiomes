@@ -68,7 +68,7 @@ public class BlockGrassEB extends BlockGrass implements IGrowable
 					Block block = p_149674_1_.getBlock(i1, j1 + 1, k1);
 
 					if(p_149674_1_.getBlockLightValue(i1, j1 + 1, k1) >= 4 && p_149674_1_.getBlockLightOpacity(i1, j1 + 1, k1) <= 2) {
-						if(p_149674_1_.getBlock(i1, j1, k1) == EnhancedBiomesBlocks.dirtEB) p_149674_1_.setBlock(i1, j1, k1, EnhancedBiomesBlocks.grassEB, p_149674_1_.getBlockMetadata(i1, j1, k1), 2);
+						if(p_149674_1_.getBlock(i1, j1, k1) == EnhancedBiomesBlocks.dirtEB && p_149674_1_.getBlockMetadata(i1, j1, k1) < 8) p_149674_1_.setBlock(i1, j1, k1, EnhancedBiomesBlocks.grassEB, p_149674_1_.getBlockMetadata(i1, j1, k1), 2);
 						else if(p_149674_1_.getBlock(i1, j1, k1) == Blocks.dirt && p_149674_1_.getBlockMetadata(i1, j1, k1) == 0) p_149674_1_.setBlock(i1, j1, k1, Blocks.grass, 0, 2);
 					}
 				}
@@ -127,9 +127,7 @@ public class BlockGrassEB extends BlockGrass implements IGrowable
 
 	@SideOnly(Side.CLIENT)
 	public int getBlockColor() {
-		double d0 = 0.5D;
-		double d1 = 1.0D;
-		return ColorizerGrass.getGrassColor(d0, d1);
+		return ColorizerGrass.getGrassColor(0.5D, 1.0D);
 	}
 
 	/**
