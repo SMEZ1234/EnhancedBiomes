@@ -7,6 +7,7 @@ import java.util.Random;
 import enhancedbiomes.world.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.gen.feature.WorldGenCanopyTree;
 import net.minecraft.world.gen.feature.WorldGenForest;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenSwamp;
@@ -48,4 +49,5 @@ public class TreeGen
 
 	public static WorldGenAbstractTree birch(){return new WorldGenForest(false, false);}
 	public static WorldGenAbstractTree swamp(){return new WorldGenSwamp();}
+	public static WorldGenAbstractTree darkOak(){return new WorldGenCanopyTree(false);}
 }

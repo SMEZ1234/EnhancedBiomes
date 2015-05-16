@@ -3,6 +3,7 @@ package enhancedbiomes.world.biome.wasteland.rock;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.ReplaceBiomeBlocksHandler;
 import enhancedbiomes.helpers.TreeGen;
@@ -42,6 +43,7 @@ public class BiomeGenStoneCanyon extends BiomeGenRockBase
 			for(h += 0; h > 75 - worldGenNoise * 3; h--)
 				e.blockArray[preHeightIndex + h] = h < 63 ? Blocks.flowing_water : Blocks.air;
 			e.blockArray[preHeightIndex + h] = worldGenNoise > 4.2 ? Blocks.flowing_water : worldGenNoise > 3 ? Blocks.dirt : Blocks.stone;
+			if(worldGenNoise > 3 && worldGenNoise <= 4.2) e.metaArray[preHeightIndex + h] = BlockWithMeta.coarse_dirt.meta;
 		}
 		else if(h >= 75 && (worldGenNoise > 1.85D || (h < 85 && worldGenNoise > 1.35D))) {
 			for(int h1 = h; h1 >= (75 + h) / 2; h1--)
@@ -68,7 +70,7 @@ public class BiomeGenStoneCanyon extends BiomeGenRockBase
 			int j2 = par3 + par2Random.nextInt(16) + 8;
 			int l3 = par2Random.nextInt(120);
 			int j5 = par4 + par2Random.nextInt(16) + 8;
-			(new WorldGenMinableEnhancedBiomes(EnhancedBiomesMod.soilList[biomeID], EnhancedBiomesMod.soilMetaList[biomeID], 50, EnhancedBiomesMod.getDominantStone(j2, j5, par1World))).generate(par1World, par2Random, j2, l3, j5);
+			(new WorldGenMinableEnhancedBiomes(EnhancedBiomesMod.soilList[biomeID], EnhancedBiomesMod.soilMetaList[biomeID] + 8, 50, EnhancedBiomesMod.getDominantStone(j2, j5, par1World))).generate(par1World, par2Random, j2, l3, j5);
 		}
 
 		for(int c = 20; c > 0; c--) {

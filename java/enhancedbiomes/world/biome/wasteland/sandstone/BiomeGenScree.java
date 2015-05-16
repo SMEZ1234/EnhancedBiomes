@@ -3,6 +3,7 @@ package enhancedbiomes.world.biome.wasteland.sandstone;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.helpers.TreeGen;
 import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
@@ -29,7 +30,8 @@ public class BiomeGenScree extends BiomeGenSandstoneBase
 		this.theBiomeDecorator.treesPerChunk = 7;
 		this.theBiomeDecorator.grassPerChunk = 5;
 		this.theWorldGenerator = new WorldGenMinable(Blocks.monster_egg, 8);
-		this.topBlock = Blocks.dirt;
+		this.topBlock = BlockWithMeta.coarse_dirt.block;
+		this.field_150604_aj = BlockWithMeta.coarse_dirt.meta;
 		this.fillerBlock = Blocks.sandstone;
 	}
 

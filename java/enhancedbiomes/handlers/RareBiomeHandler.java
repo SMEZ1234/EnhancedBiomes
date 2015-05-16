@@ -35,7 +35,6 @@ public class RareBiomeHandler
 		setRareBiome(biomeSandStoneRanges, biomeSandStoneRangesM);
 		setRareBiome(biomeGrasslands, biomeGrasslandsRoofed);
 		setRareBiome(biomeMeadow, biomeMeadowM);
-		setRareBiome(biomeAlpine, biomeAlpineM);
 		setRareBiome(biomeTundra, biomeSnowDesert);
 		setRareBiome(biomeWasteLands, biomeWasteLandsSnowy);
 		setRareBiome(biomeSandStoneCanyon, biomeStoneCanyon);

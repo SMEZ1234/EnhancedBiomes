@@ -22,7 +22,7 @@ public class BiomeGenMountains extends BiomeGenGrassBase
 
 	public BiomeGenMountains(int par1) {
 		super(par1);
-		this.theBiomeDecorator.treesPerChunk = 1;
+		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = 5;
 		this.theWorldGenerator = new WorldGenMinable(Blocks.monster_egg, 8);
 	}
@@ -65,6 +65,14 @@ public class BiomeGenMountains extends BiomeGenGrassBase
 			var7 = par2Random.nextInt(64);
 			var8 = par4 + par2Random.nextInt(16);
 			this.theWorldGenerator.generate(par1World, par2Random, var6, var7, var8);
+		}
+		
+		var7 = par1World.getTopSolidOrLiquidBlock(par3 + 8, par4 + 8);
+		int treeLimit = Math.max(12 - var7 / 10, 1);
+		for(var5 = 0; var5 < treeLimit; ++var5) {
+			var6 = par3 + par2Random.nextInt(16);
+			var8 = par4 + par2Random.nextInt(16);
+			this.func_150567_a(par2Random).generate(par1World, par2Random, var6, par1World.getTopSolidOrLiquidBlock(var6, var8), var8);
 		}
 	}
 }

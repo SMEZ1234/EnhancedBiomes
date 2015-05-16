@@ -24,6 +24,6 @@ public class BiomeGenOakForest extends BiomeGenWoodlandBase
 	 */
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random) {
-		return par1Random.nextInt(5) == 0 ? TreeGen.greatOak(par1Random) : this.worldGeneratorTrees;
+		return par1Random.nextInt(5) == 0 ? TreeGen.greatOak(par1Random) : TreeGen.darkOak();
 	}
 }

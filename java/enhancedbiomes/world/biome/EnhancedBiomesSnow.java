@@ -19,7 +19,6 @@ import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
 import enhancedbiomes.world.biome.base.BiomeGenSnowBase;
 import enhancedbiomes.world.biome.snow.BiomeGenAlpine;
-import enhancedbiomes.world.biome.snow.BiomeGenAlpineM;
 import enhancedbiomes.world.biome.snow.BiomeGenGlacier;
 import enhancedbiomes.world.biome.snow.BiomeGenIceSheet;
 import enhancedbiomes.world.biome.snow.BiomeGenPolarDesert;
@@ -68,11 +67,7 @@ public class EnhancedBiomesSnow
 	
 	public static int wasteLandsSnowyId;
 	public static boolean villageWasteLandsSnowy;  
-	public static BiomeGenRockBase biomeWasteLandsSnowy; 
-
-	public static int alpineMId;
-	public static boolean villageAlpineM;
-	public static BiomeGenSnowBase biomeAlpineM;	  
+	public static BiomeGenRockBase biomeWasteLandsSnowy;
 	
 	/*public static int driftsId; 
 	public static int driftsGen;  
@@ -116,9 +111,6 @@ public class EnhancedBiomesSnow
 		
 		wasteLandsSnowyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Wastelands", BiomeIDs.snowyWastelands).getInt();
 		villageWasteLandsSnowy = config.get(config.CATEGORY_GENERAL, "Generate villages in Snowy Wastelands biome", true).getBoolean(true);
-		
-		alpineMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains M", BiomeIDs.alpineMountainsM).getInt();
-		villageAlpineM = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Mountains M biome", true).getBoolean(true);
 		
 		/*driftsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Drifts", BiomeIDs.drifts).getInt();
 		driftsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Drifts biome", 10).getInt();
@@ -178,11 +170,6 @@ public class EnhancedBiomesSnow
 		if (villageWasteLandsSnowy) BiomeManager.addVillageBiome(biomeWasteLandsSnowy, true);
 		BiomeManager.addStrongholdBiome(biomeWasteLandsSnowy);	
 		BiomeWoods.register(biomeWasteLandsSnowy, EnhancedBiomesBlocks.planksEB, 13);
-		
-		biomeAlpineM = (BiomeGenSnowBase) (new BiomeGenAlpineM(alpineMId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighHills).setEnableSnow().setBiomeName("Alpine Mountains M");
-		if (villageAlpineM)	BiomeManager.addVillageBiome(biomeAlpineM, true);
-		BiomeManager.addStrongholdBiome(biomeAlpineM);
-		BiomeWoods.register(biomeAlpineM, EnhancedBiomesBlocks.planksEB, 6);
 		
 		/*biomeDrifts = (BiomeGenSnowBase) (new BiomeGenDrifts(driftsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightDefault).setEnableSnow().setBiomeName("Drifts");
 		registerBiomeType(biomeDrifts, Type.FROZEN);							

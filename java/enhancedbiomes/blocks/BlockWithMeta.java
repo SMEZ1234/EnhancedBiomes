@@ -40,6 +40,15 @@ public class BlockWithMeta
 	public static BlockWithMeta mollisol;
 	public static BlockWithMeta oxisol;
 
+	public static BlockWithMeta coarse_dirt;
+	public static BlockWithMeta coarse_alfisol;
+	public static BlockWithMeta coarse_andisol;
+	public static BlockWithMeta coarse_gelisol;
+	public static BlockWithMeta coarse_histosol;
+	public static BlockWithMeta coarse_inceptisol;
+	public static BlockWithMeta coarse_mollisol;
+	public static BlockWithMeta coarse_oxisol;
+
 	public static BlockWithMeta[] rocksIgneous;
 	public static BlockWithMeta[] rocksMetamorphic;
 	public static BlockWithMeta[] rocksSedimentary;
@@ -69,6 +78,15 @@ public class BlockWithMeta
 		inceptisol = new BlockWithMeta(dirtEB, 5);
 		mollisol = new BlockWithMeta(dirtEB, 6);
 		oxisol = new BlockWithMeta(dirtEB, 7);
+
+		coarse_dirt = new BlockWithMeta(Blocks.dirt, 1);
+		coarse_alfisol = new BlockWithMeta(dirtEB, 8);
+		coarse_andisol = new BlockWithMeta(dirtEB, 9);
+		coarse_gelisol = new BlockWithMeta(dirtEB, 11);
+		coarse_histosol = new BlockWithMeta(dirtEB, 12);
+		coarse_inceptisol = new BlockWithMeta(dirtEB, 13);
+		coarse_mollisol = new BlockWithMeta(dirtEB, 14);
+		coarse_oxisol = new BlockWithMeta(dirtEB, 15);
 
 		rocksIgneous = new BlockWithMeta[] {basalt, rhyolite, gabbro, dacite};
 		rocksMetamorphic = new BlockWithMeta[] {slate, marble, schist};

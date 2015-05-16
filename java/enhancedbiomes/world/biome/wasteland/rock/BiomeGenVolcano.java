@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
+import enhancedbiomes.handlers.ReplaceBiomeBlocksHandler;
 import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import enhancedbiomes.world.gen.WorldGenMagmaSpout;
 import net.minecraft.block.Block;
@@ -13,6 +15,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 
 public class BiomeGenVolcano extends BiomeGenRockBase
 {
@@ -25,6 +28,18 @@ public class BiomeGenVolcano extends BiomeGenRockBase
 		this.topBlock = ground;
 		this.fillerBlock = ground;
 	}
+
+	/*public void replaceBiomeBlocks(ReplaceBiomeBlocks e, int x, int z, int preHeightIndex, int heightRange, double worldGenNoise) {
+		super.replaceBiomeBlocks(e, x, z, preHeightIndex, heightRange, worldGenNoise);
+
+		int h = ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange);
+
+		if(Math.abs(worldGenNoise) < 0.6D) {
+			e.blockArray[preHeightIndex + h] = Blocks.air;
+			e.blockArray[preHeightIndex + h - 1] = Blocks.flowing_lava;
+			e.blockArray[preHeightIndex + h - 2] = Blocks.flowing_lava;
+		}
+	}*/
 
 	public void decorate(World par1World, Random par2Random, int par3, int par4) {
 		super.decorate(par1World, par2Random, par3, par4);

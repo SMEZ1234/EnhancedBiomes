@@ -184,10 +184,7 @@ public class EnhancedBiomesBlocks {
 	    oreRedstoneLitEB = (new BlockRedstoneOreEB(true)).setLightLevel(0.625F).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreRedstoneLitEB").setBlockTextureName("redstone_ore").setCreativeTab(tabEnhancedBiomesMineral);
 	    oreDiamondEB = (new BlockOreEB()).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreDiamondEB").setBlockTextureName("diamond_ore").setCreativeTab(tabEnhancedBiomesMineral);
 	    oreEmeraldEB = (new BlockOreEB()).setHardness(3.0F).setResistance(5.0F).setStepSound(soundTypePiston).setBlockName("oreEmeraldEB").setBlockTextureName("emerald_ore").setCreativeTab(tabEnhancedBiomesMineral);
-	    //FIXME Remove for release
-	    /*EnhancedBiomesApi.createOre("enhancedbiomes", "oreTest", "test_ore", Blocks.redstone_block, 1, false, Items.redstone, 0, 2, 5, 1, 3, 0, 128, 30, 16);
-	    EnhancedBiomesApi.createOre("enhancedbiomes", "oreTest2", "test2_ore", Blocks.glowstone, 1, false, Items.glowstone_dust, 0, 2, 5, 1, 3, 0, 128, 30, 16);*/
-		
+	    
 	    slabS = (BlockSlab) new BlockHalfSlabSEB(false).setHardness(2.0F).setResistance(10.0F).setStepSound(soundTypePiston).setBlockName("slabSEB").setCreativeTab(tabEnhancedBiomesMineral);
 	    slabSB = (BlockSlab) new BlockHalfSlabSEB(false).setHardness(2.0F).setResistance(10.0F).setStepSound(soundTypePiston).setBlockName("slabSEBB").setCreativeTab(tabEnhancedBiomesMineral);
 	    slabSC = (BlockSlab) new BlockHalfSlabSEB(false).setHardness(2.0F).setResistance(10.0F).setStepSound(soundTypePiston).setBlockName("slabSCEB").setCreativeTab(tabEnhancedBiomesMineral);

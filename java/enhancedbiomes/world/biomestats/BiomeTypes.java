@@ -46,7 +46,7 @@ public class BiomeTypes {
 		registerBiomeType(biomeRockyDesert, 			HOT, DRY, SANDY, WASTELAND);  	  
 		registerBiomeType(biomeScrub, 					HOT, DRY, SANDY, SPARSE);
 		registerBiomeType(biomeSahara, 					HOT, DRY, SANDY); 	  
-		registerBiomeType(biomeAlpine, 					COLD, MOUNTAIN, SNOWY);		  
+		registerBiomeType(biomeAlpine, 					COLD, MOUNTAIN, SNOWY, CONIFEROUS);		  
 		registerBiomeType(biomeGlacier, 				COLD, MOUNTAIN);	
 		registerBiomeType(biomeIceSheet, 				COLD, WASTELAND);
 		registerBiomeType(biomeTundra, 					COLD, SNOWY);
@@ -54,7 +54,6 @@ public class BiomeTypes {
 		registerBiomeType(biomeSnowDesert, 				COLD, SNOWY, SANDY);							
 		registerBiomeType(biomePolarDesert, 			COLD, SNOWY, WASTELAND);  	  
 		registerBiomeType(biomeWasteLandsSnowy, 		COLD, SNOWY, WASTELAND);																				
-		registerBiomeType(biomeAlpineM, 				COLD, MOUNTAIN, SNOWY, CONIFEROUS);		  
 		registerBiomeType(biomeSnowyRanges, 			COLD, MOUNTAIN, HILLS, SNOWY, FOREST);
 		registerBiomeType(biomeColdPineForest, 			COLD, CONIFEROUS, FOREST, SNOWY);
 		registerBiomeType(biomeColdFirForest, 			COLD, CONIFEROUS, FOREST, SNOWY);

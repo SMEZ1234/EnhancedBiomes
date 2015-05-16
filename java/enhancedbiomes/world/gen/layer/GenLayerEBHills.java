@@ -100,7 +100,9 @@ public class GenLayerEBHills extends GenLayer
 						}
 					}
 
-					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
+					else if(EnhancedBiomesBiome.volcanoGen && 
+							//FIXME this.nextInt(16) == 0 && 
+							BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
 						i2 = biomeVolcano.biomeID;
 					}
 
@@ -112,105 +114,49 @@ public class GenLayerEBHills extends GenLayer
 						i2 = biomeLake.biomeID;
 					}
 
-					else if(k1 == biomeRockyDesert.biomeID) {
-						i2 = biomeOasis.biomeID;
-					}
-
-					else if(k1 == biomeRainforest.biomeID) {
-						i2 = biomeRainforestValley.biomeID;
-					}
-
-					else if(k1 == biomeTundra.biomeID) {
-						i2 = BiomeGenBase.frozenOcean.biomeID;
-					}
-
-					else if(k1 == biomeBlossomWoods.biomeID) {
-						i2 = biomeBlossomHills.biomeID;
-					}
-
-					else if(k1 == biomeWoodLands.biomeID) {
-						i2 = biomeWoodLandHills.biomeID;
-					}
-
-					else if(k1 == biomeSavannah.biomeID) {
-						i2 = biomeOasis.biomeID;
-					}
-
-					else if(k1 == biomeTundra.biomeID) {
-						i2 = biomeColdFirForest.biomeID;
-					}
-
+					//Hills
+					else if(k1 == biomeRainforest.biomeID)			i2 = biomeRainforestValley.biomeID;
+					else if(k1 == biomeBlossomWoods.biomeID)		i2 = biomeBlossomHills.biomeID;
+					else if(k1 == biomeWoodLands.biomeID)			i2 = biomeWoodLandHills.biomeID;
+					else if(k1 == biomeSilverPineForest.biomeID)	i2 = biomeSilverPineHills.biomeID;
+					else if(k1 == biomeAspenForest.biomeID)			i2 = biomeAspenHills.biomeID;
+					else if(k1 == BiomeGenBase.desert.biomeID)		i2 = BiomeGenBase.desertHills.biomeID;
+					else if(k1 == BiomeGenBase.forest.biomeID)		i2 = BiomeGenBase.forestHills.biomeID;
+					else if(k1 == BiomeGenBase.birchForest.biomeID)	i2 = BiomeGenBase.birchForestHills.biomeID;
+					else if(k1 == BiomeGenBase.taiga.biomeID)		i2 = BiomeGenBase.taigaHills.biomeID;
+					else if(k1 == BiomeGenBase.megaTaiga.biomeID)	i2 = BiomeGenBase.megaTaigaHills.biomeID;
+					else if(k1 == BiomeGenBase.coldTaiga.biomeID)	i2 = BiomeGenBase.coldTaigaHills.biomeID;
+					else if(k1 == BiomeGenBase.icePlains.biomeID)	i2 = BiomeGenBase.iceMountains.biomeID;
+					else if(k1 == BiomeGenBase.jungle.biomeID)		i2 = BiomeGenBase.jungleHills.biomeID;
+					else if(k1 == BiomeGenBase.extremeHills.biomeID)i2 = BiomeGenBase.extremeHillsPlus.biomeID;
+					else if(k1 == BiomeGenBase.savanna.biomeID)		i2 = BiomeGenBase.savannaPlateau.biomeID;
+					
+					//Mini-biomes
+					else if(k1 == biomeRockyDesert.biomeID)			i2 = biomeOasis.biomeID;
+					else if(k1 == biomeSavannah.biomeID)			i2 = biomeOasis.biomeID;
+					else if(k1 == biomeTundra.biomeID)				i2 = BiomeGenBase.frozenOcean.biomeID;
+					
+					//Plains -> forest
+					else if(k1 == biomeMeadow.biomeID)				i2 = biomeOakForest.biomeID;
+					else if(k1 == biomePlateau.biomeID)				i2 = biomeForestMountains.biomeID;
 					else if(k1 == biomeLowHills.biomeID) {
-						i2 = biomeWoodLands.biomeID;
-					}
-
-					else if(k1 == biomeMeadow.biomeID) {
-						i2 = biomeOakForest.biomeID;
-					}
-
-					else if(k1 == biomePlateau.biomeID) {
-						i2 = biomeForestMountains.biomeID;
-					}
-
-					else if(k1 == biomeSilverPineForest.biomeID) {
-						i2 = biomeSilverPineHills.biomeID;
-					}
-
-					else if(k1 == biomeAspenForest.biomeID) {
-						i2 = biomeAspenHills.biomeID;
-					}
-
-					else if(k1 == BiomeGenBase.desert.biomeID) {
-						i2 = BiomeGenBase.desertHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.forest.biomeID) {
-						i2 = BiomeGenBase.forestHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.birchForest.biomeID) {
-						i2 = BiomeGenBase.birchForestHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.roofedForest.biomeID) {
-						i2 = BiomeGenBase.plains.biomeID;
-					}
-					else if(k1 == BiomeGenBase.taiga.biomeID) {
-						i2 = BiomeGenBase.taigaHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.megaTaiga.biomeID) {
-						i2 = BiomeGenBase.megaTaigaHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.coldTaiga.biomeID) {
-						i2 = BiomeGenBase.coldTaigaHills.biomeID;
+						if(this.nextInt(3) == 0) i2 = biomeWoodLandHills.biomeID;
+						else i2 = biomeWoodLands.biomeID;
 					}
 					else if(k1 == BiomeGenBase.plains.biomeID) {
-						if(this.nextInt(3) == 0) {
-							i2 = BiomeGenBase.forestHills.biomeID;
-						}
-						else {
-							i2 = BiomeGenBase.forest.biomeID;
-						}
+						if(this.nextInt(3) == 0) i2 = BiomeGenBase.forestHills.biomeID;
+						else i2 = BiomeGenBase.forest.biomeID;
 					}
-					else if(k1 == BiomeGenBase.icePlains.biomeID) {
-						i2 = BiomeGenBase.iceMountains.biomeID;
-					}
-					else if(k1 == BiomeGenBase.jungle.biomeID) {
-						i2 = BiomeGenBase.jungleHills.biomeID;
-					}
-					else if(k1 == BiomeGenBase.extremeHills.biomeID) {
-						i2 = BiomeGenBase.extremeHillsPlus.biomeID;
-					}
-					else if(k1 == BiomeGenBase.savanna.biomeID) {
-						i2 = BiomeGenBase.savannaPlateau.biomeID;
-					}
+					
+					//Forest -> plains
+					else if(k1 == BiomeGenBase.roofedForest.biomeID)i2 = BiomeGenBase.plains.biomeID;
+										
 					else if(compareBiomesById(k1, BiomeGenBase.mesaPlateau_F.biomeID)) {
 						i2 = BiomeGenBase.mesa.biomeID;
 					}
 					else if(k1 == BiomeGenBase.deepOcean.biomeID && this.nextInt(3) == 0) {
-						if(this.nextInt(2) == 0) {
-							i2 = BiomeGenBase.plains.biomeID;
-						}
-						else {
-							i2 = BiomeGenBase.forest.biomeID;
-						}
+						if(this.nextInt(2) == 0) i2 = BiomeGenBase.plains.biomeID;
+						else i2 = BiomeGenBase.forest.biomeID;
 					}
 
 					if(flag && i2 != k1) {

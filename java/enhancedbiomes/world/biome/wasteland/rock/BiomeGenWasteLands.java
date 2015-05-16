@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.helpers.TreeGen;
 import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
@@ -26,19 +27,17 @@ public class BiomeGenWasteLands extends BiomeGenRockBase
 	public void decorate(World worldObj, Random rand, int x, int z) {
 		super.decorate(worldObj, rand, x, z);
 
-		for(int c = 20; c > 0; c--) {
-			int j2 = x + rand.nextInt(16) + 8;
-			int l3 = rand.nextInt(120);
-			int j5 = z + rand.nextInt(16) + 8;
-			(new WorldGenMinableEnhancedBiomes(EnhancedBiomesMod.soilList[biomeID], EnhancedBiomesMod.soilMetaList[biomeID], 50, Blocks.gravel)).generate(worldObj, rand, j2, l3, j5);
-		}
+		int j2 = x + rand.nextInt(16) + 8;
+		int j5 = z + rand.nextInt(16) + 8;
+		int l3 = worldObj.getTopSolidOrLiquidBlock(j2, j5);
+		(new WorldGenMinableEnhancedBiomes(BlockWithMeta.coarse_dirt.block, BlockWithMeta.coarse_dirt.meta, 50, Blocks.gravel)).generate(worldObj, rand, j2, l3, j5);
 
-		for(int c = 200; c > 0; c--) {
-			int j2 = x + rand.nextInt(16) + 8;
-			int l3 = rand.nextInt(120);
-			int j5 = z + rand.nextInt(16) + 8;
+		for(int c = 2; c > 0; c--) {
+			j2 = x + rand.nextInt(16) + 8;
+			j5 = z + rand.nextInt(16) + 8;
+			l3 = worldObj.getTopSolidOrLiquidBlock(j2, j5);
 			if(worldObj.getBlock(j2, l3, j5) == Blocks.air && worldObj.getBlock(j2, l3 - 1, j5) == EnhancedBiomesMod.soilList[biomeID]) {
-				TreeGen.dead(rand);
+				TreeGen.dead(rand).generate(worldObj, rand, j2, l3, j5);
 			}
 		}
 	}

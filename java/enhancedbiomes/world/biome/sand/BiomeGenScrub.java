@@ -3,9 +3,11 @@ package enhancedbiomes.world.biome.sand;
 import java.util.Random;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.world.biome.base.BiomeGenSandBase;
 import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
 import enhancedbiomes.world.gen.WorldGenSpikedBush;
+import enhancedbiomes.world.gen.WorldGenTinyTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
@@ -27,7 +29,8 @@ public class BiomeGenScrub extends BiomeGenSandBase
 		this.theBiomeDecorator.treesPerChunk = 4;
 		this.theBiomeDecorator.grassPerChunk = 5;
 		this.theWorldGenerator = new WorldGenMinable(Blocks.monster_egg, 8);
-		this.topBlock = Blocks.dirt;
+		this.topBlock = BlockWithMeta.coarse_dirt.block;
+		this.field_150604_aj = BlockWithMeta.coarse_dirt.meta;
 	}
 
 	/**
@@ -35,7 +38,9 @@ public class BiomeGenScrub extends BiomeGenSandBase
 	 */
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random) {
-		return (WorldGenAbstractTree) new WorldGenSpikedBush(Blocks.log, 0, Blocks.leaves, 0, EnhancedBiomesMod.soilList[biomeID]);
+		return (WorldGenAbstractTree) (par1Random.nextInt(2) == 0 ? 
+			new WorldGenSpikedBush(Blocks.log, 0, Blocks.leaves, 0, EnhancedBiomesMod.soilList[biomeID]) : 
+			new WorldGenTinyTree(Blocks.log, 0, Blocks.leaves, 0, EnhancedBiomesMod.soilList[biomeID]));
 	}
 
 	/**
