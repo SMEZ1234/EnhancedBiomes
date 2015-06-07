@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import enhancedbiomes.EnhancedBiomesMod;
+import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 //import enhancedbiomes.world.biome.decorators.BiomeDecoratorVanillaWoodland;
 import enhancedbiomes.world.biome.decorators.BiomeDecoratorWoodland;
 import enhancedbiomes.world.biomestats.BiomeWoods;
@@ -121,7 +122,9 @@ public class VanillaHandler
 		BiomeGenManager.addEBHotBiome(savanna, savannaGen);
 		BiomeGenManager.addEBHotBiome(mesa, mesaGen);
 		/**/
-
+		
+		BiomeWoods.register(river, EnhancedBiomesBlocks.planksEB, 8);
+		
 		if(villagePlains == false) {
 			removeVillageBiome(plains);
 		}

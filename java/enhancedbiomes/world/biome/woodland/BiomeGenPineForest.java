@@ -6,6 +6,8 @@ import enhancedbiomes.helpers.TreeGen;
 import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityWolf;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -25,5 +27,17 @@ public class BiomeGenPineForest extends BiomeGenWoodlandBase
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random) {
 		return TreeGen.pine(par1Random);
+	}
+
+	public void genTerrainBlocks(World world, Random rand, Block[] blocks, byte[] metas, int x, int z, double stoneNoise) {
+		this.topBlock = Blocks.grass;
+		this.field_150604_aj = 0;
+
+		if(stoneNoise > 1) {
+			this.topBlock = Blocks.dirt;
+			this.field_150604_aj = 2;
+		}
+
+		this.genBiomeTerrain(world, rand, blocks, metas, x, z, stoneNoise);
 	}
 }

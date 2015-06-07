@@ -29,7 +29,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
@@ -100,9 +99,7 @@ public class GenLayerEBHills extends GenLayer
 						}
 					}
 
-					else if(EnhancedBiomesBiome.volcanoGen && 
-							//FIXME this.nextInt(16) == 0 && 
-							BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
+					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
 						i2 = biomeVolcano.biomeID;
 					}
 
@@ -130,6 +127,8 @@ public class GenLayerEBHills extends GenLayer
 					else if(k1 == BiomeGenBase.jungle.biomeID)		i2 = BiomeGenBase.jungleHills.biomeID;
 					else if(k1 == BiomeGenBase.extremeHills.biomeID)i2 = BiomeGenBase.extremeHillsPlus.biomeID;
 					else if(k1 == BiomeGenBase.savanna.biomeID)		i2 = BiomeGenBase.savannaPlateau.biomeID;
+
+					else if(k1 == biomeMeadow.biomeID)				i2 = biomeMeadowM.biomeID;
 					
 					//Mini-biomes
 					else if(k1 == biomeRockyDesert.biomeID)			i2 = biomeOasis.biomeID;

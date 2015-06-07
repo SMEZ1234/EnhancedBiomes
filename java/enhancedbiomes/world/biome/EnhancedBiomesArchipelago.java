@@ -7,9 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
-import enhancedbiomes.world.biome.archipelago.BiomeGenBorealArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenDesertArchipelago;
-import enhancedbiomes.world.biome.archipelago.BiomeGenFlowerArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenForestArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenJungleArchipelago;
 import enhancedbiomes.world.biome.archipelago.BiomeGenMountainsArchipelago;
@@ -69,14 +67,6 @@ public class EnhancedBiomesArchipelago
 	public static boolean villagePlainsArchipelago;
 	public static BiomeGenArchipelagoBase biomePlainsArchipelago;
 	
-	public static int flowerArchipelagoId;
-	public static boolean villageFlowerArchipelago;
-	public static BiomeGenArchipelagoBase biomeFlowerArchipelago;
-	
-	public static int borealArchipelagoId;
-	public static boolean villageBorealArchipelago;
-	public static BiomeGenArchipelagoBase biomeBorealArchipelago;
-	
 	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
@@ -109,12 +99,6 @@ public class EnhancedBiomesArchipelago
 		plainsArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Grassy Archipelago", BiomeIDs.grassyArchipelago).getInt();
 		plainsArchipelagoGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Grassy Archipelago biome", 10).getInt();
 		villagePlainsArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Grassy Archipelago biome", true).getBoolean(true);	
-		
-		flowerArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Flowery Archipelago", BiomeIDs.floweryArchipelago).getInt();
-		villageFlowerArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Flowery Archipelago biome", true).getBoolean(true);
-		
-		borealArchipelagoId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Archipelago", BiomeIDs.borealArchipelago).getInt();
-		villageBorealArchipelago = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Archipelago biome", true).getBoolean(true);	
 		
 		config.save();
 	}
@@ -154,16 +138,6 @@ public class EnhancedBiomesArchipelago
 		if (villagePlainsArchipelago) BiomeManager.addVillageBiome(biomePlainsArchipelago, true);		
 		BiomeManager.addStrongholdBiome(biomePlainsArchipelago);
 		BiomeWoods.register(biomePlainsArchipelago, Blocks.planks, 0);
-		
-		biomeFlowerArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenFlowerArchipelago(flowerArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.4F)).setHeight(heightLowArchipelago).setBiomeName("Flowery Archipelago")).setupArchipelago(ab_warm);
-		if (villageFlowerArchipelago) BiomeManager.addVillageBiome(biomeFlowerArchipelago, true);
-		BiomeManager.addStrongholdBiome(biomeFlowerArchipelago);
-		BiomeWoods.register(biomeFlowerArchipelago, Blocks.planks, 0);
-		
-		biomeBorealArchipelago = ((BiomeGenArchipelagoBase) (new BiomeGenBorealArchipelago(borealArchipelagoId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.7F)).setHeight(heightLowArchipelago).setBiomeName("Boreal Archipelago")).setupArchipelago(ab_cool);
-		if (villageBorealArchipelago) BiomeManager.addVillageBiome(biomeBorealArchipelago, true);
-		BiomeManager.addStrongholdBiome(biomeBorealArchipelago);
-		BiomeWoods.register(biomeBorealArchipelago, Blocks.planks, 1);
 		
 		for(int a = 0; a < archipelagoBiomes.size(); a++)
 			BiomeManager.oceanBiomes.add(archipelagoBiomes.get(a));

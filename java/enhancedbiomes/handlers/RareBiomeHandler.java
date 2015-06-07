@@ -9,7 +9,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
@@ -26,20 +25,15 @@ public class RareBiomeHandler
 	}
 
 	private static void registerEB() {
-		setRareBiome(biomeForestArchipelago, biomeFlowerArchipelago);
-		setRareBiome(biomePineArchipelago, biomeBorealArchipelago);
-		setRareBiome(biomePolarDesert, biomeIceSheet);
+		setRareBiome(biomePolarDesert, frozenOcean);
 		setRareBiome(biomeWoodLands, biomeForestMountains);
-		setRareBiome(biomeWoodLandHills, biomeForestValley);
 		setRareBiome(biomePlateau, biomePlateauSnow);
 		setRareBiome(biomeSandStoneRanges, biomeSandStoneRangesM);
 		setRareBiome(biomeGrasslands, biomeGrasslandsRoofed);
 		setRareBiome(biomeMeadow, biomeMeadowM);
 		setRareBiome(biomeTundra, biomeSnowDesert);
-		setRareBiome(biomeWasteLands, biomeWasteLandsSnowy);
 		setRareBiome(biomeSandStoneCanyon, biomeStoneCanyon);
 		setRareBiome(biomeEphemeralLake, biomeWoodlandLake);
-		setRareBiome(biomeBorealPlateau, biomeBorealPlateauM);
 	}
 
 	private static void registerVanilla() {

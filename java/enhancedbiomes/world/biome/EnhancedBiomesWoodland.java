@@ -13,20 +13,8 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import enhancedbiomes.blocks.EnhancedBiomesBlocks;
 import enhancedbiomes.handlers.BiomeGenManager;
-import enhancedbiomes.world.biome.base.BiomeGenSnowForestBase;
 import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
-import enhancedbiomes.world.biome.snow.snowforest.BiomeGenAlpineEdge;
-import enhancedbiomes.world.biome.snow.snowforest.BiomeGenFirForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenAspenForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenBorealForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenCherryBlossom;
-import enhancedbiomes.world.biome.woodland.BiomeGenCypressForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenKakadu;
-import enhancedbiomes.world.biome.woodland.BiomeGenOakForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenPineForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenShield;
-import enhancedbiomes.world.biome.woodland.BiomeGenSilverPineForest;
-import enhancedbiomes.world.biome.woodland.BiomeGenWoodlands;
+import enhancedbiomes.world.biome.woodland.*;
 import enhancedbiomes.world.biomestats.BiomeIDs;
 import enhancedbiomes.world.biomestats.BiomeWoods;
 
@@ -59,11 +47,6 @@ public class EnhancedBiomesWoodland
 	public static int oakForestGen;
 	public static boolean villageOakForest;
 	public static BiomeGenWoodlandBase biomeOakForest;
-	
-	public static int borealForestId;
-	public static int borealForestGen;
-	public static boolean villageBorealForest;
-	public static BiomeGenWoodlandBase biomeBorealForest;
 	
 	public static int kakaduId;	  
 	public static int kakaduGen;
@@ -107,27 +90,19 @@ public class EnhancedBiomesWoodland
 	public static boolean villageWoodlandField;    
 	public static BiomeGenWoodlandBase biomeWoodlandField;
 	
-	public static int borealPlateauId;
-	public static int borealPlateauGen;
-	public static boolean villageBorealPlateau;
-	public static BiomeGenWoodlandBase biomeBorealPlateau;
+	public static int cypressPlateauId;
+	public static int cypressPlateauGen;
+	public static boolean villageCypressPlateau;
+	public static BiomeGenWoodlandBase biomeCypressPlateau;
 	
 	public static int alpineEdgeId;	  	  
 	public static boolean villageAlpineEdge;
-	public static BiomeGenSnowForestBase biomeAlpineEdge;  	 
+	public static BiomeGenWoodlandBase biomeAlpineEdge;  	 
 	
 	public static int firForestId;
 	public static int firForestGen;
 	public static boolean villageFirForest;	
-	public static BiomeGenSnowForestBase biomeFirForest;	
-	
-	public static int borealPlateauMId;
-	public static boolean villageBorealPlateauM;
-	public static BiomeGenWoodlandBase biomeBorealPlateauM;
-
-	public static int forestValleyId;
-	public static boolean villageForestValley;
-	public static BiomeGenWoodlandBase biomeForestValley;
+	public static BiomeGenWoodlandBase biomeFirForest;
 	
 	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
@@ -155,10 +130,6 @@ public class EnhancedBiomesWoodland
 		oakForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Oak Forest", BiomeIDs.oakForest).getInt();
 		oakForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Oak Forest biome", 10).getInt();
 		villageOakForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Oak Forest biome", true).getBoolean(true);
-		
-		borealForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Forest", BiomeIDs.borealForest).getInt();
-		borealForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Boreal Forest biome", 10).getInt();
-		villageBorealForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Forest biome", true).getBoolean(true);
 		
 		kakaduId = config.get(config.CATEGORY_GENERAL, "Biome ID of Kakadu", BiomeIDs.kakadu).getInt();
 		kakaduGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Kakadu biome", 10).getInt();
@@ -193,9 +164,9 @@ public class EnhancedBiomesWoodland
 		woodlandFieldGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Woodland Field biome", 10).getInt();
 		villageWoodlandField = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Field biome", true).getBoolean(true);
 		
-		borealPlateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau", BiomeIDs.borealPlateau).getInt();
-		borealPlateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Boreal Plateau biome", 10).getInt();
-		villageBorealPlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Plateau biome", true).getBoolean(true);
+		cypressPlateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Cypress Plateau", BiomeIDs.cypressPlateau).getInt();
+		cypressPlateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Cypress Plateau biome", 10).getInt();
+		villageCypressPlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Cypress Plateau biome", true).getBoolean(true);
 		
 		alpineEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Alpine Mountains Edge", BiomeIDs.alpineMountainsEdge).getInt();
 		villageAlpineEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Alpine Mountains Edge biome", true).getBoolean(true);
@@ -203,12 +174,6 @@ public class EnhancedBiomesWoodland
 		firForestId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fir Forest", BiomeIDs.firForest).getInt();
 		firForestGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Fir Forest biome", 10).getInt();
 		villageFirForest = config.get(config.CATEGORY_GENERAL, "Generate villages in Fir Forest biome", true).getBoolean(true);
-		
-		borealPlateauMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Boreal Plateau M", BiomeIDs.borealPlateauM).getInt();
-		villageBorealPlateauM = config.get(config.CATEGORY_GENERAL, "Generate villages in Boreal Plateau M biome", true).getBoolean(true);
-
-		forestValleyId = config.get(config.CATEGORY_GENERAL, "Biome ID of Forested Valley", BiomeIDs.forestedValley).getInt();
-		villageForestValley = config.get(config.CATEGORY_GENERAL, "Generate villages in Forested Valley biome", true).getBoolean(true);
 		
 		config.save();
 
@@ -238,7 +203,7 @@ public class EnhancedBiomesWoodland
 		BiomeManager.addStrongholdBiome(biomeWoodLandHills);
 		BiomeWoods.register(biomeWoodLandHills, Blocks.planks, 0);
 
-		biomePineForest = (BiomeGenWoodlandBase) (new BiomeGenPineForest(pineForestId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.7F).setHeight(heightLowHills).setBiomeName("Pine Forest");
+		biomePineForest = (BiomeGenWoodlandBase) (new BiomeGenPineForest(pineForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightLowHills).setBiomeName("Pine Forest");
 		BiomeGenManager.addCoolBiome(biomePineForest, pineForestGen);
 		if (villagePineForest) BiomeManager.addVillageBiome(biomePineForest, true);	
 		BiomeManager.addStrongholdBiome(biomePineForest);
@@ -249,12 +214,6 @@ public class EnhancedBiomesWoodland
 		if (villageOakForest) BiomeManager.addVillageBiome(biomeOakForest, true);	
 		BiomeManager.addStrongholdBiome(biomeOakForest);
 		BiomeWoods.register(biomeOakForest, EnhancedBiomesBlocks.planksEB, 0);	
-		
-		biomeBorealForest = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealForestId)).setColor(9286496).setTemperatureRainfall(0.5F, 0.6F).setHeight(heightHighPlains).setBiomeName("Boreal Forest");
-		BiomeGenManager.addWarmBiome(biomeBorealForest, borealForestGen);
-		if (villageBorealForest) BiomeManager.addVillageBiome(biomeBorealForest, true);	
-		BiomeManager.addStrongholdBiome(biomeBorealForest);
-		BiomeWoods.register(biomeBorealForest, Blocks.planks, 1);	
 		
 		biomeKakadu = (BiomeGenWoodlandBase) (new BiomeGenKakadu(kakaduId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.8F, 0.8F).setHeight(heightMidPlains).setBiomeName("Kakadu");
 		BiomeGenManager.addWarmBiome(biomeKakadu, kakaduGen);
@@ -307,32 +266,22 @@ public class EnhancedBiomesWoodland
 		if (villageWoodlandField) BiomeManager.addVillageBiome(biomeWoodlandField, true);
 		BiomeWoods.register(biomeWoodlandField, Blocks.planks, 0);	
 		
-		biomeBorealPlateau = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealPlateauId)).setColor(9286496).setTemperatureRainfall(0.5F, 0.6F).setHeight(heightHighPlateaus).setBiomeName("Boreal Plateau");
-		BiomeGenManager.addWarmBiome(biomeBorealPlateau, borealPlateauGen);
-		if (villageBorealPlateau) BiomeManager.addVillageBiome(biomeBorealPlateau, true);	
-		BiomeManager.addStrongholdBiome(biomeBorealPlateau);	
-		BiomeWoods.register(biomeBorealPlateau, Blocks.planks, 1);
+		biomeCypressPlateau = (BiomeGenWoodlandBase) (new BiomeGenCypressForest(cypressPlateauId)).setColor(9286496).setTemperatureRainfall(0.5F, 0.6F).setHeight(heightHighPlateaus).setBiomeName("Cypress Plateau");
+		BiomeGenManager.addWarmBiome(biomeCypressPlateau, cypressPlateauGen);
+		if (villageCypressPlateau) BiomeManager.addVillageBiome(biomeCypressPlateau, true);	
+		BiomeManager.addStrongholdBiome(biomeCypressPlateau);	
+		BiomeWoods.register(biomeCypressPlateau, Blocks.planks, 1);
 		
-		biomeAlpineEdge = (BiomeGenSnowForestBase) (new BiomeGenAlpineEdge(alpineEdgeId)).setColor(7501978).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.3F).setHeight(heightMidHills).setBiomeName("Alpine Mountains Edge");
+		biomeAlpineEdge = (BiomeGenWoodlandBase) (new BiomeGenAlpineEdge(alpineEdgeId)).setColor(7501978).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.3F).setHeight(heightMidHills).setBiomeName("Alpine Mountains Edge");
 		if (villageAlpineEdge)BiomeManager.addVillageBiome(biomeAlpineEdge, true);
 		BiomeManager.addStrongholdBiome(biomeAlpineEdge);
 		BiomeWoods.register(biomeAlpineEdge, EnhancedBiomesBlocks.planksEB, 6);
 		
-		biomeFirForest = (BiomeGenSnowForestBase) (new BiomeGenFirForest(firForestId)).setColor(9286496).setTemperatureRainfall(0.25F, 0.3F).setHeight(heightHighPlains).setBiomeName("Fir Forest");
+		biomeFirForest = (BiomeGenWoodlandBase) (new BiomeGenFirForest(firForestId)).setColor(9286496).setTemperatureRainfall(0.0F, 0.3F).setHeight(heightHighPlains).setBiomeName("Fir Forest");
 		BiomeGenManager.addCoolBiome(biomeFirForest, firForestGen);
 		if (villageFirForest) BiomeManager.addVillageBiome(biomeFirForest, true);
 		BiomeManager.addStrongholdBiome(biomeFirForest);	
 		BiomeWoods.register(biomeFirForest, EnhancedBiomesBlocks.planksEB, 4);	
-		
-		biomeBorealPlateauM = (BiomeGenWoodlandBase) (new BiomeGenBorealForest(borealPlateauMId)).setColor(9286496).setTemperatureRainfall(0.2F, 0.6F).setHeight(heightHighPlateaus).setBiomeName("Boreal Plateau M");
-		if (villageBorealPlateau) BiomeManager.addVillageBiome(biomeBorealPlateauM, true);	
-		BiomeManager.addStrongholdBiome(biomeBorealPlateauM);	
-		BiomeWoods.register(biomeBorealPlateauM, Blocks.planks, 1);
-		
-		biomeForestValley = (BiomeGenWoodlandBase) (new BiomeGenWoodlands(forestValleyId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightMidPlains).setBiomeName("Forested Valley");    		
-		if (villageForestValley) BiomeManager.addVillageBiome(biomeForestValley, true);
-		BiomeManager.addStrongholdBiome(biomeForestValley);	
-		BiomeWoods.register(biomeForestValley, Blocks.planks, 0);
 		
 		EnhancedBiomesTropical.load();
 	}

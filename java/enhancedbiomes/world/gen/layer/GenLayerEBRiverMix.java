@@ -40,14 +40,14 @@ public class GenLayerEBRiverMix extends GenLayer
 
 		for(int i1 = 0; i1 < par3 * par4; ++i1) {
 			if(aint[i1] != BiomeGenBase.ocean.biomeID && aint[i1] != BiomeGenBase.deepOcean.biomeID && aint[i1] != EnhancedBiomesWetland.biomeLake.biomeID && !isBiomeOceanic(aint[i1])) {
-				if(aint1[i1] == BiomeGenBase.river.biomeID || aint1[i1] == EnhancedBiomesBiome.biomeRiparian.biomeID) {
+				if(aint1[i1] == BiomeGenBase.river.biomeID) {
 					if(aint[i1] == BiomeGenBase.frozenRiver.biomeID) {
 						aint2[i1] = BiomeGenBase.frozenRiver.biomeID;
 					}
 					else if(aint[i1] == BiomeGenBase.icePlains.biomeID) {
 						aint2[i1] = BiomeGenBase.frozenRiver.biomeID;
 					}
-					else if(aint[i1] == EnhancedBiomesSnow.biomeTundra.biomeID || aint[i1] == EnhancedBiomesSnow.biomeIceSheet.biomeID || aint[i1] == EnhancedBiomesSnow.biomeSnowDesert.biomeID || aint[i1] == EnhancedBiomesArchipelago.biomeSnowArchipelago.biomeID || aint[i1] == EnhancedBiomesSnow.biomePolarDesert.biomeID) {
+					else if(aint[i1] == EnhancedBiomesSnow.biomeTundra.biomeID || aint[i1] == BiomeGenBase.frozenOcean.biomeID || aint[i1] == EnhancedBiomesSnow.biomeSnowDesert.biomeID || aint[i1] == EnhancedBiomesArchipelago.biomeSnowArchipelago.biomeID || aint[i1] == EnhancedBiomesSnow.biomePolarDesert.biomeID) {
 						aint2[i1] = BiomeGenBase.frozenRiver.biomeID;
 					}
 					else if(aint[i1] == EnhancedBiomesSnow.biomeAlpine.biomeID) {

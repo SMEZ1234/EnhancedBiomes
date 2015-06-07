@@ -36,12 +36,7 @@ public class GenLayerEBRiver extends GenLayer
 					aint1[j2 + i2 * par3] = -1;
 				}
 				else {
-					if(EnhancedBiomesBiome.riparianGen) {
-						aint1[j2 + i2 * par3] = EnhancedBiomesBiome.biomeRiparian.biomeID;
-					}
-					else {
-						aint1[j2 + i2 * par3] = BiomeGenBase.river.biomeID;
-					}
+					aint1[j2 + i2 * par3] = BiomeGenBase.river.biomeID;
 				}
 			}
 		}

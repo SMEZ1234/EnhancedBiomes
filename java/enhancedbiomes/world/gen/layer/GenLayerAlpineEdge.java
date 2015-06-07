@@ -1,7 +1,6 @@
 package enhancedbiomes.world.gen.layer;
 
 import enhancedbiomes.world.biome.EnhancedBiomesSnow;
-import enhancedbiomes.world.biome.EnhancedBiomesSnowForest;
 import enhancedbiomes.world.biome.EnhancedBiomesWoodland;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;

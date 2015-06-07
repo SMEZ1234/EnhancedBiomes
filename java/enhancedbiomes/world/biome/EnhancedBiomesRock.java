@@ -47,10 +47,6 @@ public class EnhancedBiomesRock
 	public static boolean villageStoneCanyon; 
 	public static BiomeGenRockBase biomeStoneCanyon;
 	
-	public static int volcanoMId;
-	public static boolean villageVolcanoM; 
-	public static BiomeGenRockBase biomeVolcanoM;
-	
 	public static void config() {
 		File configFile = new File("config/Enhanced Biomes/Biomes.cfg");
 		Configuration config = new Configuration(configFile);
@@ -72,9 +68,6 @@ public class EnhancedBiomesRock
 		
 		stoneCanyonId = config.get(config.CATEGORY_GENERAL, "Biome ID of Stone Canyon", BiomeIDs.stoneCanyons).getInt();
 		villageStoneCanyon = config.get(config.CATEGORY_GENERAL, "Generate villages in Stone Canyon biome", true).getBoolean(true);
-		
-		volcanoMId = config.get(config.CATEGORY_GENERAL, "Biome ID of Volcano M", BiomeIDs.volcanoM).getInt();
-		villageVolcanoM = config.get(config.CATEGORY_GENERAL, "Generate villages in Volcano M biome", false).getBoolean(false);
 		
 		config.save();
 	}
@@ -106,10 +99,5 @@ public class EnhancedBiomesRock
 		if (villageStoneCanyon) BiomeManager.addVillageBiome(biomeStoneCanyon, true);
 		BiomeManager.addStrongholdBiome(biomeStoneCanyon);
 		BiomeWoods.register(biomeStoneCanyon, Blocks.planks, 2);
-		
-		biomeVolcanoM = (BiomeGenRockBase) (new BiomeGenVolcano(volcanoMId).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.0F)).setHeight(heightMidPlains).setDisableRain().setBiomeName("Volcano M");
-		if (villageVolcanoM) BiomeManager.addVillageBiome(biomeVolcanoM, true);
-		BiomeManager.addStrongholdBiome(biomeVolcanoM);
-		BiomeWoods.register(biomeVolcanoM, EnhancedBiomesBlocks.planksEB, 13, false);
 	}
 }

@@ -5,7 +5,7 @@ import java.util.Random;
 import enhancedbiomes.EnhancedBiomesMod;
 import enhancedbiomes.helpers.TreeGen;
 import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
-import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomes;
+import enhancedbiomes.world.gen.WorldGenMinableEnhancedBiomesKakadu;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityOcelot;
@@ -38,9 +38,21 @@ public class BiomeGenShield extends BiomeGenWoodlandBase
 			int j2 = par3 + par2Random.nextInt(16) + 8;
 			int j5 = par4 + par2Random.nextInt(16) + 8;
 			int l3 = par1World.getTopSolidOrLiquidBlock(j2, j5) - 1;
-			(new WorldGenMinableEnhancedBiomes(Blocks.air, 0, 125, EnhancedBiomesMod.grassList[biomeID], true)).generate(par1World, par2Random, j2, l3, j5);
+			(new WorldGenMinableEnhancedBiomesKakadu(Blocks.air, 0, 125, EnhancedBiomesMod.grassList[biomeID], true)).generate(par1World, par2Random, j2, l3, j5);
 		}
 
 		super.decorate(par1World, par2Random, par3, par4);
+	}
+
+	public void genTerrainBlocks(World world, Random rand, Block[] blocks, byte[] metas, int x, int z, double stoneNoise) {
+		this.topBlock = Blocks.grass;
+		this.field_150604_aj = 0;
+
+		if(stoneNoise > 1) {
+			this.topBlock = Blocks.dirt;
+			this.field_150604_aj = 2;
+		}
+
+		this.genBiomeTerrain(world, rand, blocks, metas, x, z, stoneNoise);
 	}
 }

@@ -1,9 +1,9 @@
-package enhancedbiomes.world.biome.snow.snowforest;
+package enhancedbiomes.world.biome.woodland;
 
 import java.util.Random;
 
 import enhancedbiomes.helpers.TreeGen;
-import enhancedbiomes.world.biome.base.BiomeGenSnowForestBase;
+import enhancedbiomes.world.biome.base.BiomeGenWoodlandBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
@@ -16,7 +16,7 @@ import net.minecraft.world.gen.feature.WorldGenTaiga2;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeGenAlpineEdge extends BiomeGenSnowForestBase
+public class BiomeGenAlpineEdge extends BiomeGenWoodlandBase
 {
 	private WorldGenerator theWorldGenerator;
 

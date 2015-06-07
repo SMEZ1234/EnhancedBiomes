@@ -11,7 +11,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;

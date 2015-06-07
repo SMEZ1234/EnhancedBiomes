@@ -11,7 +11,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
@@ -43,7 +42,7 @@ public class GenLayerEBBiome extends GenLayer
 		if(bl_cool.length == 0) bl_cool = bl_backup;
 		if(bl_frozen.length == 0) bl_frozen = bl_backup;
 		//FIXME Remove for release
-		bl_frozen = /*getAllBiomesOfCat(SEA);*/new BiomeGenBase[]{biomeTundra, biomeGrasslands};
+		/*bl_frozen = /*getAllBiomesOfCat(SEA);*//*new BiomeGenBase[]{biomeShield, biomeSilverPineForest};
 		bl_hot = bl_warm = bl_cool = bl_frozen;/**/
 		/*bl_warm = bl_cool = bl_frozen = bl_hot;/**/
 		/*bl_hot = bl_frozen = bl_cool = bl_warm;/**/

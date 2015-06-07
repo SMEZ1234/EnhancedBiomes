@@ -55,9 +55,9 @@ public class EnhancedBiomesGrass
 		badlandsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Badlands biome", 10).getInt();
 		villageBadlands = config.get(config.CATEGORY_GENERAL, "Generate villages in Badlands biome", true).getBoolean(true);
 		
-		plateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Plateau", BiomeIDs.plateau).getInt();
-		plateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Plateau biome", 10).getInt();
-		villagePlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Plateau biome", true).getBoolean(true);
+		plateauId = config.get(config.CATEGORY_GENERAL, "Biome ID of Grassy Plateau", BiomeIDs.plateau).getInt();
+		plateauGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Grassy Plateau biome", 10).getInt();
+		villagePlateau = config.get(config.CATEGORY_GENERAL, "Generate villages in Grassy Plateau biome", true).getBoolean(true);
 
 		mountainsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Mountains", BiomeIDs.mountains).getInt();
 		mountainsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Mountains biome", 10).getInt();
@@ -82,7 +82,7 @@ public class EnhancedBiomesGrass
 		BiomeManager.addStrongholdBiome(biomeBadlands);
 		BiomeWoods.register(biomeBadlands, EnhancedBiomesBlocks.planksEB, 13);
 		
-		biomePlateau = (BiomeGenGrassBase) (new BiomeGenPlateau(plateauId)).setColor(9286496).setTemperatureRainfall(0.3F, 0.6F).setHeight(heightMidPlateaus).setBiomeName("Plateau");
+		biomePlateau = (BiomeGenGrassBase) (new BiomeGenPlateau(plateauId)).setColor(9286496).setTemperatureRainfall(0.3F, 0.6F).setHeight(heightMidPlateaus).setBiomeName("Grassy Plateau");
 		BiomeGenManager.addCoolBiome(biomePlateau, plateauGen);
 		if (villagePlateau) BiomeManager.addVillageBiome(biomePlateau, true);
 		BiomeManager.addStrongholdBiome(biomePlateau);

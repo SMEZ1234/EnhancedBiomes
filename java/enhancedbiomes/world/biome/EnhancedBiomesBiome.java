@@ -8,7 +8,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
@@ -28,11 +27,6 @@ import enhancedbiomes.world.biomestats.BiomeWoods;
 
 public class EnhancedBiomesBiome 
 {	
-	public static int riparianId;
-	public static boolean riparianGen;
-	public static boolean villageRiparian;
-	public static BiomeGenEBBase biomeRiparian;
-	
 	public static boolean volcanoGen;
 	
 	public static void config() {
@@ -40,10 +34,6 @@ public class EnhancedBiomesBiome
 		Configuration config = new Configuration(configFile);
 		config.load();
 
-		riparianId = config.get(config.CATEGORY_GENERAL, "Biome ID of Riparian Zone", BiomeIDs.riparianZone).getInt();
-		riparianGen = config.get(config.CATEGORY_GENERAL, "Generate the Riparian Zone instead of Rivers", true).getBoolean(true);
-		villageRiparian = config.get(config.CATEGORY_GENERAL, "Generate villages in Riparian Zone biome", false).getBoolean(false);
-		
 		volcanoGen = config.get(config.CATEGORY_GENERAL, "Generate Volcanoes throughout the world", true).getBoolean(true);
 		
 		config.save();
@@ -58,11 +48,6 @@ public class EnhancedBiomesBiome
 	}
 	
 	public static void load() {
-		biomeRiparian = (BiomeGenEBBase) (new BiomeGenRiparianZone(riparianId)).setColor(9286496).setTemperatureRainfall(0.7F, 0.8F).setHeight(heightShallowWaters).setBiomeName("Riparian Zone");
-		if (villageRiparian) BiomeManager.addVillageBiome(biomeRiparian, true);
-		BiomeManager.addStrongholdBiome(biomeRiparian);
-		BiomeWoods.register(biomeRiparian, EnhancedBiomesBlocks.planksEB, 8);
-		
 		EnhancedBiomesArchipelago.load();
 		EnhancedBiomesGrass.load();
 		EnhancedBiomesSand.load();

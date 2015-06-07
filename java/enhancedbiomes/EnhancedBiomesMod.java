@@ -34,7 +34,6 @@ import static enhancedbiomes.world.biome.EnhancedBiomesRock.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSand.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSandstone.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesSnow.*;
-import static enhancedbiomes.world.biome.EnhancedBiomesSnowForest.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesTropical.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWetland.*;
 import static enhancedbiomes.world.biome.EnhancedBiomesWoodland.*;
@@ -62,7 +61,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.*;
 import static net.minecraftforge.common.BiomeDictionary.*;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "2.5 for MC 1.7.10", useMetadata = true)
+@Mod(modid = "enhancedbiomes", name = "Enhanced Biomes", version = "pre-3.0.0 for MC 1.7.10", useMetadata = true)
 //FIXME Update version for release
 public class EnhancedBiomesMod
 {
@@ -227,6 +226,7 @@ public class EnhancedBiomesMod
 		MinecraftForge.EVENT_BUS.register(new ReplaceBiomeBlocksHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new CaveHandler());
 		MinecraftForge.EVENT_BUS.register(new PreDecorationHandler());
+		MinecraftForge.TERRAIN_GEN_BUS.register(new DecorationHandler());
 
 		MinecraftForge.ORE_GEN_BUS.register(new OreHandler());
 		MinecraftForge.EVENT_BUS.register(new ModOreHandler());
