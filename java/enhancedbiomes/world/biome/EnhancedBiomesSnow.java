@@ -19,6 +19,7 @@ import enhancedbiomes.world.biome.base.BiomeGenRockBase;
 import enhancedbiomes.world.biome.base.BiomeGenSandstoneBase;
 import enhancedbiomes.world.biome.base.BiomeGenSnowBase;
 import enhancedbiomes.world.biome.snow.BiomeGenAlpine;
+import enhancedbiomes.world.biome.snow.BiomeGenDrifts;
 import enhancedbiomes.world.biome.snow.BiomeGenGlacier;
 import enhancedbiomes.world.biome.snow.BiomeGenIceSheet;
 import enhancedbiomes.world.biome.snow.BiomeGenPolarDesert;
@@ -61,10 +62,10 @@ public class EnhancedBiomesSnow
 	public static boolean villagePolarDesert;
 	public static BiomeGenSnowBase biomePolarDesert;
 	
-	/*public static int driftsId; 
+	public static int driftsId; 
 	public static int driftsGen;  
 	public static boolean villageDrifts; 	
-	public static BiomeGenSnowBase biomeDrifts; */ 
+	public static BiomeGenSnowBase biomeDrifts;
 	
 	public static int snowyRangesId;
 	public static int snowyRangesGen;
@@ -98,9 +99,9 @@ public class EnhancedBiomesSnow
 		polarDesertGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Polar Wasteland biome", 10).getInt();
 		villagePolarDesert = config.get(config.CATEGORY_GENERAL, "Generate villages in Polar Wasteland biome", true).getBoolean(true);
 		
-		/*driftsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Drifts", BiomeIDs.drifts).getInt();
+		driftsId = config.get(config.CATEGORY_GENERAL, "Biome ID of Drifts", BiomeIDs.drifts).getInt();
 		driftsGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Drifts biome", 10).getInt();
-		villageDrifts = config.get(config.CATEGORY_GENERAL, "Generate villages in Drifts biome", true).getBoolean(true);*/
+		villageDrifts = config.get(config.CATEGORY_GENERAL, "Generate villages in Drifts biome", true).getBoolean(true);
 
 		snowyRangesId = config.get(config.CATEGORY_GENERAL, "Biome ID of Snowy Ranges", BiomeIDs.snowyRanges).getInt();
 		snowyRangesGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Snowy Ranges biome", 10).getInt();
@@ -145,12 +146,11 @@ public class EnhancedBiomesSnow
 		BiomeWoods.register(biomePolarDesert, EnhancedBiomesBlocks.planksEB, 13);
 		//BiomeGenManager.addCaveExceptionBiome(biomePolarDesert);	
 		
-		/*biomeDrifts = (BiomeGenSnowBase) (new BiomeGenDrifts(driftsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightDefault).setEnableSnow().setBiomeName("Drifts");
-		registerBiomeType(biomeDrifts, Type.FROZEN);							
+		biomeDrifts = (BiomeGenSnowBase) (new BiomeGenDrifts(driftsId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.0F, 0.7F).setHeight(heightDefault).setEnableSnow().setBiomeName("Drifts");
 		BiomeGenManager.addFrozenBiome(biomeDrifts, driftsGen);
 		if (villageDrifts)	BiomeManager.addVillageBiome(biomeDrifts, true);
 		BiomeManager.addStrongholdBiome(biomeDrifts);
-		BiomeWoods.register(biomeDrifts, EnhancedBiomesBlocks.planksEB, 4);*/
+		BiomeWoods.register(biomeDrifts, EnhancedBiomesBlocks.planksEB, 13);
 		
 		biomeSnowyRanges = (BiomeGenSnowBase) (new BiomeGenSnowyRanges(snowyRangesId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.25F, 0.3F).setHeight(heightHighSlopes).setBiomeName("Snowy Ranges");
 		BiomeGenManager.addFrozenBiome(biomeSnowyRanges, snowyRangesGen);

@@ -92,5 +92,6 @@ public class BiomeTypes {
 		registerBiomeType(biomeRainforest,				WET, HOT, JUNGLE, DENSE);		  	  
 		registerBiomeType(biomeRainforestValley, 		WET, HOT, JUNGLE, DENSE, SWAMP);
 		registerBiomeType(biomeXericShrubland,			HOT, DRY, SANDY, SPARSE);
+		registerBiomeType(biomeDrifts,					COLD, SNOWY, CONIFEROUS);
 	}
 }
