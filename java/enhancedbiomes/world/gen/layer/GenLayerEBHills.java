@@ -62,6 +62,8 @@ public class GenLayerEBHills extends GenLayer
 				int l1 = aint1[j1 + 1 + (i1 + 1) * (par3 + 2)];
 				boolean flag = (l1 - 2) % 29 == 0;
 
+				BiomeGenBase currentBiome = BiomeGenBase.getBiomeGenArray()[k1 % 256];
+				
 				if(k1 > 255) {
 					logger.debug("old! " + k1);
 				}
@@ -99,15 +101,15 @@ public class GenLayerEBHills extends GenLayer
 						}
 					}
 
-					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight < biomeVolcano.rootHeight) {
+					else if(EnhancedBiomesBiome.volcanoGen && this.nextInt(16) == 0 && currentBiome.rootHeight < biomeVolcano.rootHeight) {
 						i2 = biomeVolcano.biomeID;
 					}
 
-					else if(this.nextInt(8) == 0 && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight <= 0.4F && BiomeGenBase.getBiomeGenArray()[k1 % 256].rootHeight >= 0.1F) {
+					else if(this.nextInt(8) == 0 && currentBiome.rootHeight <= 0.4F && currentBiome.rootHeight >= 0.1F) {
 						i2 = biomeBasin.biomeID;
 					}
 
-					else if((BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenGrassBase || BiomeGenBase.getBiomeGenArray()[k1 % 256] instanceof BiomeGenWoodlandBase) && BiomeGenBase.getBiomeGenArray()[k1 % 256].temperature < 1.0F) {
+					else if((currentBiome instanceof BiomeGenGrassBase || currentBiome instanceof BiomeGenWoodlandBase) && currentBiome.temperature < 1.0F) {
 						i2 = biomeLake.biomeID;
 					}
 
@@ -148,11 +150,10 @@ public class GenLayerEBHills extends GenLayer
 					}
 					
 					//Forest -> plains
-					else if(k1 == BiomeGenBase.roofedForest.biomeID)i2 = BiomeGenBase.plains.biomeID;
+					else if(k1 == BiomeGenBase.roofedForest.biomeID) i2 = BiomeGenBase.plains.biomeID;
 										
-					else if(compareBiomesById(k1, BiomeGenBase.mesaPlateau_F.biomeID)) {
-						i2 = BiomeGenBase.mesa.biomeID;
-					}
+					else if(compareBiomesById(k1, BiomeGenBase.mesaPlateau_F.biomeID)) i2 = BiomeGenBase.mesa.biomeID;
+					
 					else if(k1 == BiomeGenBase.deepOcean.biomeID && this.nextInt(3) == 0) {
 						if(this.nextInt(2) == 0) i2 = BiomeGenBase.plains.biomeID;
 						else i2 = BiomeGenBase.forest.biomeID;

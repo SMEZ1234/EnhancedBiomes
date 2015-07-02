@@ -56,12 +56,11 @@ public class BiomeGenDrifts extends BiomeGenSnowBase
 		boolean biome11 = e.biomeArray[255] != EnhancedBiomesSnow.biomeDrifts;
 		int pos = ((z + 1) / 2 + x + (Math.abs(e.chunkX) % 2 * 8)) % 16;
 		for(int h = 0; h < getDuneHeight(pos) - getDuneModification(x, z, biome00, biome01, biome10, biome11) + worldGenNoise; h++) {
-			e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) + 1] = Math.abs(worldGenNoise) < 4 ? Blocks.stone : Blocks.dirt;
+			e.blockArray[preHeightIndex + ReplaceBiomeBlocksHandler.getTopBlock(e.blockArray, preHeightIndex, heightRange) + 1] = Blocks.stone;
 		}
 	}
 
 	private int getDuneHeight(int pos) {
-	  //int[] heights = new int[] {5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 1, 2, 3, 4, 5, 6};
 		int[] heights = new int[] {3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3};
 		if(pos < heights.length) return heights[pos];
 		return 1;
@@ -86,5 +85,17 @@ public class BiomeGenDrifts extends BiomeGenSnowBase
 			mod += Math.max(maxDuneComp - (dis / rateDuneComp), 0);
 		}
 		return mod;
+	}
+
+	public void genTerrainBlocks(World world, Random rand, Block[] blocks, byte[] metas, int x, int z, double stoneNoise) {
+		this.topBlock = Blocks.snow;
+		this.fillerBlock = Blocks.snow;
+
+		if(Math.abs(stoneNoise) > 4) {
+			this.topBlock = Blocks.grass;
+			this.fillerBlock = Blocks.dirt;
+		}
+
+		this.genBiomeTerrain(world, rand, blocks, metas, x, z, stoneNoise);
 	}
 }

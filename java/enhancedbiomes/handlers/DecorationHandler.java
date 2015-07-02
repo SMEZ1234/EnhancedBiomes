@@ -25,7 +25,19 @@ public class DecorationHandler
 	            if (worldgenabstracttree.generate(e.world, e.rand, k, i1, l)) 
 	            	worldgenabstracttree.func_150524_b(e.world, e.rand, k, i1, l);
 	        }
-			e.setResult(Result.DENY);
+		}
+		int rain = (int) (e.world.getBiomeGenForCoords(e.chunkX + 16, e.chunkZ + 16).getFloatRainfall() * 10);
+		
+		if(e.type == EventType.TREE && rain >= 6 && e.rand.nextInt(16 / Math.max(rain - 5, 1)) == 0 && e.world.getBiomeGenForCoords(e.chunkX + 16, e.chunkZ + 16).getTempCategory() != BiomeGenBase.TempCategory.WARM) {
+			int k = e.chunkX + e.rand.nextInt(16) + 8;
+            int l = e.chunkZ + e.rand.nextInt(16) + 8;
+            
+			int i1 = e.world.getHeightValue(k, l);
+            WorldGenAbstractTree worldgenabstracttree = TreeGen.willow_large(e.rand);
+            worldgenabstracttree.setScale(1.0D, 1.0D, 1.0D);
+
+            if (worldgenabstracttree.generate(e.world, e.rand, k, i1, l)) 
+            	worldgenabstracttree.func_150524_b(e.world, e.rand, k, i1, l);
 		}
 	}
 }

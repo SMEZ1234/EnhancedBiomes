@@ -21,6 +21,7 @@ public class EBHeights
 	public static		BiomeGenBase.Height heightHighHills = new BiomeGenBase.Height(2.5F, 0.5F);
 
 	public static		BiomeGenBase.Height heightSeaPlateaus = new BiomeGenBase.Height(0.0F, 0.025F);
+	public static		BiomeGenBase.Height heightFens = new BiomeGenBase.Height(0.0F, 0.0F);
 	public static		BiomeGenBase.Height heightLowPlateaus = new BiomeGenBase.Height(0.5F, 0.025F);
 	public static		BiomeGenBase.Height heightMidPlateaus = new BiomeGenBase.Height(1.5F, 0.025F);
 	public static final BiomeGenBase.Height heightHighPlateaus = new BiomeGenBase.Height(1.5F, 0.025F);

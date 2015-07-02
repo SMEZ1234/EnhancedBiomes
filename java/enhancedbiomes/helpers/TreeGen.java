@@ -34,16 +34,14 @@ public class TreeGen
 
 	public static WorldGenAbstractTree baobab(Random rand){return new WorldGenBaobab(logJungle, 0, leavesJungle, 0, 4 + rand.nextInt(3));}
 	public static WorldGenAbstractTree dead(Random rand){return new WorldGenOak(logJungle, 1, Blocks.air, 0, 4 + rand.nextInt(3), 5, 16);}
-	public static WorldGenAbstractTree cherry(Random rand){
-		int meta;
-    	if(rand.nextInt(6) == 0) meta = 1; 
-    	else meta = 2;
-        return (WorldGenAbstractTree)(new WorldGenTreesEnhancedBiomes(true, 4, 2, meta, false, logJungle, leavesJungle));
-	}
+	public static WorldGenAbstractTree cherry(Random rand){return new WorldGenTreesEnhancedBiomes(true, 4, 2, rand.nextInt(6) == 0 ? 1 : 2, false, logJungle, leavesJungle);}
 	public static WorldGenAbstractTree kapok(Random rand){return new WorldGenKapok(logJungle, 3, leavesJungle, 3, 30 + rand.nextInt(15));}
-	
+	//FIXME Add Willow wood and leaves
+	public static WorldGenAbstractTree willow(Random rand){return new WorldGenSmallWillow(3 + rand.nextInt(2), Blocks.log, 3, Blocks.leaves, 3);}
+
 	public static WorldGenAbstractTree fir_large(Random rand){return new WorldGenFir(5 + rand.nextInt(6), logSpruce, 0, leavesSpruce, 0, true);}	
 	public static WorldGenAbstractTree cherry_large(){return new WorldGenShrineTree(true);}
+	public static WorldGenAbstractTree willow_large(Random rand){return new WorldGenWillow(8 + rand.nextInt(3), Blocks.log, 3, Blocks.leaves, 3);}
 	
 	public static WorldGenAbstractTree eucalyptus_shrub(Random rand){return new WorldGenTallShrub(logBirch, 1, leavesBirch, 1, 2);}
 

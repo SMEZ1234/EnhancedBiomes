@@ -7,7 +7,6 @@ public class TileEntityTide extends TileEntity
 {
 	int c = 0;
 
-	//TODO Tides
 	/*public void updateEntity() 
 	{
 		c++; c %= 20;

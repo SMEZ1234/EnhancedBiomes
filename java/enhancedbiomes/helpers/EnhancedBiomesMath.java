@@ -7,6 +7,10 @@ import net.minecraft.world.gen.structure.MapGenVillage;
 
 public class EnhancedBiomesMath
 {
+	public static double increaseMagnitude(double input, double increase) {
+		return input + (input > 0 ? increase : -increase);
+	}
+	
 	public static double average(double... inputs) {
 		ArrayList<Double> avg = new ArrayList<Double>();
 
