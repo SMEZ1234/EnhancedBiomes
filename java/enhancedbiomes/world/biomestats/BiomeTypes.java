@@ -63,12 +63,12 @@ public class BiomeTypes {
 		registerBiomeType(biomeSandStoneRangesM, 		HOT, SANDY, MESA, HILLS, SPARSE);
 		registerBiomeType(biomeMangrove, 				WET, SWAMP);
 		registerBiomeType(biomeEphemeralLake, 			WET, SWAMP, BEACH);
-		registerBiomeType(biomeEphemeralLakeEdge, 		WET, SWAMP, BEACH);
+//		registerBiomeType(biomeEphemeralLakeEdge, 		WET, SWAMP, BEACH);
 		registerBiomeType(biomeFen, 					WET, SWAMP);	
 		registerBiomeType(biomeCarr, 					WET, SWAMP, FOREST);	
 		registerBiomeType(biomeLake, 					WET, SWAMP);		
 		registerBiomeType(biomeWoodlandLake, 			WET, SWAMP, FOREST);	
-		registerBiomeType(biomeWoodlandLakeEdge, 		WET, SWAMP, FOREST);	
+//		registerBiomeType(biomeWoodlandLakeEdge, 		WET, SWAMP, FOREST);	
 		registerBiomeType(biomeMarsh, 					WET, SWAMP);			
 		registerBiomeType(biomeBlossomWoods, 			FOREST);
 		registerBiomeType(biomeBlossomHills, 			FOREST, HILLS);

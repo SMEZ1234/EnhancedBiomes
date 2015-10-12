@@ -36,9 +36,9 @@ public class EnhancedBiomesWetland
 	public static boolean villageEphemeralLake;
 	public static BiomeGenWetlandBase biomeEphemeralLake;
 
-	public static int ephemeralLakeEdgeId;
-	public static boolean villageEphemeralLakeEdge;
-	public static BiomeGenWetlandBase biomeEphemeralLakeEdge;
+//	public static int ephemeralLakeEdgeId;
+//	public static boolean villageEphemeralLakeEdge;
+//	public static BiomeGenWetlandBase biomeEphemeralLakeEdge;
 
 	public static int fenId;
 	public static int fenGen;
@@ -55,13 +55,13 @@ public class EnhancedBiomesWetland
 	public static BiomeGenWetlandBase biomeLake;
 
 	public static int woodlandLakeId;
+	public static int woodlandLakeGen;
 	public static boolean villageWoodlandLake;
 	public static BiomeGenWetlandBase biomeWoodlandLake;
 
-	public static int woodlandLakeEdgeId;
-	public static int woodlandLakeGen;
-	public static boolean villageWoodlandLakeEdge;
-	public static BiomeGenWetlandBase biomeWoodlandLakeEdge;
+//	public static int woodlandLakeEdgeId;
+//	public static boolean villageWoodlandLakeEdge;
+//	public static BiomeGenWetlandBase biomeWoodlandLakeEdge;
 
 	public static int marshId;
 	public static int marshGen;
@@ -81,8 +81,8 @@ public class EnhancedBiomesWetland
 		ephemeralLakeGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Ephemeral Lake biome", 10).getInt();
 		villageEphemeralLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Ephemeral Lake biome", true).getBoolean(true);
 
-		ephemeralLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake Edge", BiomeIDs.ephemeralLakeEdge).getInt();
-		villageEphemeralLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Ephemeral Lake Edge biome", true).getBoolean(true);
+//		ephemeralLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Ephemeral Lake Edge", BiomeIDs.ephemeralLakeEdge).getInt();
+//		villageEphemeralLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Ephemeral Lake Edge biome", true).getBoolean(true);
 
 		fenId = config.get(config.CATEGORY_GENERAL, "Biome ID of Fens", BiomeIDs.fens).getInt();
 		fenGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Fens biome", 10).getInt();
@@ -99,8 +99,8 @@ public class EnhancedBiomesWetland
 		woodlandLakeGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Woodland Lake biome", 10).getInt();
 		villageWoodlandLake = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake biome", true).getBoolean(true);
 
-		woodlandLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake Edge", BiomeIDs.woodlandLakeEdge).getInt();
-		villageWoodlandLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake Edge biome", true).getBoolean(true);
+//		woodlandLakeEdgeId = config.get(config.CATEGORY_GENERAL, "Biome ID of Woodland Lake Edge", BiomeIDs.woodlandLakeEdge).getInt();
+//		villageWoodlandLakeEdge = config.get(config.CATEGORY_GENERAL, "Generate villages in Woodland Lake Edge biome", true).getBoolean(true);
 
 		marshId = config.get(config.CATEGORY_GENERAL, "Biome ID of Marsh", BiomeIDs.marsh).getInt();
 		marshGen = config.get(config.CATEGORY_GENERAL, "Generation frequency of Marsh biome", 10).getInt();
@@ -122,10 +122,10 @@ public class EnhancedBiomesWetland
 		BiomeManager.addStrongholdBiome(biomeEphemeralLake);
 		BiomeWoods.register(biomeEphemeralLake, EnhancedBiomesBlocks.planksEB, 13);
 
-		biomeEphemeralLakeEdge = (BiomeGenWetlandBase) (new BiomeGenEphemeralLake(ephemeralLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Ephemeral Lake Edge");
-		if(villageEphemeralLakeEdge) BiomeManager.addVillageBiome(biomeEphemeralLakeEdge, true);
-		BiomeManager.addStrongholdBiome(biomeEphemeralLakeEdge);
-		BiomeWoods.register(biomeEphemeralLakeEdge, EnhancedBiomesBlocks.planksEB, 13);
+//		biomeEphemeralLakeEdge = (BiomeGenWetlandBase) (new BiomeGenEphemeralLake(ephemeralLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Ephemeral Lake Edge");
+//		if(villageEphemeralLakeEdge) BiomeManager.addVillageBiome(biomeEphemeralLakeEdge, true);
+//		BiomeManager.addStrongholdBiome(biomeEphemeralLakeEdge);
+//		BiomeWoods.register(biomeEphemeralLakeEdge, EnhancedBiomesBlocks.planksEB, 13);
 
 		biomeFen = (BiomeGenWetlandBase) (new BiomeGenFen(fenId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.2F, 0.8F).setHeight(heightFens).setBiomeName("Fens");
 		BiomeGenManager.addCoolBiome(biomeFen, fenGen);
@@ -150,10 +150,10 @@ public class EnhancedBiomesWetland
 		BiomeManager.addStrongholdBiome(biomeWoodlandLake);
 		BiomeWoods.register(biomeWoodlandLake, Blocks.planks, 0);
 
-		biomeWoodlandLakeEdge = (BiomeGenWetlandBase) (new BiomeGenWoodlandLake(woodlandLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Woodland Lake Edge");
-		if(villageWoodlandLakeEdge) BiomeManager.addVillageBiome(biomeWoodlandLakeEdge, true);
-		BiomeManager.addStrongholdBiome(biomeWoodlandLakeEdge);
-		BiomeWoods.register(biomeWoodlandLakeEdge, Blocks.planks, 0);
+//		biomeWoodlandLakeEdge = (BiomeGenWetlandBase) (new BiomeGenWoodlandLake(woodlandLakeEdgeId)).setColor(6316128).func_76733_a(5470985).setTemperatureRainfall(0.5F, 0.9F).setHeight(heightShores).setBiomeName("Woodland Lake Edge");
+//		if(villageWoodlandLakeEdge) BiomeManager.addVillageBiome(biomeWoodlandLakeEdge, true);
+//		BiomeManager.addStrongholdBiome(biomeWoodlandLakeEdge);
+//		BiomeWoods.register(biomeWoodlandLakeEdge, Blocks.planks, 0);
 
 		biomeMarsh = (BiomeGenWetlandBase) (new BiomeGenMarsh(marshId)).setColor(5470985).func_76733_a(5470985).setTemperatureRainfall(0.9F, 0.6F).setHeight(heightLowPlains).setBiomeName("Marsh");
 		BiomeGenManager.addWarmBiome(biomeMarsh, marshGen);

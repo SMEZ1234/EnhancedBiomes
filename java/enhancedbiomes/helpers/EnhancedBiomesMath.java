@@ -7,6 +7,11 @@ import net.minecraft.world.gen.structure.MapGenVillage;
 
 public class EnhancedBiomesMath
 {
+	public static double sqrtMagnitude(double input) {
+		if(input < 0) return -Math.sqrt(Math.abs(input));
+		else return Math.sqrt(input);
+	}
+	
 	public static double increaseMagnitude(double input, double increase) {
 		return input + (input > 0 ? increase : -increase);
 	}

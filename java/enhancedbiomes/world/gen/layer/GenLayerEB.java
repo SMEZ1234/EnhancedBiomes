@@ -79,7 +79,7 @@ public abstract class GenLayerEB extends GenLayer
 			if(j == 1) {
 				object = new GenLayerEBShore(1000L, (GenLayer) object);
 				object = new GenLayerAlpineEdge(1000L, (GenLayer) object);
-				object = new GenLayerEphemeralEdge(1000L, (GenLayer) object);
+				//object = new GenLayerEphemeralEdge(1000L, (GenLayer) object);
 				object = new GenLayerMountainsEdge(1000L, (GenLayer) object);
 				object = new GenLayerScree(1000L, (GenLayer) object);
 			}

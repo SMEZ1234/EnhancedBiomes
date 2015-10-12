@@ -116,6 +116,10 @@ public class ReplaceBiomeBlocksHandler
 								e.metaArray[index] = 2;
 							}
 						}
+						else if(biomegenbase == EnhancedBiomesSand.biomeRockyDesert) {
+							if(e.blockArray[index] == Blocks.glass) e.blockArray[index] = Blocks.stone;
+							else if(e.blockArray[index] == Blocks.sponge) e.blockArray[index] = Blocks.cobblestone;
+						}
 					}
 				}
 			}

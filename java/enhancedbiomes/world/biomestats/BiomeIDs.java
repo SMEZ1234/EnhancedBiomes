@@ -28,7 +28,7 @@ public class BiomeIDs {
 	, wastelands = getNextID()
 	, sandstoneCanyons = getNextID()		, stoneCanyons = sandstoneCanyons + 128
 	, ephemeralLake = getNextID()			, woodlandLake = ephemeralLake + 128
-	, ephemeralLakeEdge = getNextID()		, woodlandLakeEdge = ephemeralLakeEdge + 128
+//	, ephemeralLakeEdge = getNextID()		, woodlandLakeEdge = ephemeralLakeEdge + 128
 	, cypressPlateau = getNextID()
 	, pineForest = getNextID()
 	, mountainousArchipelago = getNextID()
