@@ -16,6 +16,7 @@ import enhancedbiomes.blocks.BlockWithMeta;
 import enhancedbiomes.blocks.LandTypes;
 import enhancedbiomes.handlers.*;
 import enhancedbiomes.items.EnhancedBiomesItems;
+import enhancedbiomes.modules.atg.ATGModule;
 import enhancedbiomes.proxy.CommonProxy;
 import enhancedbiomes.village.MapGenVillageEB;
 import enhancedbiomes.village.StructureVillagePiecesEB;
@@ -281,6 +282,9 @@ public class EnhancedBiomesMod
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		if (Loader.isModLoaded("ATG")) {
+			ATGModule.load();
+		}
 	}
 
 	private static BlockWithMeta[] getRocksForBiome(int id) {
