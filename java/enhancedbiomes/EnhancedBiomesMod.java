@@ -103,6 +103,7 @@ public class EnhancedBiomesMod
 
 	public static boolean worldType;
 	public static boolean vanilla;
+	public static String[] worldTypes;
 	//public static boolean achievement;
 	public static boolean seasons;
 	//public static boolean tides;
@@ -137,6 +138,13 @@ public class EnhancedBiomesMod
 
 		worldType = config.get(config.CATEGORY_GENERAL, "Allow world type module", true).getBoolean(true);
 		vanilla = config.get(config.CATEGORY_GENERAL, "Allow vanilla module", true).getBoolean(true);
+		
+		String[] worldTypesDefaults = new String[0];
+		if (Loader.isModLoaded("ATG")) {
+			worldTypesDefaults = new String[] { "ATG" };
+		}
+		worldTypes = config.get(config.CATEGORY_GENERAL, "Additional world types to support", worldTypesDefaults, "Warning: this will not work with all mods").getStringList();
+		
 		//achievement = config.get(config.CATEGORY_GENERAL, "Allow achievement module", true).getBoolean(true);
 		seasons = config.get(config.CATEGORY_GENERAL, "Allow seasons module", true).getBoolean(true);
 		//tides = config.get(config.CATEGORY_GENERAL, "Allow tides module", true).getBoolean(true);
