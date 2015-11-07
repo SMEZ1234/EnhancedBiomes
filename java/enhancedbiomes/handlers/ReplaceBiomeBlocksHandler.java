@@ -2,6 +2,7 @@ package enhancedbiomes.handlers;
 
 import java.awt.Event;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import com.google.common.eventbus.Subscribe;
@@ -51,7 +52,7 @@ public class ReplaceBiomeBlocksHandler
 	/** Modifies the default biome block placement **/
 	@SubscribeEvent
 	public void replaceBlocksForBiome(ReplaceBiomeBlocks e) {
-		if(e.biomeArray != null && (e.chunkProvider instanceof ChunkProviderGenerate || e.chunkProvider instanceof ChunkProviderEnhancedBiomes) && e.world.provider.dimensionId == 0) {
+		if(e.biomeArray != null && (e.chunkProvider instanceof ChunkProviderGenerate || e.chunkProvider instanceof ChunkProviderEnhancedBiomes || Arrays.asList(EnhancedBiomesMod.worldTypes).contains(e.world.provider.terrainType.getWorldTypeName())) && e.world.provider.dimensionId == 0) {
 			if(this.rand == null) this.rand = new Random(e.world.getSeed());
 			if(this.stonePerlin == null) this.stonePerlin = new NoiseGeneratorPerlin(rand, 4);
 			if(this.worldGenPerlin == null) this.worldGenPerlin = new NoiseGeneratorPerlin(rand, 4);

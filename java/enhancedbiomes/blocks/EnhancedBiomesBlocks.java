@@ -368,7 +368,7 @@ public class EnhancedBiomesBlocks {
 				GameRegistry.addRecipe(new ItemStack(stairsSEB[x], 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(stoneCobbleEB, 1, x)});
 
 			if(stairsSEB[x + stairsSEB.length / 2] != null)
-				GameRegistry.addRecipe(new ItemStack(stairsSEB[x + 6], 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(stoneBrickEB, 1, x)});
+				GameRegistry.addRecipe(new ItemStack(stairsSEB[x + (stairsSEB.length / 2)], 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(stoneBrickEB, 1, x)});
 
     		GameRegistry.addSmelting(new ItemStack(oreGoldEB, 1, x), new ItemStack(Items.gold_ingot, 1, 0), 1.0F);
     		GameRegistry.addSmelting(new ItemStack(oreDiamondEB, 1, x), new ItemStack(Items.diamond, 1, 0), 1.0F);
